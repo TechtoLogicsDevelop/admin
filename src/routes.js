@@ -301,8 +301,12 @@ const RefundOrders = React.lazy(() => import('./views/base/refundorders/RefundOr
 const WalletTransaction = React.lazy(() => import('./views/base/wallettransaction/WalletTransaction'));  
 const PromoCode = React.lazy(() => import('./views/base/promocode/PromoCode'));    
 const Promotion = React.lazy(() => import('./views/base/promotion/Promotion'));       
-const CreatePromoCode = React.lazy(() => import('./views/createpromocode/CreatePromoCode'));    
-const CreatePromotion = React.lazy(() => import('./views/createpromotion/CreatePromotion'));
+const CreatePromoCode = React.lazy(() => import('./views/createpromocode/CreatePromoCode'));  
+  
+const CreatePromotion = React.lazy(() => import('./views/createpromotion/CreatePromotion'));  
+const PaymentSetting = React.lazy(() => import('./views/paymentsetting/PaymentSetting'));  
+const Enquiries = React.lazy(() => import('./views/enquiries/Enquiries'));  
+const ReviewRating = React.lazy(() => import('./views/reviewrating/ReviewRating'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -327,7 +331,10 @@ const routes = [
        { path: '/base/promocode', name: 'PromoCode', component: PromoCode },	
         { path: '/base/promotion', name: 'Promotion', component: Promotion },	
          { path: '/createpromocode', name: 'CreatePromoCode', component: CreatePromoCode },	
-        { path: '/createpromotion', name: 'CreatePromotion', component: CreatePromotion },			 
+        { path: '/createpromotion', name: 'CreatePromotion', component: CreatePromotion },	
+       { path: '/paymentsetting', name: 'PaymentSetting', component: PaymentSetting },	
+        { path: '/enquiries', name: 'Enquiries', component: Enquiries },
+         { path: '/reviewrating', name: 'ReviewRating', component: ReviewRating },		
 	 
 	 
 	{ path: '/selectmembers', name: 'SelectMembers', component: SelectMembers },
