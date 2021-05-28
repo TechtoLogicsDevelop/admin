@@ -290,7 +290,19 @@ const AssignVehicle = React.lazy(() => import('./views/assignvehicle/AssignVehic
 const OrdersReport = React.lazy(() => import('./views/ordersreport/OrdersReport'));
 const ReportOrders = React.lazy(() => import('./views/base/reportorders/ReportOrders'));
 const BasketOrders = React.lazy(() => import('./views/base/basketorders/BasketOrders'));  
-const DeliveredReports = React.lazy(() => import('./views/base/deliveredreports/DeliveredReports'));  
+const DeliveredReports = React.lazy(() => import('./views/base/deliveredreports/DeliveredReports')); 
+ 
+const ChangePassword = React.lazy(() => import('./views/base/changepassword/ChangePassword'));    
+const Profile = React.lazy(() => import('./views/base/profile/Profile'));    
+const AbondonedOrders = React.lazy(() => import('./views/base/abondonedorders/AbondonedOrders'));  
+const SearchOrders = React.lazy(() => import('./views/base/searchorders/SearchOrders'));
+const ReturnedOrders = React.lazy(() => import('./views/base/returnedorders/ReturnedOrders'));    
+const RefundOrders = React.lazy(() => import('./views/base/refundorders/RefundOrders'));
+const WalletTransaction = React.lazy(() => import('./views/base/wallettransaction/WalletTransaction'));  
+const PromoCode = React.lazy(() => import('./views/base/promocode/PromoCode'));    
+const Promotion = React.lazy(() => import('./views/base/promotion/Promotion'));       
+const CreatePromoCode = React.lazy(() => import('./views/createpromocode/CreatePromoCode'));    
+const CreatePromotion = React.lazy(() => import('./views/createpromotion/CreatePromotion'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -305,7 +317,18 @@ const routes = [
 	 { path: '/ordersreport', name: 'OrdersReport', component: OrdersReport },  
 	 { path: '/base/reportorders', name: 'ReportOrders', component: ReportOrders },
 	 { path: '/base/basketorders', name: 'BasketOrders', component: BasketOrders },
-	 { path: '/base/deliveredreports', name: 'DeliveredReports', component: DeliveredReports },
+	 { path: '/base/deliveredreports', name: 'DeliveredReports', component: DeliveredReports }, 
+	  { path: '/base/profile', name: 'Profile', component: Profile },
+	   { path: '/base/abondonedorders', name: 'AbondonedOrders', component: AbondonedOrders },
+	    { path: '/base/searchorders', name: 'SearchOrders', component: SearchOrders }, 
+         { path: '/base/returnedorders', name: 'ReturnedOrders', component: ReturnedOrders }, 	
+      { path: '/base/refundorders', name: 'RefundOrders', component: RefundOrders }, 
+      { path: '/base/wallettransaction', name: 'WalletTransaction', component: WalletTransaction }, 
+       { path: '/base/promocode', name: 'PromoCode', component: PromoCode },	
+        { path: '/base/promotion', name: 'Promotion', component: Promotion },	
+         { path: '/createpromocode', name: 'CreatePromoCode', component: CreatePromoCode },	
+        { path: '/createpromotion', name: 'CreatePromotion', component: CreatePromotion },			 
+	 
 	 
 	{ path: '/selectmembers', name: 'SelectMembers', component: SelectMembers },
 	{ path: '/emailssetting', name: 'EmailsSetting', component: EmailsSetting },
@@ -365,8 +388,8 @@ const routes = [
 	  { path: '/base/onroute', name: 'OnRoute', component: OnRoute },
 	   { path: '/base/ordersdelivered', name: 'OrdersDelivered', component: OrdersDelivered },
 	    { path: '/base/ordersreturned', name: 'OrdersReturned', component: OrdersReturned },
-		 { path: '/base/orderscancelled', name: 'OrdersCancelled', component: OrdersCancelled },
-	   
+		 { path: '/base/orderscancelled', name: 'OrdersCancelled', component: OrdersCancelled },    
+	    { path: '/base/changepassword', name: 'ChangePassword', component: ChangePassword },
 	 
     { path: '/base/manufacturers', name: 'Manufacturers', component: Manufacturers },
 	 { path: '/exhibitorsreg', name: 'ExhibitorsReg', component: ExhibitorsReg },
