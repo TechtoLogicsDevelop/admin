@@ -39,7 +39,7 @@ import { DocsLink } from 'src/reusable'
 
 
 
-const CreatePromotion = () => {
+const CreateBlogs = () => {
   const [collapsed, setCollapsed] = React.useState(true)
   const [showElements, setShowElements] = React.useState(true)
 
@@ -50,7 +50,7 @@ const CreatePromotion = () => {
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-             Create Promotion
+             Create Blogs
               
             </CCardHeader>
             <CCardBody>
@@ -58,7 +58,7 @@ const CreatePromotion = () => {
 			   <CFormGroup row className="my-0">
                 <CCol xs="8">
                   <CFormGroup>
-                    <CLabel col md="6" htmlFor="picture">Upload Image</CLabel>
+                    <CLabel col md="6" htmlFor="picture">Blog Upload Image</CLabel>
                      <CInputFile id="picture" name="picture"/>
                   </CFormGroup>
                 </CCol>
@@ -67,56 +67,61 @@ const CreatePromotion = () => {
 			      <CFormGroup row className="my-0">
 				  <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Promote Type</CLabel>
+                    <CLabel htmlFor="first">Blog Group</CLabel>
                      <CSelect custom name="select" id="select">
-                      <option value="0"> Promotion Type 1</option>
-                      <option value="1">Promotion Type 2 </option>
-                      <option value="2">Promotion Type 3</option>
+                      <option value="0"> Group 1</option>
+                      <option value="1">Group 2 </option>
+                      <option value="2">Group 3</option>
                      
                     </CSelect>
                   </CFormGroup>
                 </CCol>
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Promote Category</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0">Select </option>
-                      <option value="1">Invoice Amount Based</option>
-                      <option value="2">Product Based</option>
-                     
-                    </CSelect>
-                  </CFormGroup>
-                </CCol>
-                 <CCol xs="4">
-                  <CFormGroup>
-                    <CLabel htmlFor="first">FOC Product</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0">Select Product </option>
-                      <option value="1">Product 1 </option>
-                      <option value="2">Product 2 </option>
-                     
-                    </CSelect>
-                  </CFormGroup>
-                </CCol>
-              </CFormGroup>
-                 <CFormGroup row className="my-0">
-				  <CLabel htmlFor="first"><strong>Invoice Amount:</strong></CLabel>
-                <CCol xs="4">
-                  <CFormGroup>
-                    <CLabel htmlFor="text">From Amount</CLabel>
-                    <CInput id="text" placeholder="Amount" />
+                    <CLabel htmlFor="first">Blog Title</CLabel>
+                    <CInput id="text" placeholder="Blog Title" />
                   </CFormGroup>
                 </CCol>
 				 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="text">To Amount</CLabel>
-                    <CInput id="text" placeholder="Amount" />
+                    <CLabel htmlFor="first">Sort Order</CLabel>
+                    <CInput id="text" placeholder="Sort Order" />
                   </CFormGroup>
                 </CCol>
-                <CCol xs="6">
+                
+              </CFormGroup>
+                 <CFormGroup row className="my-0">
+				  
+                <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="phone">FOC Quantity</CLabel>
-                    <CInput id="phone" placeholder="FOC Quantity*" />
+                    <CLabel htmlFor="text">Meta Keyword</CLabel>
+                    <CInput id="text" placeholder="Meta Keyword" />
+                  </CFormGroup>
+                </CCol>
+				 <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="text">Meta Description</CLabel>
+                    <CCol xs="12" md="12">
+                    <CTextarea 
+                      name="textarea-input" 
+                      id="textarea-input" 
+                      rows="4"
+                      placeholder="Meta Description.." 
+                    />
+                  </CCol>
+                  </CFormGroup>
+                </CCol>
+                 <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="text">Content</CLabel>
+                    <CCol xs="12" md="12">
+                    <CTextarea 
+                      name="textarea-input" 
+                      id="textarea-input" 
+                      rows="4"
+                      placeholder="Content.." 
+                    />
+                  </CCol>
                   </CFormGroup>
                 </CCol>
               </CFormGroup>
@@ -140,4 +145,4 @@ const CreatePromotion = () => {
   )
 }
 
-export default CreatePromotion
+export default CreateBlogs

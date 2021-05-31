@@ -57,13 +57,24 @@ const CreatePromoCode = () => {
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
 			      <CFormGroup row className="my-0">
-                <CCol xs="6">
+                 <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Select Promotion Type</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0"> Promotion Type 1</option>
+                      <option value="1">Promotion Type 2 </option>
+                      <option value="2">Promotion Type 3</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>               
+			   <CCol xs="4">
                   <CFormGroup>
                     <CLabel htmlFor="first">Promo Code</CLabel>
                     <CInput id="first" placeholder="Promo Code" />
                   </CFormGroup>
                 </CCol>
-                <CCol xs="6">
+                <CCol xs="4">
                   <CFormGroup>
                     <CLabel htmlFor="last">Amount Type</CLabel>
                    <CSelect custom name="select" id="select">

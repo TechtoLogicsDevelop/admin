@@ -39,7 +39,7 @@ import { DocsLink } from 'src/reusable'
 
 
 
-const CreatePromotion = () => {
+const CreateNewOffer = () => {
   const [collapsed, setCollapsed] = React.useState(true)
   const [showElements, setShowElements] = React.useState(true)
 
@@ -50,73 +50,60 @@ const CreatePromotion = () => {
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-             Create Promotion
+             Create New Offer
               
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-			   <CFormGroup row className="my-0">
-                <CCol xs="8">
-                  <CFormGroup>
-                    <CLabel col md="6" htmlFor="picture">Upload Image</CLabel>
-                     <CInputFile id="picture" name="picture"/>
-                  </CFormGroup>
-                </CCol>
-               
-              </CFormGroup>
+			  
 			      <CFormGroup row className="my-0">
 				  <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Promote Type</CLabel>
+                    <CLabel htmlFor="first">Offers Type</CLabel>
                      <CSelect custom name="select" id="select">
-                      <option value="0"> Promotion Type 1</option>
-                      <option value="1">Promotion Type 2 </option>
-                      <option value="2">Promotion Type 3</option>
+                      <option value="0"> Flat</option>
+                      <option value="1">Percentage </option>
+                     
                      
                     </CSelect>
                   </CFormGroup>
                 </CCol>
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Promote Category</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0">Select </option>
-                      <option value="1">Invoice Amount Based</option>
-                      <option value="2">Product Based</option>
-                     
-                    </CSelect>
+                    <CLabel htmlFor="first">Offer Name</CLabel>
+                    <CInput id="text" placeholder="Offer Name" />
                   </CFormGroup>
                 </CCol>
-                 <CCol xs="4">
+				 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="first">FOC Product</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0">Select Product </option>
-                      <option value="1">Product 1 </option>
-                      <option value="2">Product 2 </option>
-                     
-                    </CSelect>
+                    <CLabel htmlFor="first">Offer Mode</CLabel>
+                    <CInput id="text" placeholder="Offer Mode" />
                   </CFormGroup>
                 </CCol>
+                
               </CFormGroup>
                  <CFormGroup row className="my-0">
-				  <CLabel htmlFor="first"><strong>Invoice Amount:</strong></CLabel>
+				  
                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="text">From Amount</CLabel>
+                    <CLabel htmlFor="text">Offer Amount</CLabel>
                     <CInput id="text" placeholder="Amount" />
                   </CFormGroup>
                 </CCol>
 				 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="text">To Amount</CLabel>
-                    <CInput id="text" placeholder="Amount" />
+                    <CLabel htmlFor="text">Start date</CLabel>
+                    <CCol xs="12" md="12">
+                   <CInput type="date" id="date-input" name="date-input" placeholder="date" />
+                  </CCol>
                   </CFormGroup>
                 </CCol>
-                <CCol xs="6">
+                 <CCol xs="4">
                   <CFormGroup>
-                    <CLabel htmlFor="phone">FOC Quantity</CLabel>
-                    <CInput id="phone" placeholder="FOC Quantity*" />
+                    <CLabel htmlFor="text">End Date</CLabel>
+                    <CCol xs="12" md="12">
+                    <CInput type="date" id="date-input" name="date-input" placeholder="date" />
+                  </CCol>
                   </CFormGroup>
                 </CCol>
               </CFormGroup>
@@ -140,4 +127,4 @@ const CreatePromotion = () => {
   )
 }
 
-export default CreatePromotion
+export default CreateNewOffer
