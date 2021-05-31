@@ -80,6 +80,7 @@ const PromoCode = () => {
                   <tr>
                     
                    <th>Id</th>
+				   <th className="text-center">Promotion Type </th> 
                     <th className="text-center">Promo Code </th> 
                     <th className="text-center">Amount Type </th>  
 					 <th className="text-center">Discount Amount </th>
@@ -100,8 +101,10 @@ const PromoCode = () => {
                   <tr>
 				  <td>01
 				  </td>
+				   <td>Advertising
+				  </td>
 				  <td>
-				  Test Promo Code
+				  Promo-2021
 				  </td>
                      <td>
                     Percentage

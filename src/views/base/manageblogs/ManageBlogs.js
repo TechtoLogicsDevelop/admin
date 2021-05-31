@@ -20,7 +20,7 @@ import { DocsLink } from 'src/reusable'
 
 
 
-const Promotion = () => {
+const ManageBlogs = () => {
   return (
     <>
      
@@ -31,7 +31,7 @@ const Promotion = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-          Promotion
+          Manage Blogs
             </CCardHeader>
 			
 		   
@@ -39,24 +39,10 @@ const Promotion = () => {
 			<CCardHeader>
             
 			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/createpromotion">Add New </CHeaderNavLink>
+          <CHeaderNavLink to="/createblogs">Add New </CHeaderNavLink>
         </CHeaderNavItem>
             </CCardHeader>
-              <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="select">Promotion Type</CLabel>
-                  </CCol>
-                  <CCol xs="4" >
-                    <CSelect custom name="select" id="select">
-					 <option value="0">Select </option>
-                      <option value="1">All</option>
-                      <option value="2">Invoice Amount Based</option>
-					   <option value="3">Product Based</option>
-                     
-					  
-                    </CSelect>
-                  </CCol> <CButton size="sm" className="btn-xing btn-brand mr-1 mb-1"><span className="mfs-2">Filter</span></CButton> 
-                </CFormGroup>
+            
 
               
 
@@ -66,17 +52,13 @@ const Promotion = () => {
                     
                    <th>Id</th>
                     <th className="text-center">Image </th> 
-					<th className="text-center">Promotion Type </th>
-                    <th className="text-center">FOC Product </th>  
-					 <th className="text-center">Promotion Category </th>
+					<th className="text-center"> Group </th>
+                    <th className="text-center">Title </th>  
+					 <th className="text-center">Created Date </th>
 					
-					<th className="text-center">FOC Quantity</th>
+					<th className="text-center">Updated Date</th>
+					<th className="text-center">Sort Order</th>
 					
-					 <th className="text-center">Invoice From Amount</th>
-					 <th className="text-center">Invoice To Amount</th>
-					  <th className="text-center">Purchasing Product</th>
-					 
-					    <th className="text-center">Purchasing Product Quantity</th>
 					  <th className="text-center">Status</th>
 					 
 					    <th className="text-center">Action</th>
@@ -84,41 +66,35 @@ const Promotion = () => {
                 </thead>
                 <tbody>  
                   <tr>
-				  <td>64
+				  <td>b01
 				  </td>
 				  <td>
-				 No Image
+				  <div className="c-avatar">
+                        <img src={'avatars/Blog_pic.png'} className="c-avatar-img"  />
+                        <span className="c-avatar-status bg-success"></span>
+                      </div>
 				  </td>
 				   <td>
                     Advertising
                      
                     </td>
                      <td>
-                    Special Dress
+                    Products Promotion
                      
                     </td>
                     <td>
-                     Product based
+                     29/05/2021
                      
                     </td>
 					<td>
-                     1
+                    29/05/2021
+                     
+                    </td>
+					<td>
+                    01
                      
                     </td>
 					
-					<td className="text-center">
-                   00.00
-                    </td>
-					<td className="text-center">
-                  00.00
-                    </td>
-					
-					 <td className="text-center">
-                   Special Dress
-                    </td>
-					 <td className="text-center">
-                   1
-                    </td>
 					<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
@@ -142,4 +118,4 @@ const Promotion = () => {
   )
 }
 
-export default Promotion
+export default ManageBlogs
