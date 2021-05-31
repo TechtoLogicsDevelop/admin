@@ -12,6 +12,9 @@ import {
   CButton,
   CSwitch,
   CHeaderNavLink,
+  CFormGroup,
+  CLabel,
+  CSelect,
   
   CTabPane
 } from '@coreui/react'
@@ -35,6 +38,34 @@ const UsersMaster = () => {
             </CCardHeader>
 			
             <CCardBody>
+			  <CFormGroup row className="my-0">
+				  <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Search Subcategory Wise</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0"> Subcategory 1</option>
+                      <option value="1">Subcategory 2 </option>
+                      <option value="2">Subcategory 3</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Search Group Wise</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0">Select </option>
+                      <option value="1">Oil Painter</option>
+                      <option value="2">Sketch Pen Painter</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+                 <CCol xs="4">
+                 <CButton type="submit" size="sm" color="info"><CIcon name="cil-scrubber" /> Search </CButton>&nbsp;&nbsp;
+                </CCol>
+              </CFormGroup>
+			  
               <CRow>
                 <CCol xs="2">
                   <CListGroup id="list-tab" role="tablist">
