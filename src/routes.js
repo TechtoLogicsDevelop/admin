@@ -306,13 +306,58 @@ const CreatePromoCode = React.lazy(() => import('./views/createpromocode/CreateP
 const CreatePromotion = React.lazy(() => import('./views/createpromotion/CreatePromotion'));  
 const PaymentSetting = React.lazy(() => import('./views/paymentsetting/PaymentSetting'));  
 const Enquiries = React.lazy(() => import('./views/enquiries/Enquiries'));  
-const ReviewRating = React.lazy(() => import('./views/reviewrating/ReviewRating'));
+const ReviewRating = React.lazy(() => import('./views/reviewrating/ReviewRating'));    
+const PromotionTypes = React.lazy(() => import('./views/promotypes/PromotionTypes'));  
+const AddPromotionTypes = React.lazy(() => import('./views/addpromotypes/AddPromotionTypes'));  
+const PaytoVendor = React.lazy(() => import('./views/paytovendor/PaytoVendor'));      
+const VendorsMembership = React.lazy(() => import('./views/vendorsmembership/VendorsMembership')); 
+const VendorsPackage = React.lazy(() => import('./views/base/vendorspackage/VendorsPackage'));   
+
+const AddVendorsPackage = React.lazy(() => import('./views/addvendorspackage/AddVendorsPackage'));    
+const Membership = React.lazy(() => import('./views/base/membership/Membership'));  
+const BlogsGroups = React.lazy(() => import('./views/base/bloggroups/BlogsGroups'));    
+const AddBlogGroup = React.lazy(() => import('./views/addbloggroup/AddBlogGroup'));   
+const ManageBlogs = React.lazy(() => import('./views/base/manageblogs/ManageBlogs'));    
+const CreateBlogs = React.lazy(() => import('./views/createblogs/CreateBlogs'));    
+const ManageOffers = React.lazy(() => import('./views/base/manageoffers/ManageOffers'));    
+const Discounts = React.lazy(() => import('./views/base/discounts/Discounts'));             
+const AddDiscount = React.lazy(() => import('./views/adddiscount/AddDiscount'));    
+const CreateNewOffer = React.lazy(() => import('./views/createnewoffer/CreateNewOffer'));   
+const Coupons = React.lazy(() => import('./views/base/coupons/Coupons'));   
+const Vouchers = React.lazy(() => import('./views/base/vouchers/Vouchers'));    
+const JobsSetting = React.lazy(() => import('./views/jobssetting/JobsSetting'));       
+const JobTypes = React.lazy(() => import('./views/jobtypes/JobTypes'));             
+const AddJobtype = React.lazy(() => import('./views/addjobtype/AddJobtype'));  
+const JobListings = React.lazy(() => import('./views/joblistings/JobListings'));  
+const AddJobList = React.lazy(() => import('./views/addjoblist/AddJobList'));    
+const CoursesList = React.lazy(() => import('./views/courseslist/CoursesList')); 
+const AddCourse = React.lazy(() => import('./views/addcourse/AddCourse')); 
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/base/eventsmaster', name: 'EventsMaster', component: EventsMaster }, 
    { path: '/base/exhibitors', name: 'Exhibitors', component: Exhibitors },
+   { path: '/base/membership', name: 'Membership', component: Membership },
+    { path: '/base/bloggroups', name: 'BlogsGroups', component: BlogsGroups },
+    { path: '/addbloggroup', name: 'AddBlogGroup', component: AddBlogGroup },
+	{ path: '/base/manageblogs', name: 'ManageBlogs', component: ManageBlogs },
+	 { path: '/createblogs', name: 'CreateBlogs', component: CreateBlogs },
+	 { path: '/base/manageoffers', name: 'ManageOffers', component: ManageOffers },
+	 { path: '/base/discounts', name: 'Discounts', component: Discounts },
+	 { path: '/adddiscount', name: 'AddDiscount', component: AddDiscount },
+	 { path: '/createnewoffer', name: 'CreateNewOffer', component: CreateNewOffer },
+	  { path: '/base/coupons', name: 'Coupons', component: Coupons },
+	  { path: '/base/vouchers', name: 'Vouchers', component: Vouchers },
+	   { path: '/jobssetting', name: 'JobsSetting', component: JobsSetting },
+	   { path: '/jobtypes', name: 'JobTypes', component: JobTypes }, 
+	    { path: '/addjobtype', name: 'AddJobtype', component: AddJobtype }, 
+		{ path: '/joblistings', name: 'JobListings', component: JobListings }, 
+		{ path: '/addjoblist', name: 'AddJobList', component: AddJobList }, 
+		{ path: '/courseslist', name: 'CoursesList', component: CoursesList },  
+		{ path: '/addcourse', name: 'AddCourse', component: AddCourse },
+		
+	  
     { path: '/base/companybanks', name: 'CompanyBanks', component: CompanyBanks },
 	 { path: '/base/vendorsbanks', name: 'VendorsBanks', component: VendorsBanks },
 	  { path: '/base/bankinquiry', name: 'BankInquiry', component: BankInquiry },    
@@ -335,8 +380,13 @@ const routes = [
        { path: '/paymentsetting', name: 'PaymentSetting', component: PaymentSetting },	
         { path: '/enquiries', name: 'Enquiries', component: Enquiries },
          { path: '/reviewrating', name: 'ReviewRating', component: ReviewRating },		
-	 
-	 
+		  { path: '/promotypes', name: 'PromotionTypes', component: PromotionTypes },	    
+	   { path: '/addpromotypes', name: 'AddPromotionTypes', component: AddPromotionTypes },
+	   { path: '/paytovendor', name: 'PaytoVendor', component: PaytoVendor }, 
+       { path: '/vendorsmembership', name: 'VendorsMembership', component: VendorsMembership }, 	     
+	  { path: '/base/vendorspackage', name: 'VendorsPackage', component: VendorsPackage },
+	   { path: '/addvendorspackage', name: 'AddVendorsPackage', component: AddVendorsPackage },
+	  
 	{ path: '/selectmembers', name: 'SelectMembers', component: SelectMembers },
 	{ path: '/emailssetting', name: 'EmailsSetting', component: EmailsSetting },
 	{ path: '/notificationsset', name: 'NotificationsSet', component: NotificationsSet },
