@@ -330,13 +330,38 @@ const JobTypes = React.lazy(() => import('./views/jobtypes/JobTypes'));
 const AddJobtype = React.lazy(() => import('./views/addjobtype/AddJobtype'));  
 const JobListings = React.lazy(() => import('./views/joblistings/JobListings'));  
 const AddJobList = React.lazy(() => import('./views/addjoblist/AddJobList'));    
-const CoursesList = React.lazy(() => import('./views/courseslist/CoursesList')); 
+const CoursesList = React.lazy(() => import('./views/courseslist/CoursesList'));   
 const AddCourse = React.lazy(() => import('./views/addcourse/AddCourse')); 
+
+const PurchaseOrder = React.lazy(() => import('./views/base/purchaseorder/PurchaseOrder')); 
+const PurchaseOrderGenerate = React.lazy(() => import('./views/pogenrate/PurchaseOrderGenerate'));   
+const SelectProducts = React.lazy(() => import('./views/selectproducts/SelectProducts'));    
+const PurchaseInvoice = React.lazy(() => import('./views/base/purchaseinvoice/PurchaseInvoice'));      
+const VendorsPay = React.lazy(() => import('./views/vendorspay/VendorsPay'));  
+const DebitNote = React.lazy(() => import('./views/debitnote/DebitNote'));  
+const AddDebitNote = React.lazy(() => import('./views/adddebitnote/AddDebitNote'));    
+const PurchaseReport = React.lazy(() => import('./views/base/purchasereport/PurchaseReport'));  
+const StockList = React.lazy(() => import('./views/base/stocklist/StockList'));  
+const GRN = React.lazy(() => import('./views/base/grn/GRN'));  
+const GenerateGrn = React.lazy(() => import('./views/base/generategrn/GenerateGrn'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
-  { path: '/base/eventsmaster', name: 'EventsMaster', component: EventsMaster }, 
+  
+  { path: '/base/purchaseorder', name: 'PurchaseOrder', component: PurchaseOrder },  
+  { path: '/pogenrate', name: 'PurchaseOrderGenerate', component: PurchaseOrderGenerate },
+  { path: '/selectproducts', name: 'SelectProducts', component: SelectProducts },
+  { path: '/base/purchaseinvoice', name: 'PurchaseInvoice', component: PurchaseInvoice }, 
+   { path: '/vendorspay', name: 'VendorsPay', component: VendorsPay },
+    { path: '/debitnote', name: 'DebitNote', component: DebitNote },
+	{ path: '/adddebitnote', name: 'AddDebitNote', component: AddDebitNote },
+	{ path: '/base/purchasereport', name: 'PurchaseReport', component: PurchaseReport },
+	{ path: '/base/stocklist', name: 'StockList', component: StockList },
+    { path: '/base/grn', name: 'GRN', component: GRN },
+	{ path: '/base/generategrn', name: 'GenerateGrn', component: GenerateGrn },
+	
+ { path: '/base/eventsmaster', name: 'EventsMaster', component: EventsMaster }, 
    { path: '/base/exhibitors', name: 'Exhibitors', component: Exhibitors },
    { path: '/base/membership', name: 'Membership', component: Membership },
     { path: '/base/bloggroups', name: 'BlogsGroups', component: BlogsGroups },
@@ -356,8 +381,7 @@ const routes = [
 		{ path: '/addjoblist', name: 'AddJobList', component: AddJobList }, 
 		{ path: '/courseslist', name: 'CoursesList', component: CoursesList },  
 		{ path: '/addcourse', name: 'AddCourse', component: AddCourse },
-		
-	  
+		  
     { path: '/base/companybanks', name: 'CompanyBanks', component: CompanyBanks },
 	 { path: '/base/vendorsbanks', name: 'VendorsBanks', component: VendorsBanks },
 	  { path: '/base/bankinquiry', name: 'BankInquiry', component: BankInquiry },    
