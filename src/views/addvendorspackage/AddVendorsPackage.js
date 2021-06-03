@@ -79,10 +79,10 @@ const AddVendorsPackage = () => {
                 </CFormGroup>
 				 <CFormGroup row>
                   <CCol md="3">
-                    <CLabel htmlFor="select"> Time</CLabel>
+                    <CLabel htmlFor="select"> Days</CLabel>
                   </CCol>
                   <CCol xs="9" md="9">
-                    <CInput id="text-input" name="text-input" placeholder=" 00:00:00 AM/PM" />
+                    <CInput id="text-input" name="text-input" placeholder=" Days" />
                    
                   </CCol>
                 </CFormGroup>
