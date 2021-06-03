@@ -332,7 +332,6 @@ const JobListings = React.lazy(() => import('./views/joblistings/JobListings'));
 const AddJobList = React.lazy(() => import('./views/addjoblist/AddJobList'));    
 const CoursesList = React.lazy(() => import('./views/courseslist/CoursesList'));   
 const AddCourse = React.lazy(() => import('./views/addcourse/AddCourse')); 
-
 const PurchaseOrder = React.lazy(() => import('./views/base/purchaseorder/PurchaseOrder')); 
 const PurchaseOrderGenerate = React.lazy(() => import('./views/pogenrate/PurchaseOrderGenerate'));   
 const SelectProducts = React.lazy(() => import('./views/selectproducts/SelectProducts'));    
@@ -343,12 +342,48 @@ const AddDebitNote = React.lazy(() => import('./views/adddebitnote/AddDebitNote'
 const PurchaseReport = React.lazy(() => import('./views/base/purchasereport/PurchaseReport'));  
 const StockList = React.lazy(() => import('./views/base/stocklist/StockList'));  
 const GRN = React.lazy(() => import('./views/base/grn/GRN'));  
-const GenerateGrn = React.lazy(() => import('./views/base/generategrn/GenerateGrn'));
+const GenerateGrn = React.lazy(() => import('./views/base/generategrn/GenerateGrn'));  
+const DeliveryNote = React.lazy(() => import('./views/base/deliverynote/DeliveryNote'));        
+const InventoryReport = React.lazy(() => import('./views/base/inventoryreport/InventoryReport'));  
+const CustomersGroup = React.lazy(() => import('./views/base/customersgroup/CustomersGroup'));    
+const AddCustomerGroup = React.lazy(() => import('./views/addcustgroup/AddCustomerGroup'));  
+const CustomersMembership = React.lazy(() => import('./views/base/custmembership/CustomersMembership'));  
+const SalesQuatation = React.lazy(() => import('./views/base/salesquatation/SalesQuatation'));  
+
+const CreateQuatation = React.lazy(() => import('./views/createquatation/CreateQuatation'));  
+const SalesOrder = React.lazy(() => import('./views/base/salesorder/SalesOrder'));   
+const CreateSalesOrder = React.lazy(() => import('./views/createsalesorder/CreateSalesOrder'));         
+const SalesInvoice = React.lazy(() => import('./views/base/salesinvoice/SalesInvoice'));   
+const Collections = React.lazy(() => import('./views/base/collections/Collections'));           
+const CollectionsEntry = React.lazy(() => import('./views/collectionsentry/CollectionsEntry'));  
+const CreditNote = React.lazy(() => import('./views/base/creditnote/CreditNote'));     
+const CreateCreditNote = React.lazy(() => import('./views/createcreditnote/CreateCreditNote'));  
+const SalesReport = React.lazy(() => import('./views/base/salesreport/SalesReport'));    
+const DayBook = React.lazy(() => import('./views/base/daybook/DayBook'));  
+const LedgerList = React.lazy(() => import('./views/base/ledgerlist/LedgerList'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   
+  { path: '/base/ledgerlist', name: 'LedgerList', component: LedgerList },
+  { path: '/base/daybook', name: 'DayBook', component: DayBook },
+  { path: '/base/salesreport', name: 'SalesReport', component: SalesReport },
+   { path: '/createcreditnote', name: 'CreateCreditNote', component: CreateCreditNote },
+  { path: '/base/creditnote', name: 'CreditNote', component: CreditNote },
+   { path: '/collectionsentry', name: 'CollectionsEntry', component: CollectionsEntry },
+   { path: '/base/collections', name: 'Collections', component: Collections },
+  { path: '/base/salesinvoice', name: 'SalesInvoice', component: SalesInvoice },
+  { path: '/createquatation', name: 'CreateQuatation', component: CreateQuatation },
+   { path: '/base/salesorder', name: 'SalesOrder', component: SalesOrder },
+  { path: '/createsalesorder', name: 'CreateSalesOrder', component: CreateSalesOrder },
+  
+  { path: '/base/salesquatation', name: 'SalesQuatation', component: SalesQuatation },
+   { path: '/base/custmembership', name: 'CustomersMembership', component: CustomersMembership },
+  { path: '/addcustgroup', name: 'AddCustomerGroup', component: AddCustomerGroup },
+   { path: '/base/customersgroup', name: 'CustomersGroup', component: CustomersGroup },
+   { path: '/base/inventoryreport', name: 'InventoryReport', component: InventoryReport },
+   { path: '/base/deliverynote', name: 'DeliveryNote', component: DeliveryNote },
   { path: '/base/purchaseorder', name: 'PurchaseOrder', component: PurchaseOrder },  
   { path: '/pogenrate', name: 'PurchaseOrderGenerate', component: PurchaseOrderGenerate },
   { path: '/selectproducts', name: 'SelectProducts', component: SelectProducts },
@@ -360,8 +395,7 @@ const routes = [
 	{ path: '/base/stocklist', name: 'StockList', component: StockList },
     { path: '/base/grn', name: 'GRN', component: GRN },
 	{ path: '/base/generategrn', name: 'GenerateGrn', component: GenerateGrn },
-	
- { path: '/base/eventsmaster', name: 'EventsMaster', component: EventsMaster }, 
+	 { path: '/base/eventsmaster', name: 'EventsMaster', component: EventsMaster }, 
    { path: '/base/exhibitors', name: 'Exhibitors', component: Exhibitors },
    { path: '/base/membership', name: 'Membership', component: Membership },
     { path: '/base/bloggroups', name: 'BlogsGroups', component: BlogsGroups },
