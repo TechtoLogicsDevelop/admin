@@ -36,7 +36,7 @@ const VendorsMembership = () => {
         <CCol >
           <CCard>
             <CCardHeader>
-          Manage Vendors Membership
+          Manage Vendors Membership Payment
             </CCardHeader>
 			
 		   
