@@ -38,7 +38,14 @@ const PaytoVendor = () => {
             <CCardHeader>
           Manage Pay to Vendor
             </CCardHeader>
-			
+			 <CCardHeader>
+		  
+                <CHeaderNav className="d-md-down-none mr-auto">
+                     <CHeaderNavItem className="px-3" >
+                     <CHeaderNavLink to="/vendorspay">+Pay to Vendor</CHeaderNavLink>
+                     </CHeaderNavItem>
+                </CHeaderNav>
+              </CCardHeader>
 		   
             <CCardBody>
                  <CFormGroup>
@@ -55,9 +62,14 @@ const PaytoVendor = () => {
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                  
+                  <th>Sl No</th>
+				  <th>Payment No</th>
+				   <th>Payment Type</th>
+				    <th>Payment Date</th>
+					 <th>PI No</th>
                     <th>Vendor</th>
-                    <th >Amount</th>
+                    <th >Paid Amount Now</th>
+					 <th >Balance Amount</th>
                    <th >Payment Method</th>
                   
                   
@@ -65,14 +77,32 @@ const PaytoVendor = () => {
 					  <th>Actions</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody>  
                   <tr>
+				   <td>
+                    1
+                    </td>
+					 <td>
+                     PAY_004
+                    </td>
+					 <td>
+                     Payment Against Invoice
+                    </td>
+					 <td>
+                     31/05/2021
+                    </td>
+					 <td>
+                    PI_001
+                    </td>
                     <td>
                        <CHeaderNavLink to="/vendorsdetails"> Artwork  </CHeaderNavLink>
                      
                     </td>
                     <td>
-                     Rs 2000.00
+                    Rs 26,387.00
+                    </td>
+					 <td>
+                     Rs 00.00
                     </td>
 					 <td>
                     Cash
@@ -86,25 +116,6 @@ const PaytoVendor = () => {
 					</td>
                   </tr>
 				  
-				    <tr>
-                    <td>
-                       <CHeaderNavLink to="/vendorsdetails"> Artwork  </CHeaderNavLink>
-                     
-                    </td>
-                    <td>
-                     Rs 2500.00
-                    </td>
-					 <td>
-                    Phone Pay
-                    </td>
-                                     
-					<td>
-					Payment Done
-					</td>
-					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
 				  
                 </tbody>
               </table>
