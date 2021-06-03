@@ -55,49 +55,42 @@ const GRN = () => {
                   <tr>
                     
                    
-                    <th>Sl No</th>
-					 <th>GRN No</th>
-					  <th >PO No</th>
-					  <th >Vendor </th>
-                    <th >Date </th>
-					 <th >Raised By </th>
+                    <th>Item Code/SKU</th>
+					 <th>Store</th>
+					  <th >Product</th>
+					  <th >UOM </th>
+                    <th >Minimum Qty </th>
+					 <th >Available </th>
 					
-					<th >Status </th>
-					<th >Action </th>
 				
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                      <td>
-                     01
+                     1001
                      
                     </td>
 					 <td>
-                     GRN_0017
+                     JP Nagar
                      
                     </td>
-                    <td className="text-center">
-                     PO_0017
+                    <td >
+                     Digital Prints
                     </td>
 					<td>
-                   <CHeaderNavLink to="/vendorsdetails">Artwork</CHeaderNavLink>
-                     
-                    </td>
-					<td>
-                   31/05/2021
-                     
-                    </td>
-						<td>
-                   Inventory Manager
+                   Pcs
                      
                     </td>
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
+                   10
+                     
+                    </td>
 					<td>
-					View / Edit / Delete
-					</td>
+                   25
+                     
+                    </td>
+					
                   </tr>
 				  
 				  
