@@ -16,7 +16,7 @@ import { DocsLink } from 'src/reusable'
 
 
 
-const Customers = () => {
+const CustomersGroup = () => {
   return (
     <>
      
@@ -27,15 +27,15 @@ const Customers = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-          Customers
+          CustomersGroup 
             </CCardHeader>
 			
 		   
             <CCardBody>
                <CCardHeader>
-             Customers Master
+            Customers Group Master
 			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/addcustomers">Add Customers </CHeaderNavLink>
+          <CHeaderNavLink to="/addcustgroup">Add Customers Group </CHeaderNavLink>
         </CHeaderNavItem>
             </CCardHeader>
 
@@ -45,15 +45,10 @@ const Customers = () => {
                 <thead className="thead-light">
                   <tr>
                     
-                   
-                    <th>Id</th>
-					 <th>Group</th>
-                    <th > First Name </th>
-					 <th >Last Name </th>
+                    <th>  Select</th>
+                    <th>Group Name</th>
+                    <th > Tax Exempt </th>
 					
-					<th className="text-center">Email</th>
-					
-					 <th className="text-center">Mobile</th>
 					 
 					<th>Status</th>
 					
@@ -62,30 +57,24 @@ const Customers = () => {
                 </thead>
                 <tbody>
                   <tr>
-                     <td>
-                     C-01
-                     
-                    </td>
-					  <td>
-                    Wholesalers
+                   <td>
+                      <CSwitch
+                      className="mr-1"
+                      color="success"
+                      defaultChecked
+                      variant="outline"
+                    />
                      
                     </td>
                     <td>
-                     <CHeaderNavLink to="/customerdetails">Rajesh</CHeaderNavLink>
+                     Default
                      
                     </td>
 					<td>
-                    Kumar
+                    No
                      
                     </td>
 					
-					<td className="text-center">
-                   rajesh84@gmail.com
-                    </td>
-					
-					 <td className="text-center">
-                   87964525811
-                    </td>
 						<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
@@ -95,30 +84,53 @@ const Customers = () => {
 					</td>
                   </tr>
 				   <tr>
-                     <td>
-                     C-02
-                     
-                    </td>
-					  <td>
-                    Wholesalers
+                   <td>
+                      <CSwitch
+                      className="mr-1"
+                      color="success"
+                      defaultChecked
+                      variant="outline"
+                    />
                      
                     </td>
                     <td>
-                     <CHeaderNavLink to="/vendorsdetails">Naveen</CHeaderNavLink>
+                     Newsletter Subscribers
                      
                     </td>
 					<td>
-                   SB
+                   No
                      
                     </td>
 					
-					<td className="text-center">
-                   sbnaveen@gmail.com
+					
+						<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				    <tr>
+                   <td>
+                      <CSwitch
+                      className="mr-1"
+                      color="success"
+                      defaultChecked
+                      variant="outline"
+                    />
+                     
+                    </td>
+                    <td>
+                     Wholesalers
+                     
+                    </td>
+					<td>
+                   Yes
+                     
                     </td>
 					
-					 <td className="text-center">
-                   9513574560
-                    </td>
+					
 						<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
@@ -141,4 +153,4 @@ const Customers = () => {
   )
 }
 
-export default Customers
+export default CustomersGroup
