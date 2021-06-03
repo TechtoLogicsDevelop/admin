@@ -68,7 +68,7 @@ const VendorsPackage = () => {
                     </td>
 					 <td className="text-center">
                       <div className="c-avatar">
-                        <img src={'avatars/1.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
+                        <img src={'avatars/starter.png'} className="c-avatar-img" />
                         <span className="c-avatar-status bg-success"></span>
                       </div>
                     </td>
@@ -84,14 +84,132 @@ const VendorsPackage = () => {
 					
 					
 						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					Lifetime
 					</td>
 					
 					<td>
 					View / Edit / Delete
 					</td>
                   </tr>
-				   
+				    <tr>
+                     <td>
+                     2
+                     
+                    </td>
+					 <td className="text-center">
+                      <div className="c-avatar">
+                        <img src={'avatars/basic.png'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
+                        <span className="c-avatar-status bg-success"></span>
+                      </div>
+                    </td>
+                   
+					<td>
+                   Basic
+                     
+                    </td>
+					<td>
+                    Rs 10000.00
+                     
+                    </td>
+					
+					
+						<td>
+					3 Months
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				   <tr>
+                     <td>
+                     3
+                     
+                    </td>
+					 <td className="text-center">
+                      <div className="c-avatar">
+                        <img src={'avatars/optimal.png'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
+                        <span className="c-avatar-status bg-success"></span>
+                      </div>
+                    </td>
+                   
+					<td>
+                    Optimal
+                     
+                    </td>
+					<td>
+                    Rs 15000.00                     
+                    </td>
+					
+					
+						<td>
+					6 Months
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				   <tr>
+                     <td>
+                     4
+                     
+                    </td>
+					 <td className="text-center">
+                      <div className="c-avatar">
+                        <img src={'avatars/business.png'} className="c-avatar-img"  />
+                        <span className="c-avatar-status bg-success"></span>
+                      </div>
+                    </td>
+                   
+					<td>
+                    Business
+                     
+                    </td>
+					<td>
+                    Rs 25000.00
+                     
+                    </td>
+					
+					
+						<td>
+					1 Years
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				    <tr>
+                     <td>
+                     5
+                     
+                    </td>
+					 <td className="text-center">
+                      <div className="c-avatar">
+                        <img src={'avatars/premium.png'} className="c-avatar-img"  />
+                        <span className="c-avatar-status bg-success"></span>
+                      </div>
+                    </td>
+                   
+					<td>
+                    Premium
+                     
+                    </td>
+					<td>
+                    Rs 35000.00
+                     
+                    </td>
+					
+					
+						<td>
+					2 Years
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
 				   
 				  
                 </tbody>
