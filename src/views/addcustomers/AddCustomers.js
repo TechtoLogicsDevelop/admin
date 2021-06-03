@@ -119,8 +119,15 @@ const AddCustomers = () => {
                 </CCol>
                 <CCol xs="6">
                   <CFormGroup>
-                    <CLabel htmlFor="tag-line">Nature Of Business</CLabel>
-                    <CInput id="tag-line" placeholder="Nature Of Business" />
+                    <CLabel htmlFor="tag-line">Customer Group</CLabel>
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Group </option>
+                      <option value="1">Default</option>
+                      <option value="2">Newsletter Subscribers</option>
+                      <option value="3">Wholesalers</option>
+					   <option value="4">Guest Customer</option>
+                     
+                    </CSelect>
                   </CFormGroup>
                 </CCol>
               </CFormGroup>
