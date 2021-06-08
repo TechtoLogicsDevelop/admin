@@ -64,7 +64,7 @@ const JobsSetting = () => {
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/carousel">Job Alerts</CHeaderNavLink>
+          <CHeaderNavLink to="/jobalerts">Job Alerts</CHeaderNavLink>
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
@@ -73,7 +73,7 @@ const JobsSetting = () => {
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/carousel">Job Fields</CHeaderNavLink>
+          <CHeaderNavLink to="/employers">Manage the Registered employers</CHeaderNavLink>
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
@@ -82,7 +82,7 @@ const JobsSetting = () => {
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/carousel">Job Alerts</CHeaderNavLink>
+          <CHeaderNavLink to="/jobtitles">Job Titles</CHeaderNavLink>
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
@@ -90,7 +90,70 @@ const JobsSetting = () => {
 		
 		
       </CRow>
-     
+     <CRow>
+	  
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/paygrade">Pay Grade</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/jobskills">Job Skills</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/education">Education</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		
+		
+      </CRow>
+	   <CRow>
+	  
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/certifications">Certifications</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/trainsession">Training Sessions</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/jobposition">Job Position</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		
+		
+      </CRow>
     </>
   )
 }
