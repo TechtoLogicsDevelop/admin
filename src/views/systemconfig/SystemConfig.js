@@ -64,7 +64,7 @@ const SystemConfig = () => {
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/carousel">Banners Carousel</CHeaderNavLink>
+          <CHeaderNavLink to="/socialmedia">Social Medias</CHeaderNavLink>
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
