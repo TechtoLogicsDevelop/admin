@@ -360,14 +360,110 @@ const CreditNote = React.lazy(() => import('./views/base/creditnote/CreditNote')
 const CreateCreditNote = React.lazy(() => import('./views/createcreditnote/CreateCreditNote'));  
 const SalesReport = React.lazy(() => import('./views/base/salesreport/SalesReport'));    
 const DayBook = React.lazy(() => import('./views/base/daybook/DayBook'));  
-const LedgerList = React.lazy(() => import('./views/base/ledgerlist/LedgerList'));
+
+const LedgerGroup = React.lazy(() => import('./views/base/ledgergroup/LedgerGroup'));  
+const CreateLedgerGroup = React.lazy(() => import('./views/createledgergroup/CreateLedgerGroup'));      
+const LedgerMaster = React.lazy(() => import('./views/base/ledgermaster/LedgerMaster'));        
+const CreateLedger = React.lazy(() => import('./views/createledger/CreateLedger'));   
+const JournalEntries = React.lazy(() => import('./views/base/journalentries/JournalEntries'));          
+const AddJournalEntry = React.lazy(() => import('./views/addjournalentry/AddJournalEntry')); 
+const FinanceReport = React.lazy(() => import('./views/base/financereport/FinanceReport'));   
+
+const StoreSettings = React.lazy(() => import('./views/storesettings/StoreSettings'));    
+const WebsiteSettings = React.lazy(() => import('./views/websitesettings/WebsiteSettings'));  
+const StoreStatus = React.lazy(() => import('./views/storestatus/StoreStatus'));  
+const PhysicalSetup = React.lazy(() => import('./views/physicalsetup/PhysicalSetup'));  
+const SEOptimize = React.lazy(() => import('./views/seoptimize/SEOptimize'));    
+const DisplaySettings = React.lazy(() => import('./views/displaysettings/DisplaySettings'));  
+const DisplaySetup = React.lazy(() => import('./views/displaysetup/DisplaySetup'));  
+const CategorySetup = React.lazy(() => import('./views/categorysetup/CategorySetup'));  
+const ProductsSetup = React.lazy(() => import('./views/productssetup/ProductsSetup'));    
+const ImagesSettings = React.lazy(() => import('./views/imagessettings/ImagesSettings'));  
+
+const ImagesSetup = React.lazy(() => import('./views/imagessetup/ImagesSetup'));  
+const BrandGroupSetup = React.lazy(() => import('./views/brandgroupsetup/BrandGroupSetup'));    
+const ShareSetting = React.lazy(() => import('./views/sharesetting/ShareSetting'));  
+const DateandTime = React.lazy(() => import('./views/dateandtime/DateandTime'));  
+const Miscellaneous = React.lazy(() => import('./views/miscellaneous/Miscellaneous'));    
+const DocSetup = React.lazy(() => import('./views/docsetup/DocSetup'));  
+const GoogleSetup = React.lazy(() => import('./views/googlesetup/GoogleSetup'));  
+const AdvancedStoreSetup = React.lazy(() => import('./views/advsetup/AdvancedStoreSetup'));  
+const EmailSetup = React.lazy(() => import('./views/emailsetup/EmailSetup'));    
+const SecurePrivacy = React.lazy(() => import('./views/secureprivacy/SecurePrivacy'));  
+const OrderStatuses = React.lazy(() => import('./views/base/orderstatuses/OrderStatuses')); 
+const AddNewStatus = React.lazy(() => import('./views/addnewstatus/AddNewStatus'));     
+const StatusNotification = React.lazy(() => import('./views/statusnotification/StatusNotification'));  
+
+const JobAlerts = React.lazy(() => import('./views/jobalerts/JobAlerts'));  
+const Employers = React.lazy(() => import('./views/employers/Employers'));    
+const AddEmployer = React.lazy(() => import('./views/addemployer/AddEmployer'));  
+const JobTitles = React.lazy(() => import('./views/jobtitles/JobTitles'));  
+const AddJobtitle = React.lazy(() => import('./views/addjobtitle/AddJobtitle'));  
+const PayGrade = React.lazy(() => import('./views/paygrade/PayGrade'));    
+const AddPayGrade = React.lazy(() => import('./views/addpaygrade/AddPayGrade'));    
+const JobSkills = React.lazy(() => import('./views/jobskills/JobSkills'));    
+const AddJobSkills = React.lazy(() => import('./views/addjobskills/AddJobSkills'));   
+const Education = React.lazy(() => import('./views/education/Education'));     
+const AddEducation = React.lazy(() => import('./views/addeducation/AddEducation'));    
+const Certifications = React.lazy(() => import('./views/certifications/Certifications'));    
+const AddCertifications = React.lazy(() => import('./views/addcertifications/AddCertifications'));      
+const TrainingSession = React.lazy(() => import('./views/trainsession/TrainingSession'));  
+const AddSession = React.lazy(() => import('./views/addsession/AddSession')); 
+ 
+const JobPosition = React.lazy(() => import('./views/jobposition/JobPosition'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   
-  { path: '/base/ledgerlist', name: 'LedgerList', component: LedgerList },
-  { path: '/base/daybook', name: 'DayBook', component: DayBook },
+   { path: '/jobposition', name: 'JobPosition', component: JobPosition },
+     { path: '/addsession', name: 'AddSession', component: AddSession },
+  { path: '/trainsession', name: 'TrainingSession', component: TrainingSession },
+  { path: '/addcertifications', name: 'AddCertifications', component: AddCertifications },
+  { path: '/certifications', name: 'Certifications', component: Certifications },
+  { path: '/addeducation', name: 'AddEducation', component: AddEducation },
+   { path: '/education', name: 'Education', component: Education },
+  { path: '/addjobskills', name: 'AddJobSkills', component: AddJobSkills },
+  { path: '/addpaygrade', name: 'AddPayGrade', component: AddPayGrade },
+  { path: '/jobskills', name: 'JobSkills', component: JobSkills },
+  { path: '/paygrade', name: 'PayGrade', component: PayGrade },
+  { path: '/addjobtitle', name: 'AddJobtitle', component: AddJobtitle },
+  { path: '/jobtitles', name: 'JobTitles', component: JobTitles },
+   { path: '/addemployer', name: 'AddEmployer', component: AddEmployer },
+  { path: '/employers', name: 'Employers', component: Employers },
+   { path: '/jobalerts', name: 'JobAlerts', component: JobAlerts },
+  { path: '/statusnotification', name: 'StatusNotification', component: StatusNotification },
+  { path: '/addnewstatus', name: 'AddNewStatus', component: AddNewStatus },
+  { path: '/base/orderstatuses', name: 'OrderStatuses', component: OrderStatuses },
+  { path: '/secureprivacy', name: 'SecurePrivacy', component: SecurePrivacy },
+   { path: '/emailsetup', name: 'EmailSetup', component: EmailSetup },
+   { path: '/advsetup', name: 'AdvancedStoreSetup', component: AdvancedStoreSetup },
+  { path: '/googlesetup', name: 'GoogleSetup', component: GoogleSetup },
+  { path: '/docsetup', name: 'DocSetup', component: DocSetup },
+  { path: '/miscellaneous', name: 'Miscellaneous', component: Miscellaneous },
+  { path: '/dateandtime', name: 'DateandTime', component: DateandTime },
+  { path: '/sharesetting', name: 'ShareSetting', component: ShareSetting },
+   { path: '/brandgroupsetup', name: 'BrandGroupSetup', component: BrandGroupSetup },
+   { path: '/imagessetup', name: 'ImagesSetup', component: ImagesSetup },
+  { path: '/imagessettings', name: 'ImagesSettings', component: ImagesSettings },
+  { path: '/productssetup', name: 'ProductsSetup', component: ProductsSetup },
+  { path: '/categorysetup', name: 'CategorySetup', component: CategorySetup },
+    { path: '/displaysetup', name: 'DisplaySetup', component: DisplaySetup },
+   { path: '/displaysettings', name: 'DisplaySettings', component: DisplaySettings },
+   { path: '/seoptimize', name: 'SEOptimize', component: SEOptimize },
+   { path: '/physicalsetup', name: 'PhysicalSetup', component: PhysicalSetup },
+  { path: '/storestatus', name: 'StoreStatus', component: StoreStatus },
+   { path: '/websitesettings', name: 'WebsiteSettings', component: WebsiteSettings },
+   { path: '/storesettings', name: 'StoreSettings', component: StoreSettings },
+   { path: '/base/financereport', name: 'FinanceReport', component: FinanceReport },
+  { path: '/addjournalentry', name: 'AddJournalEntry', component: AddJournalEntry },
+  { path: '/base/journalentries', name: 'JournalEntries', component: JournalEntries },
+  { path: '/createledger', name: 'CreateLedger', component: CreateLedger },
+   { path: '/base/ledgermaster', name: 'LedgerMaster', component: LedgerMaster },
+  { path: '/createledgergroup', name: 'CreateLedgerGroup', component: CreateLedgerGroup },
+    { path: '/base/ledgergroup', name: 'LedgerGroup', component: LedgerGroup },
+  
+  {  path: '/base/daybook', name: 'DayBook', component: DayBook },
   { path: '/base/salesreport', name: 'SalesReport', component: SalesReport },
    { path: '/createcreditnote', name: 'CreateCreditNote', component: CreateCreditNote },
   { path: '/base/creditnote', name: 'CreditNote', component: CreditNote },
