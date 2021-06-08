@@ -1,31 +1,25 @@
 import React, { lazy } from 'react'
 import {
-	CHeaderNav,
-  CHeaderNavItem,
+	
   CHeaderNavLink,
-  CBadge,
+  
   CButton,
-  CButtonGroup,
+ 
   CCard,
   CCardBody,
-  CCardFooter,
+ 
   CCardHeader,
   CCol,
-  CProgress,
+ 
   CRow,
    CSwitch,
    CFormGroup,
    CInputGroup,
    CLabel,
    CInput,
-   CInputGroupAppend,
-  CCallout
+   CInputGroupAppend
+ 
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const VendorsMembership = () => {
   return (
