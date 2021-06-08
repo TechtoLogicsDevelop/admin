@@ -32,11 +32,9 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
+
 
 const AddCourse = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
 
   return (
     <>
@@ -120,7 +118,36 @@ const AddCourse = () => {
                 </CCol>
                 
               </CFormGroup>
-			  
+			   <CFormGroup row className="my-0">
+				  <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Coordinator</CLabel>
+                    <CInput id="text-input" name="text-input" placeholder="Coordinator" />
+                     
+                    
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="text">Trainer</CLabel>
+                   <CInput id="text-input" name="text-input" placeholder="Trainer" />
+                  </CFormGroup>
+                </CCol>
+				  <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="text">Trainer Details</CLabel>
+                    <CCol xs="12" md="12">
+                    <CTextarea 
+                      name="textarea-input" 
+                      id="textarea-input" 
+                      rows="4"
+                      placeholder="Trainer Details.." 
+                    />
+                  </CCol>
+                  </CFormGroup>
+                </CCol>
+                
+              </CFormGroup>
 			  <CFormGroup row className="my-0">
                  <CCol xs="4">
                   <CFormGroup>
@@ -149,16 +176,22 @@ const AddCourse = () => {
              
               <CFormGroup row className="my-0">
                
-				 <CCol xs="6">
+				 <CCol xs="4">
                   <CFormGroup>
                     <CLabel htmlFor="first">Start Date</CLabel>
                      <CInput type="date" id="date-input" name="date-input" placeholder="date" />
                   </CFormGroup>
                 </CCol>
-                <CCol xs="6">
+                <CCol xs="4">
                   <CFormGroup>
                     <CLabel htmlFor="other">Duration</CLabel>
                      <CInput id="postal-code" placeholder="Time" />
+                  </CFormGroup>
+                </CCol>
+				  <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="other">Cost</CLabel>
+                     <CInput id="cost" placeholder="Cost" />
                   </CFormGroup>
                 </CCol>
               </CFormGroup>
