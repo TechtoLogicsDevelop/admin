@@ -73,10 +73,20 @@ const _nav =  [
         name: 'Vendors',
         to: '/base/vendors',
       },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Customers Group',
+        to: '/base/customersgroup',
+      },
 	  {
         _tag: 'CSidebarNavItem',
         name: 'Customers',
         to: '/base/customers',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Membership Customers',
+        to: '/base/custmembership',
       },
 	   {
         _tag: 'CSidebarNavItem',
@@ -87,8 +97,43 @@ const _nav =  [
      
     ],
   },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Purchase Management',
+    route: '/base',
+    icon: 'cil-puzzle',
+    _children: [
+      {
+        _tag: 'CSidebarNavItem',
+        name: 'Purchase Order',
+        to: '/base/purchaseorder',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Purchase Invoice',
+        to: '/base/purchaseinvoice',             
+      },
+	    {
+        _tag: 'CSidebarNavItem',
+        name: 'Manage Pay to Vendor',
+        to: '/paytovendor',
+      },
+	  
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Debit Note',
+        to: '/debitnote',
+      },
+      {
+        _tag: 'CSidebarNavItem',
+        name: 'Purchase Report',
+        to: '/base/purchasereport',
+      },
+    ],
+  },
   {
     _tag: 'CSidebarNavDropdown',  
+
     name: 'Product Catalogue',
     route: '/base',
     icon: 'cil-puzzle',
@@ -145,6 +190,11 @@ const _nav =  [
     icon: 'cil-puzzle',
     _children: [
 	
+	     {
+        _tag: 'CSidebarNavItem',
+        name: 'Stores Setting',
+        to: '/storesettings',
+      },
 	   {
         _tag: 'CSidebarNavItem',
         name: 'Stores',
@@ -184,19 +234,97 @@ const _nav =  [
     ],
   },
  
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Inventory',
+    route: '/base',
+    icon: 'cil-puzzle', 
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Stock Availability',  
+        to: '/base/stocklist',
+      },
+     {
+        _tag: 'CSidebarNavItem', 
+        name: 'GRN', 
+        to: '/base/grn',
+      },
+	 {
+        _tag: 'CSidebarNavItem', 
+
+        name: 'Delivery Note', 
+        to: '/base/deliverynote',
+      },
+	   
+	    {
+        _tag: 'CSidebarNavItem',
+        name: 'Inventory Report', 
+        to: '/base/inventoryreport',
+      },
+     
+    ],
+  },
+  
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Sales Management',
+    route: '/base',
+    icon: 'cil-puzzle', 
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Sales Quatation',  
+        to: '/base/salesquatation',
+      },
+     {
+        _tag: 'CSidebarNavItem', 
+        name: 'Sales Order', 
+        to: '/base/salesorder',  
+      },
+	 
+	   {
+        _tag: 'CSidebarNavItem', 
+        name: 'Sales Invoice', 
+        to: '/base/salesinvoice',
+      },
+	  {
+        _tag: 'CSidebarNavItem', 
+        name: 'Collections', 
+        to: '/base/collections',
+      },
+	     {
+        _tag: 'CSidebarNavItem',
+        name: 'Credit Note', 
+        to: '/base/creditnote',
+      },
+	    {
+        _tag: 'CSidebarNavItem',
+        name: 'Sales Report', 
+        to: '/base/salesreport',
+      },
+     
+    ],
+  },
    {
     _tag: 'CSidebarNavDropdown',
     name: 'Orders Management',
     route: '/base',
     icon: 'cil-puzzle',
     _children: [
+	
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Orders Statuses',
+        to: '/base/orderstatuses',
+      },
 	{
         _tag: 'CSidebarNavItem',
         name: 'Orders',
         to: '/base/ordersmanage',
       },
      
-	  {
+	  {                                            
         _tag: 'CSidebarNavItem',
         name: 'Outbound Orders',
         to: '/base/outboundorders',
@@ -219,22 +347,22 @@ const _nav =  [
 	   {
         _tag: 'CSidebarNavItem',
         name: 'Abondoned Orders',
-        to: '/base/manufacturers',
+        to: '/base/abondonedorders',
       },
 	   {
         _tag: 'CSidebarNavItem',
         name: 'Search Orders',
-        to: '/base/productskit',
+        to: '/base/searchorders',
       },
 	    {
         _tag: 'CSidebarNavItem',
         name: 'Return Orders',
-        to: '/base/publish',
+        to: '/base/returnedorders',
       },
 	   {
         _tag: 'CSidebarNavItem',
         name: 'Refund Orders',
-        to: '/base/publish',
+        to: '/base/refundorders',  
       },
 	  
      
@@ -334,7 +462,7 @@ const _nav =  [
       },
 	  
      
-    ],
+    ],    
   },
    {
     _tag: 'CSidebarNavDropdown',
@@ -348,6 +476,94 @@ const _nav =  [
         to: '/taxsetting',
       },
 	 
+      
+    ],                     
+  },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Wallet Transaction',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Transaction History',
+        to: '/base/wallettransaction',
+      },
+	 
+      
+    ],
+  },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Offers Details',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Manage Discounts',
+        to: '/base/discounts',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Coupon Details',
+        to: '/base/coupons',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Voucher Details',
+        to: '/base/vouchers',
+      },
+	{
+        _tag: 'CSidebarNavItem',      
+        name: 'Manage Offers',
+        to: '/base/manageoffers',
+      },
+	 
+      
+    ],
+  },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Advertising & Promotion',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',  
+        name: 'Promotion Types',
+        to: '/promotypes',
+      },
+	{
+        _tag: 'CSidebarNavItem',  
+        name: 'Manage Promo Code',
+        to: '/base/promocode',
+      },
+	 {
+        _tag: 'CSidebarNavItem',  
+        name: 'Manage Promotion',
+        to: '/base/promotion',
+      },
+      
+    ],
+  },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Blog Management',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',  
+        name: 'Blogs Group',
+        to: '/base/bloggroups',
+      },
+	 {
+        _tag: 'CSidebarNavItem',  
+        name: 'Manage Blogs',
+        to: '/base/manageblogs',
+      },
       
     ],
   },
@@ -363,6 +579,45 @@ const _nav =  [
         to: '/zones',
       },
 	 
+      
+    ],
+  },
+   {
+    _tag: 'CSidebarNavDropdown',  
+    name: 'Opportunities',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Manage',
+        to: '/jobssetting',
+      },
+	 {
+        _tag: 'CSidebarNavItem',  
+        name: 'Jobs Sub Category',
+        to: '/zones',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Jobs Post',
+        to: '/zones',
+      },
+       {
+        _tag: 'CSidebarNavItem',
+        name: 'Jobseeker',
+        to: '/zones',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Employer',
+        to: '/zones',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Guest user',
+        to: '/zones',
+      },
       
     ],
   },
@@ -412,8 +667,38 @@ const _nav =  [
       
     ],
   },
-   {
+  {
     _tag: 'CSidebarNavDropdown',
+    name: 'Enquiries',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Customer Enquiries',
+        to: '/enquiries',
+      },
+	 
+      
+    ],
+  },
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Reviews & Ratings',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Manage Reviews & Ratings',
+        to: '/reviewrating',
+      },
+	 
+      
+    ],
+  },
+   {
+    _tag: 'CSidebarNavDropdown',    
     name: 'Messages Master',
     route: '',
     icon: 'cil-puzzle',
@@ -443,7 +728,7 @@ const _nav =  [
     ],
   },
    {
-    _tag: 'CSidebarNavDropdown',
+    _tag: 'CSidebarNavDropdown',  
     name: 'Payments Master',
     route: '',
     icon: 'cil-puzzle',
@@ -458,8 +743,12 @@ const _nav =  [
         name: 'Payment Wallets',
         to: '/paymentwallets',
       },
-	 
-      
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Payment Setting',
+        to: '/paymentsetting',
+      },
+     
     ],
   },
   
@@ -516,6 +805,30 @@ const _nav =  [
       
     ],
   },
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Membership',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Vendors Package',
+        to: '/base/vendorspackage',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Membership Package',
+        to: '/base/membership',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Manage Vendor Payment',
+        to: '/vendorsmembership',
+      },
+      
+    ],
+  },
   {
     _tag: 'CSidebarNavDropdown',
     name: 'UOM Master',
@@ -526,6 +839,42 @@ const _nav =  [
         _tag: 'CSidebarNavItem',
         name: 'Unit of Measurement',
         to: '/uomlist',
+      },
+	 
+      
+    ],
+  },
+  
+   {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Finance',
+    route: '/base',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Ledger Group',
+        to: '/base/ledgergroup',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Ledger Master',
+        to: '/base/ledgermaster',
+      },
+	 {
+        _tag: 'CSidebarNavItem',
+        name: 'Journal Entries',  
+        to: '/base/journalentries',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Finance Reports',
+        to: '/base/financereport',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Day Book',
+        to: '/base/daybook',
       },
 	 
       
@@ -546,6 +895,7 @@ const _nav =  [
       
     ],
   },
+  
   
   {
     _tag: 'CSidebarNavTitle',

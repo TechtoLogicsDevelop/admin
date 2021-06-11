@@ -56,6 +56,7 @@ const Vendors = () => {
 					  <th className="text-center">Contact</th>
 					 
 					    <th className="text-center">Product</th>
+              <th className="text-center">Back Details</th>
 					  
 					
 					
@@ -97,7 +98,10 @@ const Vendors = () => {
                      <CHeaderNavLink to="/storesdetails">Product</CHeaderNavLink>
                      
                     </td>
-                   
+                    <td>
+                     <CHeaderNavLink to="/vendorsbank">Bank Details</CHeaderNavLink>
+                     
+                    </td>
                      
 					<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
