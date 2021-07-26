@@ -14,14 +14,9 @@ export const get_companyProfile = () => async (dispatch) => {
     alert(error.message);
   }
 };
-
 export const add_companyProfile = (companyProfile) => async (dispatch) => {
   try {
-    const result = await axios({
-      method: "post",
-      url: "/companyProfile/addCompanyProfile",
-      body: JSON.stringify(companyProfile),
-    });
+    const result = await axios.post("/companyProfile/addCompanyProfile", {companyProfile})
     //dispatch(get_companyProfile())
     console.log(companyProfile);
     localStorage.removeItem("data");

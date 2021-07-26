@@ -165,7 +165,6 @@ const AddVendors = (props) => {
                       <CLabel htmlFor="tag-line">Vendor Type</CLabel>
                       <CSelect
                         custom
-                        name="select"
                         id="select"
                         name="vendorType"
                         value={vendorData.vendorType}
