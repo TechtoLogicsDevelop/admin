@@ -209,7 +209,8 @@ const CreateQuatation = () => {
 					
                    
                     <td>
-                     <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/selectproducts">Add New Item</CHeaderNavLink></span></CButton>
+					 <CButton size="sm" className="btn-behance btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/selectproducts">Add New Item</CHeaderNavLink></span></CButton>
+                    
                      
                     </td>
 					 

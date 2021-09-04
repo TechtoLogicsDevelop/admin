@@ -40,9 +40,7 @@ import { DocsLink } from 'src/reusable'
 
 
 const CreateNewOffer = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
       

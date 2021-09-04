@@ -51,8 +51,9 @@ const CompanyProfile = () => {
           <CCard>
             <CCardHeader>
               Company Profile
-              <small> Setting</small>
-			  <DocsLink name="-Input"/>
+            <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

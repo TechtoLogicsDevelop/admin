@@ -29,15 +29,14 @@ import {
   CLabel,
   CSelect,
   CRow,
+  CHeaderNavLink,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 
 const CartDisplay = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,7 +45,9 @@ const CartDisplay = () => {
           <CCard>
             <CCardHeader>
              Shopping Cart Display Settings
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/taxsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
