@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -17,8 +17,6 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
 
 
 const Miscellaneous = () => {
@@ -31,6 +29,9 @@ const Miscellaneous = () => {
           <CCard>
             <CCardHeader>
             Miscellaneous Settings
+			 <div className="text-right">
+			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			 <CCardHeader>
 		  

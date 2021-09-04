@@ -1,28 +1,46 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
-	CHeaderNav,
+  CBadge,
+   CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
-  CBadge,
-  CButton,
-  CButtonGroup,
   CCard,
   CCardBody,
-  CCardFooter,
   CCardHeader,
   CCol,
-  CProgress,
-  CRow,
-   CSwitch,
-  CCallout
+  CDataTable,
+  CSwitch,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+    CPagination,
+  CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const ModulePages = () => {
+		const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -32,22 +50,102 @@ const ModulePages = () => {
           <CCard>
             <CCardHeader>
             Module Pages Setting
+			 <div className="text-right">
+			 <CHeaderNavLink   to="/modulesmaster">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
 		   
             <CCardBody>
+			     <div className="text-right">
+			
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add New</CButton>
+			   </div>
+			      <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle> Add Pages</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+            Add the New Pages
+           
+            </CCardHeader>
+            <CCardBody >
+               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+               
+                
+                <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Module</option>
+                      <option value="1">Dashboard</option>
+                      <option value="2">Visitors List</option>
+                      <option value="3">Setting</option>
+					  
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Sub-Module</option>
+                      <option value="1">Dashboard</option>
+                      <option value="2">Visitors List</option>
+                      <option value="3">Setting</option>
+					  
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Sub-Module</option>
+					    <option value="1">None</option>
+                      <option value="2">Dashboard</option>
+                      <option value="3">Visitors List</option>
+                      <option value="4">Setting</option>
+					  
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				  <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder="Page Name" />
+                   
+                  </CCol>
+                </CFormGroup>
+                
+                
+              </CForm>
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal> 
                 <CCardHeader>
 		  
-                <CHeaderNav className="d-md-down-none mr-auto">
-                     <CHeaderNavItem className="px-3" >
-                     <CHeaderNavLink to="/addpages">+Add New Pages</CHeaderNavLink>
-                     </CHeaderNavItem>
-                </CHeaderNav>
               </CCardHeader>
-                 
-				 
-				 
-				 
+                
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -224,7 +322,13 @@ const ModulePages = () => {
                  
                 </tbody>
               </table>
-
+                 <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

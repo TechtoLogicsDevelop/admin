@@ -27,10 +27,9 @@ import {
     CPagination,
   CRow
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
 
-const Modules = () => {
-	const [modal, setModal] = useState(true)
+const LmsTopics = () => {
+			const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -48,12 +47,12 @@ const Modules = () => {
         <CCol >
           <CCard>
             <CCardHeader>
-            Modules 
+            Lms Topics
 			 <div className="text-right">
-			 <CHeaderNavLink   to="/modulesmaster">Back</CHeaderNavLink> 
+			 <CHeaderNavLink   to="/managecourse">Back</CHeaderNavLink> 
 			 </div>
             </CCardHeader>
-			
+		
             <CCardBody>
 			 <div className="text-right">
 			
@@ -65,42 +64,55 @@ const Modules = () => {
               color="success"
             >
               <CModalHeader closeButton>
-                <CModalTitle> Add Module</CModalTitle>
+                <CModalTitle> Create Topics</CModalTitle>
               </CModalHeader>
               <CModalBody>
                          <CRow>
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-            Add New Module
+            Add the New Topics
            
             </CCardHeader>
             <CCardBody >
-              <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-               
-				  <CFormGroup row>
-                 
-                  <CCol xs="12" md="12">
-                    <CInput id="text-input" name="text-input" placeholder="Module Name" />
-                   
-                  </CCol>
-                </CFormGroup>
-                 <CFormGroup row>
-                 
-                  <CCol xs="12" md="12">
-                    <CTextarea 
-                      name="textarea-input" 
-                      id="textarea-input" 
-                      rows="4"
-                      placeholder=" Description..." 
-                    />
-                  </CCol>
-                </CFormGroup>
+             <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			
                 <CFormGroup row>
-                 
+				
+					<CCol xs="12" md="12">
+                     <CSelect custom name="select" id="select">
+                      <option value="0">Select Course</option>
+                      <option value="1">Course 1</option>
+                      <option value="2">Course 2</option>
+                      <option value="3">Course 3</option>
+                    </CSelect>
+					</CCol>
+                  </CFormGroup>
+				   <CFormGroup row>
+				
+					<CCol xs="12" md="12">
+                     <CSelect custom name="select" id="select">
+                      <option value="0">Select Subject</option>
+                      <option value="1">Subject 1</option>
+                      <option value="2">Subject 2</option>
+                      <option value="3">Subject 3</option>
+                    </CSelect>
+					</CCol>
+                  </CFormGroup>
+				  <CFormGroup row>
+                
                   <CCol xs="12" md="12">
-                    <CInput id="text-input" name="text-input" placeholder="Tag" />
+                    <CInput id="text-input" name="text-input" placeholder="Topic Name" />
                    
+                  </CCol>
+                </CFormGroup>
+                   <CFormGroup row>
+                  
+                  <CCol xs="12" md="12">
+                    <CInputFile custom id="custom-file-input"/>
+                    <CLabel htmlFor="custom-file-input" variant="custom-file">
+                      Select File..
+                    </CLabel>
                   </CCol>
                 </CFormGroup>
               </CForm>
@@ -118,86 +130,61 @@ const Modules = () => {
                 <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
               </CModalFooter>
             </CModal> 
-               <CCardHeader>
+			 
+                <CCardHeader>
 		  
-              </CCardHeader>
-                 
+                </CCardHeader>
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                   <th>#</th>
-                     <th>Priority</th>				   
-                    <th>Module Name</th>
                   
-                   <th  className="text-center">Tag</th>
-                    <th className="text-center">Created On</th>
+                    <th>Sl No</th>
+                  <th className="text-center">Topic Name</th>
+				   <th className="text-center">Courses </th>
+                    <th className="text-center">Subjects </th>
+                   <th className="text-center">Document </th>
+                   <th  className="text-center">Created By</th>
+                   <th  className="text-center">Created On</th>
 					<th >Status</th>
 					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
-                      m-01
-                     
+                   
+                     <td >
+               
                     </td>
-					 <td>
-                      1
-                     
+                       	  <td >
+               
                     </td>
-                    <td>
-                      <div>Dashboard</div>
-                     
+                 <td >
+               
                     </td>
-					
-                    <td className="text-center">
-                     Dashboard
+                    <td >
+             
                     </td>
-					
-                    <td className="text-center">
-                      28-04-2021
-                    </td>
-                                      
+                
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					 
 					</td>
 					<td>
-					View / Edit / Delete
+					 
+					</td>
+					 <td >
+               
+                    </td>
+                    <td >
+             
+                    </td>
+                
+					<td>
+					 
 					</td>
                   </tr>
-				    <tr>
-                    <td>
-                      m-02
-                     
-                     </td>
-					  <td>
-                     2
-                     
-                    </td>
-					  <td>
-                      <div>User List</div>
-                     
-                    </td>
-                   
-                   
-					<td className="text-center">
-                     Visit Users
-                    </td>
-                    <td className="text-center">
-                      28-04-2021
-                    </td>
-                                      
-					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					<td>
-					View / Edit / Delete
-					</td>
-                  </tr>
-				  
                 </tbody>
               </table>
-                           <br/>
+                     <br/>
           <CPagination
             align="end"
             activePage={currentPage}
@@ -212,4 +199,4 @@ const Modules = () => {
   )
 }
 
-export default Modules
+export default LmsTopics

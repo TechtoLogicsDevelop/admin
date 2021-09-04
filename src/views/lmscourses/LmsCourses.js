@@ -27,10 +27,9 @@ import {
     CPagination,
   CRow
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
 
-const Modules = () => {
-	const [modal, setModal] = useState(true)
+const LmsCourses = () => {
+		const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -48,12 +47,13 @@ const Modules = () => {
         <CCol >
           <CCard>
             <CCardHeader>
-            Modules 
+            LmsCourses
 			 <div className="text-right">
-			 <CHeaderNavLink   to="/modulesmaster">Back</CHeaderNavLink> 
+			 <CHeaderNavLink   to="/managecourse">Back</CHeaderNavLink> 
 			 </div>
             </CCardHeader>
-			
+		
+		  
             <CCardBody>
 			 <div className="text-right">
 			
@@ -65,23 +65,23 @@ const Modules = () => {
               color="success"
             >
               <CModalHeader closeButton>
-                <CModalTitle> Add Module</CModalTitle>
+                <CModalTitle> Create Course</CModalTitle>
               </CModalHeader>
               <CModalBody>
                          <CRow>
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-            Add New Module
+            Add the New Learning Course
            
             </CCardHeader>
             <CCardBody >
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
                
 				  <CFormGroup row>
-                 
+                
                   <CCol xs="12" md="12">
-                    <CInput id="text-input" name="text-input" placeholder="Module Name" />
+                    <CInput id="text-input" name="text-input" placeholder="Course Name" />
                    
                   </CCol>
                 </CFormGroup>
@@ -99,7 +99,7 @@ const Modules = () => {
                 <CFormGroup row>
                  
                   <CCol xs="12" md="12">
-                    <CInput id="text-input" name="text-input" placeholder="Tag" />
+                    <CInput id="text-input" name="text-input" placeholder="Course Fee" />
                    
                   </CCol>
                 </CFormGroup>
@@ -118,86 +118,58 @@ const Modules = () => {
                 <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
               </CModalFooter>
             </CModal> 
-               <CCardHeader>
+                 <CCardHeader>
 		  
-              </CCardHeader>
-                 
+                 </CCardHeader>
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                   <th>#</th>
-                     <th>Priority</th>				   
-                    <th>Module Name</th>
                   
-                   <th  className="text-center">Tag</th>
-                    <th className="text-center">Created On</th>
+                    <th>Sl No</th>
+                   
+                    <th className="text-center">Course Name</th>
+                   <th  className="text-center">Course Descriptions</th>
+                  
+				     <th className="text-center">Course Fee</th>
+                   <th  className="text-center">Created By</th>
+                   <th  className="text-center">Created On</th>
 					<th >Status</th>
 					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
-                      m-01
-                     
+                   
+                     <td >
+               
                     </td>
-					 <td>
-                      1
-                     
+                       	  <td >
+               
                     </td>
-                    <td>
-                      <div>Dashboard</div>
-                     
+                 <td >
+               
                     </td>
-					
-                    <td className="text-center">
-                     Dashboard
+                    <td >
+             
                     </td>
-					
-                    <td className="text-center">
-                      28-04-2021
-                    </td>
-                                      
+                
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					 
 					</td>
+					 <td >
+               
+                    </td>
+                    <td >
+             
+                    </td>
+                
 					<td>
-					View / Edit / Delete
+					 
 					</td>
                   </tr>
-				    <tr>
-                    <td>
-                      m-02
-                     
-                     </td>
-					  <td>
-                     2
-                     
-                    </td>
-					  <td>
-                      <div>User List</div>
-                     
-                    </td>
-                   
-                   
-					<td className="text-center">
-                     Visit Users
-                    </td>
-                    <td className="text-center">
-                      28-04-2021
-                    </td>
-                                      
-					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					<td>
-					View / Edit / Delete
-					</td>
-                  </tr>
-				  
                 </tbody>
               </table>
-                           <br/>
+             <br/>
           <CPagination
             align="end"
             activePage={currentPage}
@@ -212,4 +184,4 @@ const Modules = () => {
   )
 }
 
-export default Modules
+export default LmsCourses

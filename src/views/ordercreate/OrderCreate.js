@@ -1,30 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   CButton,
-  CHeaderNav,
-  CHeaderNavItem,
+  CModal,
   CHeaderNavLink,
   CCard,
   CCardBody,
   CCardFooter,
   CCardHeader,
   CCol,
-  CCollapse,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CFade,
+  CModalHeader,
   CForm,
   CFormGroup,
-  CFormText,
-  CValidFeedback,
-  CInvalidFeedback,
-  CTextarea,
-  CInput,
-  CInputFile,
+  CModalTitle,
+  CModalBody,
   CInputCheckbox,
-  CInputRadio,
-  CInputGroup,
+  CInput,
+  CModalFooter,
   CInputGroupAppend,
   CInputGroupPrepend,
   CDropdown,
@@ -35,12 +26,18 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const OrderCreate = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
+		 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
 
+ 
   return (
     <>
       
@@ -50,16 +47,149 @@ const OrderCreate = () => {
             <CCardHeader>
           Create Order
             </CCardHeader>
-			 <p className="text-right">
-               
-			 
-             
-             
-             
-			  <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/addcustomers">Add Customer</CHeaderNavLink></span></CButton>
-            
-            </p>
+			<div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add Customer</CButton>
+			   </div>
+			
 			<CCardBody>
+			  <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>  Customers</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+             Add Customer 
+             
+            </CCardHeader>
+            <CCardBody >
+             <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			      <CFormGroup row className="my-0">
+                <CCol xs="12">
+                  <CFormGroup>
+                    <CLabel htmlFor="full-name">Full Name *</CLabel>
+                    <CInput id="full-name" placeholder="Full Name" />
+                  </CFormGroup>
+                </CCol>
+                
+              </CFormGroup>
+			       <CFormGroup row className="my-0">
+              
+                  <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Country</CLabel>
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Country </option>
+                      <option value="1">Indiat</option>
+                      <option value="2">Australia</option>
+                      <option value="3">England</option>
+					 
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+				 <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="pincode">Pin code</CLabel>
+                    <CInput id="pincode" placeholder="PinCode" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			     <CFormGroup row className="my-0">
+                <CCol xs="12">
+                  <CFormGroup>
+                    <CLabel htmlFor="address1 ">Address Line 1 *</CLabel>
+                    <CInput id="address1 " placeholder="Add Street Address" />
+                  </CFormGroup>
+                </CCol>
+                
+              </CFormGroup>
+			     <CFormGroup row className="my-0">
+                <CCol xs="12">
+                  <CFormGroup>
+                    <CLabel htmlFor="address2">Address Line 2 (optional)</CLabel>
+                    <CInput id="address2" placeholder="Add apt., floor, suite, etc" />
+                  </CFormGroup>
+                </CCol>
+                
+              </CFormGroup>
+			    <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="city">City</CLabel>
+                    <CInput id="city" placeholder="Add City" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="region">State, province, or region*</CLabel>
+                    <CInput id="region" placeholder="Add state, province or region" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+                 <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="email">Email *</CLabel>
+                    <CInput id="email" placeholder="Email" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="phone">Phone No *</CLabel>
+                    <CInput id="phone" placeholder="Phone No" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			  
+			     
+              </CForm>
+			  
+			 <CFormGroup>
+			   <CFormGroup row>
+			    <CFormGroup variant="custom-checkbox" inline>
+                      <CInputCheckbox 
+                        custom 
+                        id="inline-checkbox1" 
+                        name="inline-checkbox1" 
+                        value="option1" 
+                      />
+                      <CLabel variant="custom-checkbox" htmlFor="inline-checkbox1"></CLabel>
+                    </CFormGroup>
+                  <CCol md="12">
+                    <CLabel>Save address for future use</CLabel>
+					
+                  </CCol>
+                
+				 
+         
+        
+		
+                </CFormGroup>
+                
+              </CFormGroup>
+             
+            
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
                
                 
@@ -348,7 +478,7 @@ const OrderCreate = () => {
 					
                    
                     <td>
-                     <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="">Add New Item</CHeaderNavLink></span></CButton>
+                     <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="">Add New Item</CHeaderNavLink></span></CButton>
                      
                     </td>
 					 

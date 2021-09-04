@@ -30,29 +30,29 @@ const OrdersReport = () => {
         <CRow>
        
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/base/reportorders"> <i class="cis-file-excel"></i> Orders Report</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/base/basketorders">Baskets Reports</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/base/deliveredreports">Delivered Reports</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>

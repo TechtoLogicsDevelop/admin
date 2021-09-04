@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CButton,
   CCard,
@@ -29,10 +29,10 @@ import {
   CLabel,
   CSelect,
   CRow,
+  CHeaderNavLink,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const Local = () => {
   const [collapsed, setCollapsed] = React.useState(true)
@@ -46,7 +46,9 @@ const Local = () => {
           <CCard>
             <CCardHeader>
               User Interface Setting
-             
+             <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
@@ -59,24 +61,24 @@ const Local = () => {
                   <CCol xs="9" md="9">
                     <CSelect custom name="select" id="select">
                      <option >05/29/2015</option>
-													 <option >Friday, 29 May 2015</option>
-													  <option >Friday, 29 May 2015 5:50</option>
-													 <option >Friday, 29 May 2015 05:50</option>
-													 <option >Friday, 29 May 2015 05:50 AM</option>
-													 <option >Friday, 29 May 2015 05:50:06</option>
-													 <option >05/29/2015 5:50</option>
-													  <option >05/29/2015 05:50</option>
-													 <option > 05/29/2015 05:50 AM</option>
-													 <option >05/29/2015 05:50:06</option>
-													 <option > May 29</option>
-													 <option >2015-05-16T05:50:06.7199222-04:00</option>
-													 <option >2015-05-16T05:50:06</option>
-													 <option >05:50</option>
-													 <option >05:50 AM</option>
-													 <option >5:50</option>
-													 <option >5:50 AM</option>
-													 <option > 05:50:06</option>
-													 <option >2015 May</option>
+					<option >Friday, 29 May 2015</option>
+					<option >Friday, 29 May 2015 5:50</option>
+					<option >Friday, 29 May 2015 05:50</option>
+					<option >Friday, 29 May 2015 05:50 AM</option>
+					<option >Friday, 29 May 2015 05:50:06</option>
+					<option >05/29/2015 5:50</option>
+					<option >05/29/2015 05:50</option>
+					<option > 05/29/2015 05:50 AM</option>
+					<option >05/29/2015 05:50:06</option>
+					<option > May 29</option>
+					<option >2015-05-16T05:50:06.7199222-04:00</option>
+					<option >2015-05-16T05:50:06</option>
+					 <option >05:50</option>
+					<option >05:50 AM</option>
+					<option >5:50</option>
+					<option >5:50 AM</option>
+					<option > 05:50:06</option>
+					<option >2015 May</option>
 					  
                     </CSelect>
                   </CCol>

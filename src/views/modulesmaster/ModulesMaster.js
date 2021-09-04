@@ -1,28 +1,39 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
-	CHeaderNav,
+  CBadge,
+   CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
-  CBadge,
-  CButton,
-  CButtonGroup,
   CCard,
   CCardBody,
-  CCardFooter,
   CCardHeader,
   CCol,
-  CProgress,
-  CRow,
-   CSwitch,
-  CCallout
+  CDataTable,
+  CSwitch,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+    CPagination,
+  CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const ModulesMaster = () => {
+		
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -40,13 +51,13 @@ const ModulesMaster = () => {
 		   <p>
               
 			 
-              <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/modules">Modules </CHeaderNavLink><span
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/modules">Modules </CHeaderNavLink><span
 																class="label label-primary ml-10">[1]</span></span></CButton>
-              <CButton size="sm" className="btn-linkedin btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/submodules">Sub-Modules </CHeaderNavLink><span
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/submodules">Sub-Modules </CHeaderNavLink><span
 																class="label label-primary ml-10">[1]</span></span></CButton>
-              <CButton size="sm" className="btn-flickr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/childsubmodules">Child Sub-Modules </CHeaderNavLink><span
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/childsubmodules">Child Sub-Modules </CHeaderNavLink><span
 																class="label label-primary ml-10">[1]</span></span></CButton>
-																 <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/modulepages">Pages </CHeaderNavLink><span
+			 <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/modulepages">Pages </CHeaderNavLink><span
 																class="label label-primary ml-10">[1]</span></span></CButton>
             
             
@@ -56,13 +67,8 @@ const ModulesMaster = () => {
 
                <CCardHeader>
 		  
-                
-				
               </CCardHeader>
                  
-				 
-				 
-				 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -135,11 +141,15 @@ const ModulesMaster = () => {
 					
                   </tr>
 				  
-				  
-                 
                 </tbody>
               </table>
-
+                       <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

@@ -1,10 +1,10 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
   CBadge,
-  CButton,
+  
   CButtonGroup,
   CCard,
   CCardBody,
@@ -14,15 +14,32 @@ import {
   CProgress,
   CRow,
    CSwitch,
+     CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+   CPagination,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const NotificationsList = () => {
+	const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -31,7 +48,10 @@ const NotificationsList = () => {
         <CCol >
           <CCard>
             <CCardHeader>
-            Messages Setting
+            Notification Setting
+			 <div className="text-right">
+			 <CHeaderNavLink   to="/base/shippmentsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
 		   
@@ -52,12 +72,7 @@ const NotificationsList = () => {
             </p>
           
           </CCardHeader>
-
-              
-                 
-				 
-				 
-				 
+	 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -152,7 +167,13 @@ const NotificationsList = () => {
                  
                 </tbody>
               </table>
-
+             	   	  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>
