@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,25 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+   CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CCardFooter,
+   CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+   CButton,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,6 +36,16 @@ import { DocsLink } from 'src/reusable'
 
 
 const SalesOrder = () => {
+		 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+	 const [currentPage, setCurrentPage] = useState(2)
+	 
   return (
     <>
      
@@ -106,7 +135,13 @@ const SalesOrder = () => {
 				  
                 </tbody>
               </table>
-
+               	  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

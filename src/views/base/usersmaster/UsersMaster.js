@@ -39,9 +39,9 @@ const UsersMaster = () => {
 			
             <CCardBody>
 			  <CFormGroup row className="my-0">
-				  <CCol xs="4">
+			   <CCol xs="3">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Search Subcategory Wise</CLabel>
+                    <CLabel htmlFor="first">Search Main Wise</CLabel>
                      <CSelect custom name="select" id="select">
                       <option value="0"> Subcategory 1</option>
                       <option value="1">Subcategory 2 </option>
@@ -50,9 +50,20 @@ const UsersMaster = () => {
                     </CSelect>
                   </CFormGroup>
                 </CCol>
-                <CCol xs="4">
+				  <CCol xs="3">
                   <CFormGroup>
-                    <CLabel htmlFor="first">Search Group Wise</CLabel>
+                    <CLabel htmlFor="first">Search Primary Role Wise</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0"> Subcategory 1</option>
+                      <option value="1">Subcategory 2 </option>
+                      <option value="2">Subcategory 3</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="3">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Search Secondary Wise</CLabel>
                      <CSelect custom name="select" id="select">
                       <option value="0">Select </option>
                       <option value="1">Oil Painter</option>
@@ -61,7 +72,7 @@ const UsersMaster = () => {
                     </CSelect>
                   </CFormGroup>
                 </CCol>
-                 <CCol xs="4">
+                 <CCol xs="3" >
                  <CButton type="submit" size="sm" color="info"><CIcon name="cil-scrubber" /> Search </CButton>&nbsp;&nbsp;
                 </CCol>
               </CFormGroup>
@@ -74,11 +85,7 @@ const UsersMaster = () => {
                     <CListGroupItem onClick={() => setActiveTab(2)} action active={activeTab === 2} >Enthusiast </CListGroupItem>
                     <CListGroupItem onClick={() => setActiveTab(3)} action active={activeTab === 3} >Business</CListGroupItem>
 					 <CListGroupItem onClick={() => setActiveTab(4)} action active={activeTab === 4} >Institutions</CListGroupItem>
-                    <CListGroupItem onClick={() => setActiveTab(5)} action active={activeTab === 5} >Others </CListGroupItem>
-                    <CListGroupItem onClick={() => setActiveTab(6)} action active={activeTab === 6} >Craft Communities</CListGroupItem>
-					 <CListGroupItem onClick={() => setActiveTab(7)} action active={activeTab === 7} >Creative Communities</CListGroupItem>
-                    <CListGroupItem onClick={() => setActiveTab(8)} action active={activeTab === 8} >Students </CListGroupItem>
-                   
+                     <CListGroupItem onClick={() => setActiveTab(8)} action active={activeTab === 8} >Students </CListGroupItem>
                    
                   </CListGroup>
                 </CCol>
@@ -88,33 +95,25 @@ const UsersMaster = () => {
                       <p>
 					   <CListGroup>
                 <CListGroupItem action >
-                   
               
-
-              
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                  <th className="text-center">User Name</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    	 <td className="text-center">
-                    Rakesh
+				   <td className="text-center">
+                  Rakesh
                     </td>
 					 <td className="text-center">
                   rakesh@gmail.com
@@ -132,11 +131,13 @@ const UsersMaster = () => {
                     </td>
 					
 					<td className="text-center">
-                   Oil Painter
+                   <ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 				
-					
-					
 					 <td>
                      Bangalore
                      
@@ -144,9 +145,9 @@ const UsersMaster = () => {
                   
                   </tr>
 				    <tr>
-                    	 <td className="text-center">
-                    Sandesh
-                    </td>
+                     <td className="text-center">
+                  Sandesh S B
+                    </td>	
 					 <td className="text-center">
                   sbsandesh@gmail.com
                     </td>
@@ -163,11 +164,13 @@ const UsersMaster = () => {
                     </td>
 					
 					<td className="text-center">
-                   Seller
+                   <ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 				
-					
-					
 					 <td>
                      Bangalore
                      
@@ -175,14 +178,11 @@ const UsersMaster = () => {
                   
                   </tr>
 				   
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
@@ -192,33 +192,25 @@ const UsersMaster = () => {
 					   <CListGroup>
                 <CListGroupItem action >
                    
-              
-
-              
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                    <tr>
+                  <th className="text-center">User Name</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
 				
                   <tr>
-                    	 <td className="text-center">
-                    Rakesh
+                    	<td className="text-center">
+                  Rakesh
                     </td>
 					 <td className="text-center">
                   rakesh@gmail.com
@@ -236,11 +228,13 @@ const UsersMaster = () => {
                     </td>
 					
 					<td className="text-center">
-                   Oil Painter
+                   <ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 				
-					
-					
 					 <td>
                      Bangalore
                      
@@ -248,14 +242,11 @@ const UsersMaster = () => {
                   
                   </tr>
 				   
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
@@ -264,33 +255,25 @@ const UsersMaster = () => {
                       <p>
 					   <CListGroup>
                 <CListGroupItem action >
-                   
-              
-
-              
-
+               
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                    <tr>
+                     <th className="text-center">User Name</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    	 <td className="text-center">
-                    Sandesh
+                    	<td className="text-center">
+                  Sandesh SB
                     </td>
 					 <td className="text-center">
                   sbsandesh@gmail.com
@@ -308,11 +291,13 @@ const UsersMaster = () => {
                     </td>
 					
 					<td className="text-center">
-                   Seller
+                   <ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 				
-					
-					
 					 <td>
                      Bangalore
                      
@@ -320,14 +305,11 @@ const UsersMaster = () => {
                   
                   </tr>
 				   
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
@@ -336,39 +318,28 @@ const UsersMaster = () => {
                       <p>
 					   <CListGroup>
                 <CListGroupItem action >
-                   
-              
-
-              
-
+                 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                    <tr>
+                   <th className="text-center">Business</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
                   
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
@@ -377,39 +348,28 @@ const UsersMaster = () => {
                        <p>
 					   <CListGroup>
                 <CListGroupItem action >
-                   
-              
-
-              
-
+                
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                    <tr>
+                  <th className="text-center">Institution</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
                   
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
@@ -418,165 +378,33 @@ const UsersMaster = () => {
                       <p>
 					   <CListGroup>
                 <CListGroupItem action >
-                   
-              
-
-              
-
+                 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                     <tr>
+                    <th className="text-center">Student Name</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main  </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
-					  
                   </tr>
                 </thead>
                 <tbody>
                  
-				  
                 </tbody>
               </table>
 
-            
                 </CListGroupItem>
                
-                
               </CListGroup>
 
 					  </p>
                     </CTabPane>
-                    <CTabPane active={activeTab === 6}>
-                      <p>
-					   <CListGroup>
-                <CListGroupItem action >
-                   
-              
-
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-                <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
-					<th className="text-center">Email</th>
-					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
-					
-					<th className="text-center">Group</th>
-                     <th className="text-center">Location</th>
-					 
-					  
-                  </tr>
-                </thead>
-                <tbody>
-                 
-				  
-                </tbody>
-              </table>
-
             
-                </CListGroupItem>
-               
-                
-              </CListGroup>
-
-					  </p>
-                    </CTabPane>
-					<CTabPane active={activeTab === 7}>
-                      <p>
-					   <CListGroup>
-                <CListGroupItem action >
-                   
-              
-
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-                <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
-					<th className="text-center">Email</th>
-					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
-					
-					<th className="text-center">Group</th>
-                     <th className="text-center">Location</th>
-					 
-					  
-                  </tr>
-                </thead>
-                <tbody>
-                  
-                </tbody>
-              </table>
-
-            
-                </CListGroupItem>
-               
-                
-              </CListGroup>
-
-					  </p>
-                    </CTabPane>
-					<CTabPane active={activeTab === 8}>
-                      <p>
-					   <CListGroup>
-                <CListGroupItem action >
-                   
-              
-
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-                <thead className="thead-light">
-                  <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
-					<th className="text-center">Email</th>
-					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
-					
-					<th className="text-center">Group</th>
-                     <th className="text-center">Location</th>
-					 
-					  
-                  </tr>
-                </thead>
-                <tbody>
-                  
-				  
-                </tbody>
-              </table>
-
-            
-                </CListGroupItem>
-               
-                
-              </CListGroup>
-
-					  </p>
-                    </CTabPane>
                   </CTabContent>
                 </CCol>
               </CRow>

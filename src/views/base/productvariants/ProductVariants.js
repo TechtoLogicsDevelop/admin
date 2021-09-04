@@ -30,115 +30,112 @@ const ProductVariants = () => {
         <CRow>
        
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/colours">Colours</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
           <CHeaderNavLink to="/sizemaster">Size Master</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/shapes">Products Shapes</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
           <CHeaderNavLink to="/productpattern"> Products Pattern</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/producttype">Products Type</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/productmaterial">Products Material</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/framestype">Frames Type</CHeaderNavLink>  
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/productstyle">Products Style</CHeaderNavLink>  
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/productfinishing">Products Finishing Type</CHeaderNavLink>
-        </CHeaderNavItem>
+      
             </CCardBody>
           </CCard>
         </CCol>
 		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/packingtype">Packing Type</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		
-		
-		
-		
 		<CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+            
           <CHeaderNavLink to="/paintingtype">Painting Type </CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		<CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/dimensions">Products Dimension </CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>

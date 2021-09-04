@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,24 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+  CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -18,6 +36,17 @@ import { DocsLink } from 'src/reusable'
 
 
 const ProductBrands = () => {
+			const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
@@ -33,11 +62,129 @@ const ProductBrands = () => {
 			
 		   
             <CCardBody>
+			<div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
+			   </div>
+			      <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle> Add Product Brands</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+            Add the New Product Brand
+             
+            </CCardHeader>
+            <CCardBody >
+       <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+               <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CInputFile custom id="custom-file-input"/>
+                    <CLabel htmlFor="custom-file-input" variant="custom-file">
+                      Select the Product Brand  Image
+                    </CLabel>
+                  </CCol>
+                </CFormGroup>
+                
+                <CFormGroup row>
+                
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Main Category</option>
+                      <option value="1">Options 1</option>
+                      <option value="2">Options 2</option>
+                      <option value="3">Options 3</option>
+					   <option value="4">Options 4</option>
+                      <option value="5">Options 5</option>
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Category</option>
+                      <option value="1">Options 1</option>
+                      <option value="2">Options 2</option>
+                      <option value="3">Options 3</option>
+					   <option value="4">Options 4</option>
+                      <option value="5">Options 5</option>
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Sub Category</option>
+                      <option value="1">Options 1</option>
+                      <option value="2">Options 2</option>
+                      <option value="3">Options 3</option>
+					   <option value="4">Options 4</option>
+                      <option value="5">Options 5</option>
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select Product Group</option>
+                      <option value="1">Options 1</option>
+                      <option value="2">Options 2</option>
+                      <option value="3">Options 3</option>
+					   <option value="4">Options 4</option>
+                      <option value="5">Options 5</option>
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+				  <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder="Product Brand Name" />
+                   
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+               
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder=" Meta Keyword" />
+                   
+                  </CCol>
+                </CFormGroup>
+				 <CFormGroup row>
+                
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder="Sort Order" />
+                   
+                  </CCol>
+                </CFormGroup>
+                
+               
+              </CForm>
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
                <CCardHeader>
             
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/addproductbrand">Add Brands </CHeaderNavLink>
-        </CHeaderNavItem>
             </CCardHeader>
 
               
@@ -111,7 +258,14 @@ const ProductBrands = () => {
 				  
                 </tbody>
               </table>
-
+                  <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

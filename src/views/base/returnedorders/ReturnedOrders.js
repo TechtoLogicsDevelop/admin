@@ -44,9 +44,9 @@ const ReturnedOrders = () => {
             Returned Orders
             </CCardHeader>
 			<CCardHeader>
-			<CHeaderNavItem  className="px-3" className="text-right ">
+			<div className="text-right ">
                          <CHeaderNavLink to="/returnedview">View Returned</CHeaderNavLink>
-                       </CHeaderNavItem>
+                       </div>
 			 <CFormGroup row>
                 
 				     <CCol xs="8">

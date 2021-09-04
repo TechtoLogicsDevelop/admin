@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,7 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+  CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,25 +18,22 @@ import { DocsLink } from 'src/reusable'
 
 
 const WalletTransaction = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
-     
-      
-
-    
+	
 	   <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-           Wallet Transaction
+           Wallet Transaction 
+		    <div className="text-right">
+			 <CHeaderNavLink   to="/usersprofile">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
-		   
             <CCardBody>
              
-
-              
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -47,11 +45,11 @@ const WalletTransaction = () => {
 					
 					<th className="text-center">Transaction Type</th>
 					
-					 <th className="text-center">Credited Amount</th>
-					 <th className="text-center">Debitted Amount</th>
-					  <th className="text-center">Description</th>
+					 <th className="text-center">Credited </th>
+					 <th className="text-center">Debitted </th>
+					  <th className="text-center">Status</th>
 					 
-					    <th className="text-center">Created Date</th>
+					    <th className="text-center">Date</th>
 					 
                   </tr>
                 </thead>
@@ -59,18 +57,18 @@ const WalletTransaction = () => {
                   <tr>
 				  <td>01
 				  </td>
-				  <td>
+				  <td className="text-center">
 				 <CHeaderNavLink to="/customerdetails"> Rajesh Kumar </CHeaderNavLink>
 				  </td>
-                     <td>
+                     <td className="text-center">
                     rajesh84@gmail.com
                      
                     </td>
-                    <td>
+                    <td className="text-center"> 
                      87964525811
                      
                     </td>
-					<td>
+					<td className="text-center">
                    COD
                      
                     </td>
@@ -83,19 +81,23 @@ const WalletTransaction = () => {
                     </td>
 					
 					 <td className="text-center">
-                   Transaction Completed Sucessfully
+                   Transaction Done
                     </td>
 					 <td className="text-center">
                    27/05/2021
                     </td>
 					
-					
                   </tr>
-				  
 				  
                 </tbody>
               </table>
-
+            <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

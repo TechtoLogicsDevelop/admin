@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,25 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+  CFormGroup,
+  CLabel,
+  CSelect,
+  CInput,
+  CButton,
+   CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CInputRadio,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+      CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,6 +36,8 @@ import { DocsLink } from 'src/reusable'
 
 
 const VendorsBanks = () => {
+	const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
@@ -111,7 +132,13 @@ const VendorsBanks = () => {
 				  
                 </tbody>
               </table>
-
+                      <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

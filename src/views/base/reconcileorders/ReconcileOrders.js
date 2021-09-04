@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
   CCard,
@@ -16,15 +16,16 @@ import {
   CInputGroupAppend,
   CSwitch,
   CCardFooter,
+   CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 
 import usersData from '../../users/UsersData'
 
 const getBadge = status => {
+	
   switch (status) {
     case 'Active': return 'success'
     case 'Inactive': return 'secondary'
@@ -36,6 +37,7 @@ const getBadge = status => {
 const fields = ['orderid','customername', 'status','createddate','print']
 
 const ReconcileOrders = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
 	<CRow>
@@ -45,13 +47,12 @@ const ReconcileOrders = () => {
              
 		   <p>
               
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/shippingorders">(1) Inboud Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/transferorders">(2) Transfer Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">(3) RECONCILE DELIVERY</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/receivablesorders">(4) Manage Receivable</CHeaderNavLink></span></CButton>
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/shippingorders">(1) Inboud Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/transferorders">(2) Transfer Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">(3) RECONCILE DELIVERY</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/receivablesorders">(4) Manage Receivable</CHeaderNavLink></span></CButton>
               
             </p>
-          
           
             </CCardHeader>
            
@@ -70,7 +71,6 @@ const ReconcileOrders = () => {
                 <thead className="thead-light">
                   <tr>
                     
-                   
                     <th>Basket Id</th>
 					<th className="text-center">To Hub</th> 
                     <th >Driver </th>
@@ -107,21 +107,19 @@ const ReconcileOrders = () => {
 					</td>
                   </tr>
 				   
-				   
-				  
                 </tbody>
               </table>
+			     <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>
-
-       
       </CRow>
-
-     
-
-      
-       
     </>
   )
 }

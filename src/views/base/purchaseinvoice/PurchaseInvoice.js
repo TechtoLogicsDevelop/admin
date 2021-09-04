@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,13 +10,15 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+  CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
-
+ 
 
 
 const PurchaseInvoice = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
      
@@ -99,7 +101,14 @@ const PurchaseInvoice = () => {
 				  
                 </tbody>
               </table>
-
+			     <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

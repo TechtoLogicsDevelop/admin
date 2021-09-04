@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -15,19 +15,41 @@ import {
   CSelect,
   CInput,
   CButton,
+   CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+      CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
-
+import CIcon from '@coreui/icons-react'
 
 
 const PromoCode = () => {
+		const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
@@ -37,11 +59,108 @@ const PromoCode = () => {
 			
 		   
             <CCardBody>
+			 <div className="text-right">
+               <CButton   color="success" onClick={() => setLarge(!large)} className="mr-1">+ Add</CButton>
+			   </div>
+				 <CModal 
+              show={large} 
+              onClose={() => setLarge(!large)}
+              size="lg"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>Create PromoCode</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+              <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			      <CFormGroup row className="my-0">
+                 <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Select Promotion Type</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0"> Promotion Type 1</option>
+                      <option value="1">Promotion Type 2 </option>
+                      <option value="2">Promotion Type 3</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>               
+			   <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Promo Code</CLabel>
+                    <CInput id="first" placeholder="Promo Code" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">Amount Type</CLabel>
+                   <CSelect custom name="select" id="select">
+                      <option value="0">Select </option>
+                      <option value="1">Amount </option>
+                      <option value="2">Percentage</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+                 <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="discount">Discount Amount</CLabel>
+                    <CInput id="discount" placeholder="Discount Amount" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="use">Maximum Use</CLabel>
+                    <CInput id="use" placeholder="use" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			  
+			   <CFormGroup row className="my-0">
+                 <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Available From</CLabel>
+                   <CInput type="date" id="date-input" name="date-input" placeholder="date" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Available To</CLabel>
+                   <CInput type="date" id="date-input" name="date-input" placeholder="date" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			   <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="company">Minimum Order Value</CLabel>
+                    <CInput id="company" placeholder="Minimum Order Value" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="tag-line">Select Customer Type</CLabel>
+                     <CSelect custom name="select" id="select">
+                      <option value="0">All </option>
+                      <option value="1">New Customer </option>
+                      <option value="2">Exist Customer</option>
+                     
+                    </CSelect>
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			    
+              </CForm>
+              </CModalBody>
+             <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
 			 <CCardHeader>
             
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/createpromocode">Add New </CHeaderNavLink>
-        </CHeaderNavItem>
             </CCardHeader>
              <CCardHeader>
 			
@@ -145,7 +264,13 @@ const PromoCode = () => {
 				  
                 </tbody>
               </table>
-
+                  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

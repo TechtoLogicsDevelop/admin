@@ -10,8 +10,7 @@ import {
   CCol,
   CDataTable,
   CSwitch,
-  
-     CModal,
+    CModal,
    CModalHeader,
    CModalTitle,
    CModalBody,
@@ -23,23 +22,19 @@ import {
    CModalFooter,
    CTextarea,
    CInputFile,
-  
+   CButton,
    CInputCheckbox,
    CInputGroup,
    CInputGroupPrepend,
    CInputGroupText,
   CPagination,
- CButton,
-  CFormText,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 
-
-
-const ProductsKit = () => {
-			const [modal, setModal] = useState(true)
+const ShowcaseTypes = () => {
+	const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -48,24 +43,19 @@ const ProductsKit = () => {
   const [danger, setDanger] = useState(false)
   const [info, setInfo] = useState(false)
   
-   const [currentPage, setCurrentPage] = useState(2)
+   const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-         ProductsKit
+         Showcase Types
             </CCardHeader>
-			
-		   
-            <CCardBody>
-			  <div className="text-right">
+		  <CCardBody>
+			<div className="text-right">
                <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
 			   </div>
 			      <CModal 
@@ -74,68 +64,36 @@ const ProductsKit = () => {
               color="success"
             >
               <CModalHeader closeButton>
-                <CModalTitle> Add Products Kit</CModalTitle>
+                <CModalTitle> Showcase Types</CModalTitle>
               </CModalHeader>
               <CModalBody>
                          <CRow>
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-           Add the New Products Kit
+             Add Showcase Types
              
             </CCardHeader>
             <CCardBody >
-                 <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+         <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
                
                   <CFormGroup row>
                  
                   <CCol xs="12" md="12">
-                    <CInput id="text-input" name="text-input" placeholder=" Kit Name" />
+                    <CInput id="text-input" name="text-input" placeholder="Enter Showcase Types" />
                    
                   </CCol>
                 </CFormGroup>
-				 <CFormGroup row>
-                 
-                  <CCol xs="12" md="12">
-                    <CTextarea 
-                      name="textarea-input" 
-                      id="textarea-input" 
-                      rows="4"
-                      placeholder=" Description..." 
-                    />
-                  </CCol>
-                </CFormGroup>
-				  <CFormGroup row className="my-0">
-                <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="established">Start Date</CLabel>
-                   
-					
-                    <CInput type="date" id="date-input" name="date-input" placeholder="date" />
-                 
-                  </CFormGroup>
-                </CCol>
-                <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="established">End Date</CLabel>
-                   
-					
-                    <CInput type="date" id="date-input" name="date-input" placeholder="date" />
-                 
-                  </CFormGroup>
-                </CCol>
-              </CFormGroup>
-				 
 				
-               
+			
               </CForm>
-                 </CCardBody>
+            </CCardBody>
             
-                   </CCard>
+          </CCard>
          
-               </CCol>
+        </CCol>
        
-             </CRow>
+      </CRow>
               </CModalBody>
               <CModalFooter>
                 <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
@@ -143,141 +101,35 @@ const ProductsKit = () => {
                 <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
               </CModalFooter>
             </CModal>
-
                <CCardHeader>
            
             </CCardHeader>
-               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+
+              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
-                   
                     <th>Id</th>
-					
-                    <th > Kit Name </th>
-					
-					
-					<th >Descriptions </th>
-					<th >Kit Items </th>
-					<th >Kit Price </th>
-					<th >Product </th>
-					
-					
-					<th>Status</th>
-					
-					  <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                     <td>
-                     pk-01
-                     
-                    </td>
-					 <td >
-                      Combo Offer
-                    </td>
-                   
-					<td>
-                    Combo Offer
-                     
-                    </td>
-					<td>
-                    <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-                <thead className="thead-light">
-                  <tr>
-                    <th >Items </th>
-					
-					<th >Price </th>
-					
-					<th>Status</th>
+					 
+                    <th >Showcase Types </th>
 				
+					<th>Status</th>
+					
 					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                      <td>
-                     item 1
+                     s-01
                      
-                    </td>
-					 <td >
-                      50
                     </td>
                    
-					
-					
-					
-					
-					
-						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					
 					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
-				    <tr>
-                     <td>
-                     item 2
+                    For Sale
                      
                     </td>
-					 <td >
-                      50
-                    </td>
-                   
-					
-					
-					
-					
-					
-						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					
-					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
-				    <tr>
-                     <td>
-                     item 3
-                     
-                    </td>
-					 <td >
-                      50
-                    </td>
-                   
-					
-					
-					
-					
-					
-						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					
-					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
-				  
-                </tbody>
-              </table>
-                     
-                    </td>
-					<td>
-                    <CHeaderNavLink to="/editkitprice">Rs 125 </CHeaderNavLink> 
-                     
-                    </td>
-					<td>
-                    <CHeaderNavLink to="/addkititems">Adds Items </CHeaderNavLink> 
-                     
-                    </td>
-					
-					
-						<td>
+				<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
 					
@@ -285,104 +137,17 @@ const ProductsKit = () => {
 					View / Edit / Delete
 					</td>
                   </tr>
-				   
-				   
-				  
-                </tbody>
-              </table>
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-               
-                <tbody>
-                  <tr>
+				     <tr>
                      <td>
-                     pk-02
+                     s-02
                      
-                    </td>
-					 <td >
-                      Discount Offers
                     </td>
                    
 					<td>
-                    Discount Offers
+                   Not For Sale
                      
                     </td>
-					<td>
-                    <table className="table table-hover table-outline mb-0 d-none d-sm-table">
-                <thead className="thead-light">
-                  <tr>
-                    <th >Items </th>
-					
-					<th >Price </th>
-					
-					<th>Status</th>
-				
-					  <th>Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                     <td>
-                     item 1
-                     
-                    </td>
-					 <td >
-                      50
-                    </td>
-                   
-					
-					
-					
-					
-					
-						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					
-					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
-				    <tr>
-                     <td>
-                     item 2
-                     
-                    </td>
-					 <td >
-                      50
-                    </td>
-                   
-					
-					
-					
-					
-					
-						<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
-					</td>
-					
-					<td>
-					 Edit / Delete
-					</td>
-                  </tr>
-				   
-				  
-                </tbody>
-              </table>
-                     
-                    </td>
-					<td>
-                    <CHeaderNavLink to="/editkitprice">Rs 85 </CHeaderNavLink> 
-                     
-                    </td>
-					<td>
-                    <CHeaderNavLink to="/addkititems">Adds Items </CHeaderNavLink> 
-                     
-                    </td>
-					
-					
-						<td>
+				<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
 					
@@ -390,12 +155,206 @@ const ProductsKit = () => {
 					View / Edit / Delete
 					</td>
                   </tr>
-				   
-				   
-				  
+				     <tr>
+                     <td>
+                     s-03
+                     
+                    </td>
+                   
+					<td>
+                   Sold
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     s-04
+                     
+                    </td>
+                   
+					<td>
+                    Commissioned
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     s-05
+                     
+                    </td>
+                   
+					<td>
+                    Free Booked
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     s-06
+                     
+                    </td>
+                   
+					<td>
+                    Free Ordered
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     s-07
+                     
+                    </td>
+                   
+					<td>
+                    Make Offer
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				      <tr>
+                     <td>
+                     s-08
+                     
+                    </td>
+                   
+					<td>
+                    Auctions
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				       <tr>
+                     <td>
+                     s-09
+                     
+                    </td>
+                   
+					<td>
+                    Make Offer
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				         <tr>
+                     <td>
+                     s-10
+                     
+                    </td>
+                   
+					<td>
+                    Inquiry-based
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				         <tr>
+                     <td>
+                     s-11
+                     
+                    </td>
+                   
+					<td>
+                    Promoted
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				         <tr>
+                     <td>
+                     s-12
+                     
+                    </td>
+                   
+					<td>
+                   Lease
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				      <tr>
+                     <td>
+                     s-13
+                     
+                    </td>
+                   
+					<td>
+                   Licence
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
                 </tbody>
               </table>
-					     <br/>
+				    <br/>
 				 
           <CPagination
             align="end"
@@ -412,4 +371,4 @@ const ProductsKit = () => {
   )
 }
 
-export default ProductsKit
+export default ShowcaseTypes

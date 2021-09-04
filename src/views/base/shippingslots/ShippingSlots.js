@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,19 +10,43 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+       CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+   CInputGroup,
+   CInputGroupPrepend,
+   CInputGroupText,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
 
-
-
 const ShippingSlots = () => {
+				 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
@@ -30,22 +54,81 @@ const ShippingSlots = () => {
           Shipping - Slots
             </CCardHeader>
 			
-		   
             <CCardBody>
-               <CCardHeader>
-             ShippingSlots
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/addshipslot">Create Shipping Slots </CHeaderNavLink>
-        </CHeaderNavItem>
+			 <div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
+			   </div>
+			      <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>Add Ship Slot</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+            Add the New Shipping Slots
+             
             </CCardHeader>
-
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+            <CCardBody >
+              <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			  
+			   <CFormGroup row className="my-0">
+			   <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">Slot No</CLabel>
+                    <CInput id="first" placeholder=" Slot No" />
+                  </CFormGroup>
+                </CCol>
+				<CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">From Amount</CLabel>
+                    <CInput id="first" placeholder=" Rs:00.00 " />
+                  </CFormGroup>
+                </CCol>
+               
+				
+				<CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">To Amount</CLabel>
+                    <CInput id="first" placeholder=" Rs:00.00 " />
+                  </CFormGroup>
+                </CCol>
+				<CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">Delivery Charges</CLabel>
+                    <CInput id="first" placeholder=" Rs:00.00" />
+                  </CFormGroup>
+                </CCol>
+				
+              </CFormGroup> 
+				
+              </CForm>
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
+               <CCardHeader>
+            
+            </CCardHeader>
+               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
-                   
                     <th>Id</th>
                     <th > Slots </th>
 					 <th >From Amount </th>
@@ -151,7 +234,13 @@ const ShippingSlots = () => {
 				  
                 </tbody>
               </table>
-
+                   <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

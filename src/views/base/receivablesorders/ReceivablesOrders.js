@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
   CCard,
@@ -16,6 +16,7 @@ import {
   CInputGroupAppend,
   CSwitch,
   CCardFooter,
+   CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -36,6 +37,7 @@ const getBadge = status => {
 const fields = ['orderid','customername', 'status','createddate','print']
 
 const ReceivablesOrders = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
 	<CRow>
@@ -45,10 +47,10 @@ const ReceivablesOrders = () => {
              
 		   <p>
               
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/shippingorders">(1) INBOUND ORDERS</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/transferorders">(2) Transfer Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/reconcileorders">(3) Reconcile Delivery</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<CButton size="lg"  className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/receivablesorders">(4) MANAGE RECEIVABLE</CHeaderNavLink></span></CButton>
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/shippingorders">(1) INBOUND ORDERS</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/transferorders">(2) Transfer Orders</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/reconcileorders">(3) Reconcile Delivery</CHeaderNavLink></span></CButton>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<CButton size="lg"  className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/receivablesorders">(4) MANAGE RECEIVABLE</CHeaderNavLink></span></CButton>
               
             </p>
           
@@ -108,6 +110,13 @@ const ReceivablesOrders = () => {
 				  
                 </tbody>
               </table>
+			      <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

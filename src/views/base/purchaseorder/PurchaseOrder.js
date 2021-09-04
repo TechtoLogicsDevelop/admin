@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,7 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,6 +18,8 @@ import { DocsLink } from 'src/reusable'
 
 
 const PurchaseOrder = () => {
+	 const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
@@ -27,16 +30,16 @@ const PurchaseOrder = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-          Purchase Order 
+          Purchase Orders List 
             </CCardHeader>
 			
 		   
             <CCardBody>
                <CCardHeader>
-             Purchase Orders View
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/pogenrate">Generate </CHeaderNavLink>
-        </CHeaderNavItem>
+         
+			
+          <CHeaderNavLink to="/pogenrate">+Create Purchase Order </CHeaderNavLink>
+       
             </CCardHeader>
 
               
@@ -178,7 +181,14 @@ const PurchaseOrder = () => {
 				  
                 </tbody>
               </table>
-
+                 <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

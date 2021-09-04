@@ -44,9 +44,9 @@ const RefundOrders = () => {
            Refund Orders
             </CCardHeader>
 			<CCardHeader>
-			<CHeaderNavItem  className="px-3" className="text-right ">
+			<div className="text-right ">
                          <CHeaderNavLink to="/">View Returned</CHeaderNavLink>
-                       </CHeaderNavItem>
+                       </div>
 			 <CFormGroup row>
                 
 				     <CCol xs="8">

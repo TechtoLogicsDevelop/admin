@@ -127,6 +127,7 @@ const StockList = () => {
               </table>
 			  <br/>
             <CPagination
+			align="end"
             activePage={currentPage}
             pages={10}
             onActivePageChange={setCurrentPage}

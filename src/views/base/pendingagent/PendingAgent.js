@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
   CCard,
@@ -22,13 +22,11 @@ import {
   CDropdown,
   CLabel,
   CSelect,
+  CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
-
-
-
 
 import usersData from '../../users/UsersData'
 
@@ -44,6 +42,7 @@ const getBadge = status => {
 const fields = ['orderid','customername', 'status','createddate','print']
 
 const PendingAgent = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
 	<CRow>
@@ -51,7 +50,6 @@ const PendingAgent = () => {
           <CCard>
             <CCardHeader >
              
-		
                       <CFormGroup row>
                   <CCol md="3">
                     <CLabel htmlFor="select">Select Agent</CLabel>
@@ -61,13 +59,10 @@ const PendingAgent = () => {
                       <option value="0">Agent 1</option>
                       <option value="1">Agent 2</option>
                      
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
-                 
-          
-          
+               
             </CCardHeader>
            
           </CCard>
@@ -133,6 +128,13 @@ const PendingAgent = () => {
 				  
                 </tbody>
               </table>
+			  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>
@@ -140,10 +142,6 @@ const PendingAgent = () => {
         
       </CRow>
 
-     
-
-      
-       
     </>
   )
 }

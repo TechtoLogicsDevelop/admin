@@ -61,9 +61,9 @@ const PartiallyCancelled = () => {
 				 
                  </CCardHeader>	
                         	
-                        <CHeaderNavItem  className="px-3" className="text-right ">
-                         <CHeaderNavLink to="/partialpickview">View Partially Picked</CHeaderNavLink>
-                       </CHeaderNavItem>		
+                        <div className="text-right ">
+                         <CHeaderNavLink to="/partialpickview">View Partially Cancelled</CHeaderNavLink>
+                       </div>		
 			 <CCardHeader>
 		 
           
