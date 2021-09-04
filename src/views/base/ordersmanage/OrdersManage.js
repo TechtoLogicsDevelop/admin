@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import {
   CBadge,
   CCard,
@@ -60,23 +60,20 @@ const OrdersManage = () => {
 				
 				 
                  </CCardHeader>	
-                        <CHeaderNavItem  className="px-3" className="text-left ">
-                         <CHeaderNavLink to="/ordercreate">Add New </CHeaderNavLink>
-                        </CHeaderNavItem>	
-                        <CHeaderNavItem  className="px-3" className="text-right ">
-                         <CHeaderNavLink to="/ordersview">View Order</CHeaderNavLink>
-                       </CHeaderNavItem>		
+                      <div className="text-right">
+                        <CButton size="sm" className="btn-flickr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/ordercreate">Add New </CHeaderNavLink></span></CButton> |  <CButton size="sm" className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/ordersview">View Order</CHeaderNavLink></span></CButton>
+                       	</div>
 			 <CCardHeader>
 		   <p>
-               <CButton size="sm" className="btn-xing btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersmanage">AWAITING CONFIRM</CHeaderNavLink></span></CButton> 
+               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersmanage">AWAITING CONFIRM</CHeaderNavLink></span></CButton> 
 			 
-              <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/confirmorders">Orders Confirmed</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-linkedin btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersprocess">Processing</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-flickr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/awaitingdispatch">Awaiting Dispatch</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-tumblr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/pickedupbydriver">Picked up by Driver</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-facebook btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/onroute">On Route/In Transit</CHeaderNavLink></span></CButton>
-            <CButton size="sm" className="btn-pinterest btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersdelivered">Delivered</CHeaderNavLink></span></CButton>
-			&nbsp;<CButton size="sm" className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">Returned</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/confirmorders">Orders Confirmed</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersprocess">Processing</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/awaitingdispatch">Awaiting Dispatch</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/pickedupbydriver">Picked up</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/onroute">On Route/In Transit</CHeaderNavLink></span></CButton>
+            <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersdelivered">Delivered</CHeaderNavLink></span></CButton>
+			<CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">Returned</CHeaderNavLink></span></CButton>
               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/orderscancelled">Cancelled</CHeaderNavLink></span></CButton>
             
             </p>
@@ -90,8 +87,10 @@ const OrdersManage = () => {
               striped
               bordered
               size="sm"
+			  
               itemsPerPage={10}
               pagination
+			  align="end"
               scopedSlots = {{
                 'status':
                   (item)=>(

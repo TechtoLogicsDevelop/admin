@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,21 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,6 +32,16 @@ import { DocsLink } from 'src/reusable'
 
 
 const CustomersGroup = () => {
+				 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
@@ -32,11 +57,70 @@ const CustomersGroup = () => {
 			
 		   
             <CCardBody>
+			 <div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
+			   </div>
+			      <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>  Customer Group</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+             Add Customer Group
+             
+            </CCardHeader>
+            <CCardBody >
+            <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			      <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Customer Group Name</CLabel>
+                    <CInput id="first" placeholder="Group Name" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                   <CFormGroup variant="custom-checkbox" inline>
+				    <CCol md="12">
+                    <CLabel>Exempt from all taxes:</CLabel>
+					 <CFormGroup variant="custom-checkbox" inline>
+                      <CInputCheckbox custom id="inline-checkbox2" name="inline-checkbox2" value="option2" />
+                      <CLabel variant="custom-checkbox" htmlFor="inline-checkbox2">Yes</CLabel>
+                    </CFormGroup>
+                    <CFormGroup variant="custom-checkbox" inline>
+                      <CInputCheckbox custom id="inline-checkbox3" name="inline-checkbox3" value="option3" />
+                      <CLabel variant="custom-checkbox" htmlFor="inline-checkbox3">No</CLabel>
+                    </CFormGroup>
+                  </CCol>
+                     
+                    </CFormGroup>
+                   
+                </CCol>
+              </CFormGroup>
+             
+              </CForm>
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
                <CCardHeader>
-            Customers Group Master
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/addcustgroup">Add Customers Group </CHeaderNavLink>
-        </CHeaderNavItem>
+           
             </CCardHeader>
 
               
@@ -143,7 +227,14 @@ const CustomersGroup = () => {
 				  
                 </tbody>
               </table>
-
+              <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

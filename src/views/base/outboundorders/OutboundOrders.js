@@ -61,9 +61,9 @@ const OutboundOrders = () => {
 				 
                  </CCardHeader>	
                         	
-                        <CHeaderNavItem  className="px-3" className="text-right ">
+                        <div className="text-right ">
                          <CHeaderNavLink to="/outboundview">View Outbound Orders</CHeaderNavLink>
-                       </CHeaderNavItem>		
+                       </div>		
 			 <CCardHeader>
 		 
           

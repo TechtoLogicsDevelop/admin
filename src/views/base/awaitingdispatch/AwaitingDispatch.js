@@ -43,9 +43,9 @@ const AwaitingDispatch = () => {
             <CCardHeader>
              Waiting for 3PL to Pick Up
             </CCardHeader>
-			<CHeaderNavItem  className="px-3" className="text-right ">
+			<div className="text-right ">
                          <CHeaderNavLink to="/awaitdispatchview">View Awating Dispatch</CHeaderNavLink>
-                       </CHeaderNavItem>
+                       </div>
 			<CCardHeader>
 			 <CFormGroup row>
                   <CCol md="3">
@@ -68,15 +68,15 @@ const AwaitingDispatch = () => {
                        		
 			 <CCardHeader>
 		   <p>
-               <CButton size="sm" className="btn-xing btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersmanage">Awating Confirm</CHeaderNavLink></span></CButton> 
+               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersmanage">Awating Confirm</CHeaderNavLink></span></CButton> 
 			 
-              <CButton size="sm" className="btn-twitter btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/base/confirmorders">Orders Confirmed</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-linkedin btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersprocess">Processing</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-flickr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/awaitingdispatch">AWAITING DISPATCH</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-tumblr btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/pickedupbydriver">Picked up by Driver</CHeaderNavLink></span></CButton>
-              <CButton size="sm" className="btn-facebook btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/onroute">On Route/In Transit</CHeaderNavLink></span></CButton>
-            <CButton size="sm" className="btn-pinterest btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersdelivered">Delivered</CHeaderNavLink></span></CButton>
-			&nbsp;<CButton size="sm" className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">Returned</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"> <CHeaderNavLink to="/base/confirmorders">Orders Confirmed</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersprocess">Processing</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/awaitingdispatch">AWAITING DISPATCH</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/pickedupbydriver">Picked Up</CHeaderNavLink></span></CButton>
+              <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/onroute">On Route/In Transit</CHeaderNavLink></span></CButton>
+            <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersdelivered">Delivered</CHeaderNavLink></span></CButton>
+			<CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/ordersreturned">Returned</CHeaderNavLink></span></CButton>
               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2"><CHeaderNavLink to="/base/orderscancelled">Cancelled</CHeaderNavLink></span></CButton>
             
             </p>

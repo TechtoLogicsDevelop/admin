@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
   CCard,
@@ -20,6 +20,7 @@ import {
   CDropdownMenu,
   CDropdownItem,
   CDropdown,
+  CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -42,6 +43,7 @@ const getBadge = status => {
 const fields = ['orderid','customername', 'status','createddate','print']
 
 const OrdersOverView = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
 	<CRow>
@@ -49,9 +51,9 @@ const OrdersOverView = () => {
           <CCard>
             <CCardHeader >
              
-		  <CFormGroup row >
-                  <CCol md="6" className="text-center">
-                    <CInputGroup >
+		  <CFormGroup row  >
+                  <CCol md="6" className="text-center" >
+                    <CInputGroup  className="text-center">
                       <CInput type="search" id="input2-group3" name="input2-group3" placeholder="Search" />
                       <CDropdown className="input-group-append">
                         <CDropdownToggle color="primary">
@@ -61,10 +63,10 @@ const OrdersOverView = () => {
                           <CDropdownItem>Order Id/ External Order Id</CDropdownItem>
                           <CDropdownItem>Customers Name</CDropdownItem>
                           <CDropdownItem>Customers Mobile No</CDropdownItem>
-                          <CDropdownItem divider />
+                          <CDropdownItem Divider />
                           <CDropdownItem>Shipper Name</CDropdownItem>
 						  <CDropdownItem>Shipper Mobile No</CDropdownItem>
-						  <CDropdownItem divider />
+						  <CDropdownItem Divider />
                           <CDropdownItem>Last 3 Days Orders</CDropdownItem>
 						  <CDropdownItem>Last 15 Days Orders</CDropdownItem>
 						  <CDropdownItem>Month Orders</CDropdownItem>
@@ -92,8 +94,6 @@ const OrdersOverView = () => {
           <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                    
-                   
                     <th>Order Id</th>
 					<th className="text-center">Customer</th> 
                     <th >Agent </th>
@@ -120,16 +120,20 @@ const OrdersOverView = () => {
                      
                     </td>
 					
-						
 					<td>
 					23/05/2021
 					</td>
                   </tr>
 				   
-				   
-				  
                 </tbody>
               </table>
+			  	  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

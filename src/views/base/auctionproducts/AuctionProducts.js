@@ -10,107 +10,112 @@ import {
   CCol,
   CDataTable,
   CSwitch,
-  CPagination,
   CButton,
-  CLabel,
-  CFormGroup,
-  CModal,
-  CModalHeader,
-  CModalFooter,
-  CTextarea,
-  CModalTitle,
-  CModalBody,
-  CForm,
-  CSelect,
-  CInputFile,
-  CInput,
+  CProgress,
+  CPagination,
   CRow
 } from '@coreui/react'
-import { DocsLink } from 'src/reusable'
+import CIcon from '@coreui/icons-react'
 
 
 
-const Attendees = () => {
-	
-	const [currentPage, setCurrentPage] = useState(2)
+const AuctionProducts = () => {
+	 const [currentPage, setCurrentPage] = useState(1)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-           Attendees List
+         Auction Product List
             </CCardHeader>
 			
 		   
             <CCardBody>
+			 <CCardHeader>
+		
+          
+          </CCardHeader>
+            
               
+
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
                    
-                    <th>Id</th>
-                    <th className="text-center"> Name </th>
-					<th className="text-center">Email</th>
+                    <th>Product</th>
 					
-					 <th className="text-center">Mobile</th>
-					  <th className="text-center">Registered Date</th>
-					   <th className="text-center">Event</th>
-					   <th className="text-center">No of Seats</th>
+					 <th>Auction Price</th>
+					 <th>Reserve Price</th>
+					  
+					  <th >Start Time</th>
+                    <th >End Time  </th>
+					 <th >Valid Days </th>
+					
+					<th >Increment</th>
+					<th >Automatic</th>
+					<th >Bid Status  </th>
 				
-					<th>Status</th>
-					
-					  <th>Actions</th>
+					<th>Auctions Status</th>
+					<th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                      <td>
-                     ea-01
-                     
-                    </td>
-                    <td>
-                  Rajit
+                     Black Fur Collar
                      
                     </td>
 					
-					
-					<td className="text-center">
-                   rajith@gmail.com
-                    </td>
-					 <td className="text-center">
-                   87964525811
-                    </td>
-					 <td className="text-center">
-                   2021-05-17
-                    </td>
-					 <td className="text-center">
-                    Artwork Event
-                    </td>
-					 <td className="text-center">
-                    5 Seats
-                    </td>
-					
-                   
-                     
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+                   40
+                     
+                    </td>
+					<td>
+                   80
+                     
+                    </td>
+					<td>
+                    2021-08-11<br/> 10:38:03
+                     
+                    </td>
+					<td>
+                    2021-08-13 <br/>10:38:03
+                    </td>
+					<td>
+                   2 days
+                     
+                    </td>
+					<td>
+                    Enable
+                     
+                    </td>
+					<td>
+                    Enable
+                     
+                    </td>
+					<td>
+                    Enable
+                     
+                    </td>
+					
+						<td>
+					Enable
 					</td>
 					
 					<td>
-					 Edit / Delete
+					Edit / Delete
 					</td>
                   </tr>
-				   
+				  
 				  
                 </tbody>
               </table>
-             <br/>
+                   <br/>
+				 
           <CPagination
             align="end"
             activePage={currentPage}
@@ -126,4 +131,4 @@ const Attendees = () => {
   )
 }
 
-export default Attendees
+export default AuctionProducts

@@ -10,31 +10,31 @@ import {
   CCol,
   CDataTable,
   CSwitch,
-  CFormGroup,
-  CLabel,
-  CSelect,
-  CInput,
-  CButton,
-   CModal,
+    CModal,
    CModalHeader,
    CModalTitle,
    CModalBody,
    CForm,
-   CInputRadio,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
    CModalFooter,
    CTextarea,
    CInputFile,
-      CInputCheckbox,
+   CButton,
+   CInputCheckbox,
    CInputGroup,
    CInputGroupPrepend,
    CInputGroupText,
-   CPagination,
+  CPagination,
   CRow
 } from '@coreui/react'
+import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 
-const LedgerMaster = () => {
-			const [modal, setModal] = useState(true)
+const EventsTypes = () => {
+	const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -43,7 +43,7 @@ const LedgerMaster = () => {
   const [danger, setDanger] = useState(false)
   const [info, setInfo] = useState(false)
   
-   const [currentPage, setCurrentPage] = useState(2)
+   const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
@@ -52,12 +52,11 @@ const LedgerMaster = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-         Ledger Master
+         Events Types
             </CCardHeader>
-			
-            <CCardBody>
-			 <div className="text-right">
-               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add Ledger </CButton>
+		  <CCardBody>
+			<div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
 			   </div>
 			      <CModal 
               show={success} 
@@ -65,64 +64,28 @@ const LedgerMaster = () => {
               color="success"
             >
               <CModalHeader closeButton>
-                <CModalTitle> Ledger Master</CModalTitle>
+                <CModalTitle> Events Types</CModalTitle>
               </CModalHeader>
               <CModalBody>
                          <CRow>
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-           Create Ledger
+             Add Events Types
              
             </CCardHeader>
             <CCardBody >
-            <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-                <CFormGroup row className="my-0">
+         <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+               
+                  <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder="Enter Events Types" />
+                   
+                  </CCol>
+                </CFormGroup>
 				
-               <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="first">Select Ledger Group</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0"> Select</option>
-					   <option value="1"> Ledger Group 1</option>
-                      <option value="2">Ledger Group 2</option>
-                      <option value="3"> Ledger Group 3</option>
-                      <option value="4">Ledger Group 4</option>
-                     
-                    </CSelect>
-                  </CFormGroup>
-				    </CCol>
-				     <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="first">Ledger Name</CLabel>
-                    <CInput id="text-input" name="text-input" placeholder="Ledger Name" />
-                     
-                  </CFormGroup>
-                </CCol>
-             
-              </CFormGroup>
-                 <CFormGroup row className="my-0">
-				
-               <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="first">Select DR /CR</CLabel>
-                     <CSelect custom name="select" id="select">
-                      <option value="0"> Select</option>
-					   <option value="1"> DR</option>
-                      <option value="2">CR</option>
-                     
-                    </CSelect>
-                  </CFormGroup>
-				    </CCol>
-				     <CCol xs="6">
-                  <CFormGroup>
-                    <CLabel htmlFor="first">Opening Balance</CLabel>
-                    <CInput id="text-input" name="text-input" placeholder="Opening Balance" />
-                     
-                  </CFormGroup>
-                </CCol>
-             
-              </CFormGroup> 
+			
               </CForm>
             </CCardBody>
             
@@ -137,21 +100,19 @@ const LedgerMaster = () => {
 				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
                 <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
               </CModalFooter>
-            </CModal> 
+            </CModal>
                <CCardHeader>
-            
+           
             </CCardHeader>
 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
-                   <th>Sl No</th>
-					 <th>Group Name</th>
-                    <th > Ledger Code</th>
-					 <th >Ledger Name </th>
-				  <th > DR/ CR</th>
-					 <th >Balance </th>
+                    <th>Id</th>
+					 
+                    <th >Events Types </th>
+				
 					<th>Status</th>
 					
 					  <th>Actions</th>
@@ -160,31 +121,15 @@ const LedgerMaster = () => {
                 <tbody>
                   <tr>
                      <td>
-                     01
+                     ET-01
                      
                     </td>
-					  <td>
-                    Investments
-                     
-                    </td>
-                    <td>
-                    100-001
-                     
-                    </td>
-					  <td>
-                    Cost- Office Equipments
-                     
-                    </td>
+                   
 					<td>
-                    DR
+                    Single Event
                      
                     </td>
-					<td>
-                    Rs 00.00
-                     
-                    </td>
-					
-						<td>
+				<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
 					
@@ -192,10 +137,64 @@ const LedgerMaster = () => {
 					View / Edit / Delete
 					</td>
                   </tr>
-				  
+				     <tr>
+                     <td>
+                     ET-02
+                     
+                    </td>
+                   
+					<td>
+                   Multi Event
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     ET-03
+                     
+                    </td>
+                   
+					<td>
+                   Fundraiser
+                     
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				     <tr>
+                     <td>
+                     ET-04
+                     
+                    </td>
+                   
+					<td>
+                    Auctions
+                    </td>
+				<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				    
                 </tbody>
               </table>
-                  <br/>
+				    <br/>
+				 
           <CPagination
             align="end"
             activePage={currentPage}
@@ -211,4 +210,4 @@ const LedgerMaster = () => {
   )
 }
 
-export default LedgerMaster
+export default EventsTypes

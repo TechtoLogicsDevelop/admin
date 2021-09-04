@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,20 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+    CPagination,
+  CButton,
+  CLabel,
+  CFormGroup,
+  CModal,
+  CModalHeader,
+  CModalFooter,
+  CTextarea,
+  CModalTitle,
+  CModalBody,
+  CForm,
+  CSelect,
+  CInputFile,
+  CInput,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -17,12 +31,18 @@ import { DocsLink } from 'src/reusable'
 
 
 const Exhibitors = () => {
+	const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
@@ -32,11 +52,155 @@ const Exhibitors = () => {
 			
 		   
             <CCardBody>
+				<div className="text-right">
+			 <CButton   color="success" onClick={() => setLarge(!large)} className="mr-1"> Exhibitors Registration</CButton>
+			   </div>
+				 <CModal 
+              show={large} 
+              onClose={() => setLarge(!large)}
+              size="lg"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>Exhibitors Registration</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+              <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			      <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="company">Exhibitors Name *</CLabel>
+                    <CInput id="company" placeholder="Exhibitors Name" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="company-website">Exhibitors Website *</CLabel>
+                    <CInput id="company-website" placeholder="Exhibitors Website" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+                
+			  
+			 
+			    <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="email">Email *</CLabel>
+                    <CInput id="email" placeholder="Email" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="phone">Telephone *</CLabel>
+                    <CInput id="phone" placeholder="Telephone" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			  
+			 
+			    <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="fax">Contact Person</CLabel>
+                    <CInput id="fax" placeholder="Contact Person" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="gst">Designation</CLabel>
+                    <CInput id="gst" placeholder="Designation" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+				
+				  <CFormGroup row className="my-0">
+                <CCol xs="">
+                  <CFormGroup>  
+                   
+                     <CCol md="12">
+                    <CLabel htmlFor="select">Which best describes your role? *</CLabel>
+                  </CCol>
+                  <CCol xs="9" md="9">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select </option>
+                      <option value="1">I Recommend Products/ Services </option>
+                      <option value="2">I Influence the Final Decsion</option>
+                      <option value="3">I Have a Final Sign off</option>
+					   <option value="4">Others</option>
+                      
+                    </CSelect>
+                  </CCol>
+                  </CFormGroup>
+                </CCol>
+               <CCol xs="">
+                  <CFormGroup>  
+                   
+                     <CCol md="12">
+                    <CLabel htmlFor="select">Which of the below are you most interested in? *</CLabel>
+                  </CCol>
+                  <CCol xs="9" md="9">
+                    <CSelect custom name="select" id="select">
+                      <option value="0">Select </option>
+                      <option value="1">Marketing</option>
+                      <option value="2">Tech</option>
+                      <option value="3">Ecommerce</option>
+					   <option value="4">Media</option>
+                      <option value="5">Culture</option>
+                    </CSelect>
+                  </CCol>
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			   
+			   
+			   <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel col md="12" htmlFor="logo">Upload Logo</CLabel>
+                     <CInputFile id="logo" name="logo"/>
+                  </CFormGroup>
+                </CCol>
+               
+              </CFormGroup>
+			     
+              </CForm>
+			   <CCardHeader>
+              
+            
+				 Address
+            </CCardHeader>
+			 <CFormGroup>
+			  
+                <CLabel htmlFor="street">Street</CLabel>
+                <CInput id="street" placeholder="Enter street name" />
+              </CFormGroup>
+              <CFormGroup row className="my-0">
+                <CCol xs="8">
+                  <CFormGroup>
+                    <CLabel htmlFor="city">City</CLabel>
+                    <CInput id="city" placeholder="Enter your city" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="4">
+                  <CFormGroup>
+                    <CLabel htmlFor="postal-code">Postal Code</CLabel>
+                    <CInput id="postal-code" placeholder="Postal Code" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+              <CFormGroup>
+                <CLabel htmlFor="country">Country</CLabel>
+                <CInput id="country" placeholder="Country name" />
+              </CFormGroup>
+			  <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+			  </CModalBody>
+            </CModal>
 			  <CCardHeader>
            
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/exhibitorsreg">Exhibitors Registration </CHeaderNavLink>
-        </CHeaderNavItem>
             </CCardHeader>
               
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
@@ -109,7 +273,13 @@ const Exhibitors = () => {
 				  
                 </tbody>
               </table>
-
+                      <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

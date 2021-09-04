@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -16,6 +16,7 @@ import {
   CInputGroup,
   CInput,
   CInputGroupAppend,
+  CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
@@ -23,12 +24,11 @@ import { DocsLink } from 'src/reusable'
 
 
 const DayBook = () => {
+	const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
@@ -77,7 +77,13 @@ const DayBook = () => {
 				  
                 </tbody>
               </table>
-
+                             <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,6 +10,7 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+   CPagination,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -18,12 +19,11 @@ import { DocsLink } from 'src/reusable'
 
 
 const Membership = () => {
+	 const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
@@ -34,9 +34,6 @@ const Membership = () => {
 		   
             <CCardBody>
             
-
-              
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
@@ -159,7 +156,13 @@ const Membership = () => {
 				  
                 </tbody>
               </table>
-
+                       <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

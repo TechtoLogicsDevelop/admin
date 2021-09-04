@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,87 +10,98 @@ import {
   CCol,
   CDataTable,
   CSwitch,
-  
-   CPagination,
+  CButton,
+  CProgress,
+  CPagination,
   CRow
 } from '@coreui/react'
-import { DocsLink } from 'src/reusable'
+import CIcon from '@coreui/icons-react'
 
 
 
-const CreditNote = () => {
-		
-	 const [currentPage, setCurrentPage] = useState(2)
-	 
+const AuctionCredits = () => {
+	 const [currentPage, setCurrentPage] = useState(1)
+
   return (
     <>
      
-      
-
-    
 	   <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-          Credit Note
+         Auction Wallet Credit
             </CCardHeader>
-			   <CCardHeader>
-            
-			 <CHeaderNavItem  className="px-3" className="text-right">
-          <CHeaderNavLink to="/createcreditnote"> Generate CreditNote </CHeaderNavLink>
-        </CHeaderNavItem>
-            </CCardHeader>
+			
 		   
             <CCardBody>
+			 <CCardHeader>
+		
+          
+          </CCardHeader>
+            
               
+
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                     <th>Sl no</th>
-					 <th>Credit Note No</th>
-                    <th > Invoice No </th>
+                    
+                   
+                    <th>Customer</th>
 					
-					<th >Customer</th>
-				    <th >Product</th>
-					 <th >Date</th>
-					  <th>Actions</th>
+					 <th>Email</th>
+					 <th>Phone</th>
+					  
+					  <th >Order Id</th>
+                    <th >Date Added </th>
+					 <th >Amount </th>
+					
+					<th >Description</th>
+					
+					<th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-				   <td>
-                    01
-                     
-                    </td>
                      <td>
-                     CRDIT_001
+                     smith Jhonson
                      
                     </td>
-					  <td>
-                    <CHeaderNavLink to="/">SI_011</CHeaderNavLink> 
-                     
-                    </td>
-					 <td>
-                      <CHeaderNavLink to="/">Rajesh Kumar</CHeaderNavLink>
-                     
-                    </td> 
-					 <td>
-                    Digital prints
-                     
-                    </td>
-					 <td>
-                   14/07/2021
-                     
-                    </td>
-                    
+					
 					<td>
-					View / Edit / Delete
+                  smithj@gmail.com
+                     
+                    </td>
+					<td>
+                  9876543210
+                     
+                    </td>
+					<td>
+                   bo-11
+                     
+                    </td>
+					<td>
+                    2021-08-13 <br/>10:38:03
+                    </td>
+					<td>
+                  $1,000.00
+                     
+                    </td>
+					<td>
+                   Wallet recharge details in order #11
+                     
+                    </td>
+					
+					
+					<td>
+					Edit / Delete
 					</td>
                   </tr>
 				  
+				  
                 </tbody>
               </table>
-                      <br/>
+                   <br/>
+				 
           <CPagination
             align="end"
             activePage={currentPage}
@@ -106,4 +117,4 @@ const CreditNote = () => {
   )
 }
 
-export default CreditNote
+export default AuctionCredits

@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import {
-  CBadge,
-   CHeaderNav,
+	CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
+  CBadge,
+  CButton,
+  CButtonGroup,
   CCard,
   CCardBody,
+  CCardFooter,
   CCardHeader,
   CCol,
-  CDataTable,
-  CSwitch,
-    CModal,
+  CProgress,
+  CRow,
+   CSwitch,
+         CModal,
    CModalHeader,
    CModalTitle,
    CModalBody,
@@ -22,22 +26,22 @@ import {
    CModalFooter,
    CTextarea,
    CInputFile,
-   CButton,
+  
    CInputCheckbox,
    CInputGroup,
    CInputGroupPrepend,
    CInputGroupText,
   CPagination,
-  CRow
+  CFormText,
+  CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 
 
-const Manufacturers = () => {
-  
-  const [modal, setModal] = useState(true)
+
+const FundUsageTypes = () => {
+			const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -46,24 +50,23 @@ const Manufacturers = () => {
   const [danger, setDanger] = useState(false)
   const [info, setInfo] = useState(false)
   
-   const [currentPage, setCurrentPage] = useState(2)
+   const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
-     
       
 
-    
-	   <CRow>
+      <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-         Manufacturers
+           Fund Usage Types
+			
             </CCardHeader>
 			
 		   
             <CCardBody>
-			<div className="text-right">
+               <div className="text-right">
                <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
 			   </div>
 			      <CModal 
@@ -72,58 +75,35 @@ const Manufacturers = () => {
               color="success"
             >
               <CModalHeader closeButton>
-                <CModalTitle> Manufacturers Form</CModalTitle>
+                <CModalTitle> Fund Usage Types</CModalTitle>
               </CModalHeader>
               <CModalBody>
                          <CRow>
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-             Add Manufacturers
+            Add Fund Usage Types
              
             </CCardHeader>
             <CCardBody >
-          <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-                <CFormGroup row>
-                  <CLabel col md={3}>Upload the Logo</CLabel>
-                  <CCol xs="9" md="9">
-                    <CInputFile custom id="custom-file-input"/>
-                    <CLabel htmlFor="custom-file-input" variant="custom-file">
-                      Choose file...
-                    </CLabel>
-                  </CCol>
-                </CFormGroup>
+                 <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+               
                   <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="select"> Name</CLabel>
-                  </CCol>
-                  <CCol xs="9" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="  Name" />
+                 
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder=" Enter Fund Usage Types" />
                    
                   </CCol>
                 </CFormGroup>
-				 <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="select"> Description</CLabel>
-                  </CCol>
-                  <CCol xs="9" md="9">
-                    <CTextarea 
-                      name="textarea-input" 
-                      id="textarea-input" 
-                      rows="4"
-                      placeholder=" Description..." 
-                    />
-                  </CCol>
-                </CFormGroup>
-			
+				
               </CForm>
-            </CCardBody>
+                 </CCardBody>
             
-          </CCard>
+                   </CCard>
          
-        </CCol>
+               </CCol>
        
-      </CRow>
+             </CRow>
               </CModalBody>
               <CModalFooter>
                 <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
@@ -131,23 +111,18 @@ const Manufacturers = () => {
                 <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
               </CModalFooter>
             </CModal>
-               <CCardHeader>
-           
-            </CCardHeader>
 
-              
+               <CCardHeader>
+		  
+              </CCardHeader>
 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
                    
-                    <th>Id</th>
-					<th className="text-center">Logo</th> 
-                    <th >Name </th>
-					
-					
-					<th >Descriptions </th>
+                    <th>#</th>
+                    <th className="text-center">FundUsageTypes</th>
 					
 					
 					<th>Status</th>
@@ -157,28 +132,17 @@ const Manufacturers = () => {
                 </thead>
                 <tbody>
                   <tr>
-                     <td>
-                     mg-01
+                    
+                    <td>
+                     1
                      
                     </td>
 					 <td className="text-center">
-                      <div className="c-avatar">
-                        <img src={'avatars/1.jpg'} className="c-avatar-img" alt="admin@bootstrapmaster.com" />
-                        <span className="c-avatar-status bg-success"></span>
-                      </div>
+                    MARKETING & COMMUNICATION
                     </td>
                    
-					<td>
-                    Artcurate
                      
-                    </td>
 					<td>
-                    Artcurate
-                     
-                    </td>
-					
-					
-						<td>
 					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
 					</td>
 					
@@ -186,12 +150,67 @@ const Manufacturers = () => {
 					View / Edit / Delete
 					</td>
                   </tr>
-				   
-				   
-				  
+				      <tr>
+                    
+                    <td>
+                     2
+                     
+                    </td>
+					 <td className="text-center">
+                    LICENCING & DISTRIBUTION
+                    </td>
+                   
+                     
+					<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr> 
+				      <tr>
+                    
+                    <td>
+                     3
+                     
+                    </td>
+					 <td className="text-center">
+                    PRODUCTION
+                    </td>
+                   
+                     
+					<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				      <tr>
+                    
+                    <td>
+                     4
+                     
+                    </td>
+					 <td className="text-center">
+                    PROTOTYPING
+                    </td>
+                   
+                     
+					<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				    
                 </tbody>
               </table>
-             <br/>
+               <br/>
 				 
           <CPagination
             align="end"
@@ -203,9 +222,8 @@ const Manufacturers = () => {
           </CCard>
         </CCol>
       </CRow>
-        
     </>
   )
 }
 
-export default Manufacturers
+export default FundUsageTypes
