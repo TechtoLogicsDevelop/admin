@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
   CHeaderNav,
@@ -14,6 +14,10 @@ import {
   CFade,
   CSwitch,
   CButton,
+   CPagination,
+   CForm,
+   CSelect,
+   CFormGroup,
   CLink
 } from  '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -23,40 +27,52 @@ import { DocsLink } from 'src/reusable'
 const RegMasters = () => {
   const [collapsed, setCollapsed] = React.useState(true)
   const [showCard, setShowCard] = React.useState(true)
+ const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
      
      
         <CRow>
-        <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+		 
+		  <CCol xs="12" sm="4" md="3">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
+          <CHeaderNavLink to="/registrationoptions">Registration Options</CHeaderNavLink>
+       
+            </CCardBody>
+          </CCard>
+        </CCol>	
+		
+        <CCol xs="12" sm="4" md="3">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+              
           <CHeaderNavLink to="/regcategory">Registration Category</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
-		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+		 <CCol xs="12" sm="4" md="3">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+             
           <CHeaderNavLink to="/regsubcategory">Reg Sub Category</CHeaderNavLink>
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
-        <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+        <CCol xs="12" sm="4" md="3">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
           <CHeaderNavLink to="/regsubchild">Reg Sub Child</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
-        
+       
         
       </CRow>
      <CRow>
@@ -76,9 +92,7 @@ const RegMasters = () => {
              
               <CButton size="sm" className="btn-flickr btn-brand mr-1 mb-1"><span className="mfs-2">Institutions</span></CButton>
 			   <CButton size="sm" className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2">Others</span></CButton>
-               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2">Craft Communities</span></CButton>
-             
-              <CButton size="sm" className="btn-github btn-brand mr-1 mb-1"><span className="mfs-2">Creative Communities</span></CButton>
+              
               <CButton size="sm" className="btn-stack-overflow btn-brand mr-1 mb-1"><span className="mfs-2">Students</span></CButton>
 			 
             </p>
@@ -97,10 +111,10 @@ const RegMasters = () => {
                   <tr>
                     
                   
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main </th>
+					 <th className="text-center">Primary  </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary </th>
                     <th className="text-center">UserName </th>
 					
 					
@@ -112,23 +126,26 @@ const RegMasters = () => {
 					    <th className="text-center"> Tag</th>
 					 	<th>Status</th>
 					
-					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     
-                    <td>
+                    <td className="text-center">
                      Artist / Creaters
                      
                     </td>
-					<td>
+					<td className="text-center">
                     Painter
                      
                     </td>
 					
 					<td className="text-center">
-                   Oil Painter
+					<ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 					 <td className="text-center">
                     Rakesh
@@ -151,18 +168,39 @@ const RegMasters = () => {
                     </td>
                      
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					<CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+                  <CFormGroup row>
+                  
+                  <CCol xs="8" md="8">
+                    <CSelect custom name="Status" id="select">
+                      <option value="0">Status</option>
+                      <option value="1">Pending</option>
+                      <option value="2">Active</option>
+                      <option value="3">Inactive</option>
+					   <option value="4">Block</option>
+                      
+					  
+                    </CSelect>
+                  </CCol>
+                </CFormGroup>
+                
+              </CForm>
+					
 					</td>
 					
-					<td>
-					 Edit / Delete
-					</td>
                   </tr>
 				   
 				  
                 </tbody>
               </table>
-
+				    	  <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

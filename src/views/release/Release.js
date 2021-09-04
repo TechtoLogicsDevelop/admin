@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CButton,
   CHeaderNav,
@@ -31,15 +31,16 @@ import {
   CInputGroupText,
   CLabel,
   CSelect,
+  CPagination,
   CRow,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const Release = () => {
   const [collapsed, setCollapsed] = React.useState(true)
   const [showElements, setShowElements] = React.useState(true)
+   const [currentPage, setCurrentPage] = useState(1)
 
   return (
     <>
@@ -49,7 +50,9 @@ const Release = () => {
           <CCard>
             <CCardHeader>
               Software Release Info
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
@@ -143,7 +146,13 @@ const Release = () => {
                  
                 </tbody>
               </table>
-
+                  <br/>
+			   <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>
