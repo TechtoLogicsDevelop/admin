@@ -36,13 +36,9 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const PrivacyPolicy = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-  
-
+ 
   return (
     <>
       
@@ -50,8 +46,10 @@ const PrivacyPolicy = () => {
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-              Privacy Policy
-             
+              Privacy Policy ,Terms & Conditions Setting
+              <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

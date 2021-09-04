@@ -28,6 +28,7 @@ import {
   CInputGroupText,
   CLabel,
   CSelect,
+  CHeaderNavLink,
   CRow,
   CSwitch
 } from '@coreui/react'
@@ -35,9 +36,7 @@ import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 
 const PriceDisplay = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,12 +45,13 @@ const PriceDisplay = () => {
           <CCard>
             <CCardHeader>
              Display Product Prices 
-             
+                <div className="text-right">
+			 <CHeaderNavLink   to="/taxsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
                
-                
                 <CFormGroup row>
                   <CCol md="3">
                     <CLabel htmlFor="select">Display Product Prices in Catalog</CLabel>
@@ -63,9 +63,7 @@ const PriceDisplay = () => {
                       <option value="1">Excluding Tax</option>
                       <option value="2">Including Tax</option>
 					   <option value="3">Excluding Tax and Including Tax</option>
-					  
-                     
-					  
+					 
                     </CSelect>
                   </CCol>
                 </CFormGroup>
@@ -85,9 +83,6 @@ const PriceDisplay = () => {
                   </CCol>
                 </CFormGroup>
 				
-				 
-				 
-                
               </CForm>
             </CCardBody>
             <CCardFooter className="text-center" >
@@ -99,10 +94,6 @@ const PriceDisplay = () => {
         </CCol>
        
       </CRow>
-     
-     
-      
-     
      
     </>
   )
