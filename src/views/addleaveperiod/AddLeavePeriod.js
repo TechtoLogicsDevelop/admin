@@ -32,12 +32,10 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
-const AddManufacturers = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
 
+const AddLeavePeriod = () => {
+ 
   return (
     <>
      
@@ -45,46 +43,37 @@ const AddManufacturers = () => {
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-              Add the Manufacturers
+              Add Leave Period
              
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-                <CFormGroup row>
-                  <CLabel col md={3}>Upload the Logo</CLabel>
-                  <CCol xs="9" md="9">
-                    <CInputFile custom id="custom-file-input"/>
-                    <CLabel htmlFor="custom-file-input" variant="custom-file">
-                      Choose file...
-                    </CLabel>
-                  </CCol>
-                </CFormGroup>
-                  <CFormGroup row>
+               
+				  <CFormGroup row>
                   <CCol md="3">
                     <CLabel htmlFor="select"> Name</CLabel>
                   </CCol>
                   <CCol xs="9" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="  Name" />
+                    <CInput id="text-input" name="text-input" placeholder=" Name" />
                    
                   </CCol>
                 </CFormGroup>
-				 <CFormGroup row>
+                 <CFormGroup row>
                   <CCol md="3">
-                    <CLabel htmlFor="select"> Description</CLabel>
+                    <CLabel htmlFor="date-input">Period Start</CLabel>
                   </CCol>
-                  <CCol xs="9" md="9">
-                    <CTextarea 
-                      name="textarea-input" 
-                      id="textarea-input" 
-                      rows="4"
-                      placeholder=" Description..." 
-                    />
+                  <CCol xs="12" md="9">
+                    <CInput type="date" id="date-input" name="date-input" placeholder="date" />
                   </CCol>
                 </CFormGroup>
-				
-				 
-				
-               
+                <CFormGroup row>
+                  <CCol md="3">
+                    <CLabel htmlFor="date-input">Period End</CLabel>
+                  </CCol>
+                  <CCol xs="12" md="9">
+                    <CInput type="date" id="date-input" name="date-input" placeholder="date" />
+                  </CCol>
+                </CFormGroup>
               </CForm>
             </CCardBody>
             <CCardFooter className="text-center" >
@@ -106,4 +95,4 @@ const AddManufacturers = () => {
   )
 }
 
-export default AddManufacturers
+export default AddLeavePeriod
