@@ -28,6 +28,7 @@ import {
   CInputGroupText,
   CLabel,
   CSelect,
+  CHeaderNavLink,
   CRow,
   CSwitch
 } from '@coreui/react'
@@ -35,9 +36,7 @@ import CIcon from '@coreui/icons-react'
 import { DocsLink } from 'src/reusable'
 
 const InvoiceDisplay = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+  
   return (
     <>
      
@@ -46,7 +45,9 @@ const InvoiceDisplay = () => {
           <CCard>
             <CCardHeader>
              Invoice Display Settings
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/taxsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
@@ -64,8 +65,6 @@ const InvoiceDisplay = () => {
                       <option value="2">Including Tax</option>
 					   <option value="3">Excluding Tax and Including Tax</option>
 					  
-                     
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
@@ -80,8 +79,6 @@ const InvoiceDisplay = () => {
                       <option value="1">Excluding Tax</option>
                       <option value="2">Including Tax</option>
 					   <option value="3">Excluding Tax and Including Tax</option>
-					  
-                     
 					  
                     </CSelect>
                   </CCol>
@@ -98,8 +95,6 @@ const InvoiceDisplay = () => {
                       <option value="2">Including Tax</option>
 					   <option value="3">Excluding Tax and Including Tax</option>
 					  
-                     
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
@@ -114,9 +109,7 @@ const InvoiceDisplay = () => {
                       <option value="1">Excluding Tax</option>
                       <option value="2">Including Tax</option>
 					   <option value="3">Excluding Tax and Including Tax</option>
-					  
-                     
-					  
+					 
                     </CSelect>
                   </CCol>
                 </CFormGroup>
@@ -146,7 +139,6 @@ const InvoiceDisplay = () => {
                       <option value="1">Yes</option>
                       <option value="2">No</option>
 					  
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
@@ -160,7 +152,6 @@ const InvoiceDisplay = () => {
 					   <option value="0">Select </option>
                       <option value="1">Yes</option>
                       <option value="2">No</option>
-					  
 					  
                     </CSelect>
                   </CCol>
@@ -176,14 +167,10 @@ const InvoiceDisplay = () => {
                       <option value="1">Yes</option>
                       <option value="2">No</option>
 					  
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
 				
-				 
-				 
-                
               </CForm>
             </CCardBody>
             <CCardFooter className="text-center" >
@@ -195,10 +182,6 @@ const InvoiceDisplay = () => {
         </CCol>
        
       </CRow>
-     
-     
-      
-     
      
     </>
   )

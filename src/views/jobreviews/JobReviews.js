@@ -13,14 +13,17 @@ import {
   CCol,
   CProgress,
   CRow,
+  CDropdown,
+  CDropdownToggle,
+  CDropdownMenu,
+  CDropdownItem,
+  CDropdownDivider,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
 
-
-
-const ImagesSettings = () => {
+const JobReviews = () => {
   return (
     <>
       
@@ -29,30 +32,26 @@ const ImagesSettings = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-             Images Settings
-			   <div className="text-right">
-			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
-			 </div>
+             Reviews
             </CCardHeader>
 			 <CCardHeader>
 		  
            <CHeaderNav className="d-md-down-none mr-auto">
        
-        <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/imagessetup">Product Image Sizes</CHeaderNavLink>
-        </CHeaderNavItem>
-		
 		 <CHeaderNavItem className="px-3" >
-          <CHeaderNavLink to="/brandgroupsetup"> Product Group & Brand Images</CHeaderNavLink>
+          <CHeaderNavLink to="/companyreviews">Company Reviews</CHeaderNavLink>
         </CHeaderNavItem>
-      
-		
+		 <CHeaderNavItem className="px-3" >
+          <CHeaderNavLink to="/candidatereviews"> Candidate Reviews</CHeaderNavLink> 
+        </CHeaderNavItem>
        
+		
       </CHeaderNav>
 	  
           </CCardHeader>
+		  
+		  
 		    
-           
           </CCard>
         </CCol>
       </CRow>
@@ -60,4 +59,4 @@ const ImagesSettings = () => {
   )
 }
 
-export default ImagesSettings
+export default JobReviews

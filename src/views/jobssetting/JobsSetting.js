@@ -69,15 +69,7 @@ const JobsSetting = () => {
             </CCardBody>
           </CCard>
         </CCol>
-		<CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
-            <CCardBody>
-              <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/employers">Manage the Registered employers</CHeaderNavLink>
-        </CHeaderNavItem>
-            </CCardBody>
-          </CCard>
-        </CCol>
+		
 		<CCol xs="12" sm="6" md="4">
           <CCard color="success" className="text-white text-center">
             <CCardBody>
@@ -87,11 +79,6 @@ const JobsSetting = () => {
             </CCardBody>
           </CCard>
         </CCol>
-		
-		
-      </CRow>
-     <CRow>
-	  
 		<CCol xs="12" sm="6" md="4">
           <CCard color="success" className="text-white text-center">
             <CCardBody>
@@ -101,6 +88,11 @@ const JobsSetting = () => {
             </CCardBody>
           </CCard>
         </CCol>
+		
+      </CRow>
+     <CRow>
+	  
+		
 		<CCol xs="12" sm="6" md="4">
           <CCard color="success" className="text-white text-center">
             <CCardBody>
@@ -120,10 +112,6 @@ const JobsSetting = () => {
           </CCard>
         </CCol>
 		
-		
-      </CRow>
-	   <CRow>
-	  
 		<CCol xs="12" sm="6" md="4">
           <CCard color="success" className="text-white text-center">
             <CCardBody>
@@ -133,11 +121,15 @@ const JobsSetting = () => {
             </CCardBody>
           </CCard>
         </CCol>
+		
+      </CRow>  
+	   <CRow>
+	  
 		<CCol xs="12" sm="6" md="4">
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/trainsession">Training Sessions</CHeaderNavLink>
+          <CHeaderNavLink to="/trainsession">Training Sessions</CHeaderNavLink>  
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
@@ -146,7 +138,16 @@ const JobsSetting = () => {
           <CCard color="success" className="text-white text-center">
             <CCardBody>
               <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/jobposition">Job Position</CHeaderNavLink>
+          <CHeaderNavLink to="/experiencelevel">Experience Level</CHeaderNavLink>
+        </CHeaderNavItem>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="12" sm="6" md="4">
+          <CCard color="success" className="text-white text-center">
+            <CCardBody>
+              <CHeaderNavItem  className="px-3">
+          <CHeaderNavLink to="/benefits">Benefits</CHeaderNavLink>  
         </CHeaderNavItem>
             </CCardBody>
           </CCard>
@@ -154,6 +155,9 @@ const JobsSetting = () => {
 		
 		
       </CRow>
+	
+	 
+	 
     </>
   )
 }

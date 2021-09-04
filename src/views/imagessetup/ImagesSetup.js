@@ -36,12 +36,9 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const ImagesSetup = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-  
+
 
   return (
     <>
@@ -51,6 +48,9 @@ const ImagesSetup = () => {
           <CCard>
             <CCardHeader>
              Product Images Sizes
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/imagessettings">Back</CHeaderNavLink> 
+			 </div>
              
             </CCardHeader>
             <CCardBody>

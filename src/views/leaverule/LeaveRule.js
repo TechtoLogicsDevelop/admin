@@ -21,8 +21,7 @@ import {
 import CIcon from '@coreui/icons-react'
 
 
-
-const JobPosition = () => {
+const LeaveRule = () => {
   return (
     <>
       
@@ -31,7 +30,7 @@ const JobPosition = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-           Job Position
+            Leave Rule
             </CCardHeader>
 			
 		   
@@ -42,7 +41,7 @@ const JobPosition = () => {
 		  
                 <CHeaderNav className="d-md-down-none mr-auto">
                      <CHeaderNavItem className="px-3" >
-                     <CHeaderNavLink to="/addjobposition">+Add Job Position</CHeaderNavLink>
+                     <CHeaderNavLink to="/addleaverule">+Add Leave Rule</CHeaderNavLink>
                      </CHeaderNavItem>
                 </CHeaderNav>
               </CCardHeader>
@@ -50,41 +49,57 @@ const JobPosition = () => {
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                   <th>Job Code</th>
-                    <th>Job Title</th>
+                  
                     
-                    <th>Details</th>
-                    <th>Department</th>
-                   <th>Country</th>
-				   
+                    <th>Leave Type</th>
+                    <th>Leave Group</th>
+                   <th>	Leave Period</th>
+				     <th>Department</th>
+                   <th>	Job Title</th>
+				    <th>Employement Status</th>
+					  <th>Employee</th>
+                   <th>	Experience</th>
+				    <th>Leaves Per year</th>
 					<th>Status</th>
 					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                   
                     <td>
-                      JC001
-                    </td>
-                    <td>
-                     Software Engineer
+                     
                     </td>
                     <td className="text-center">
-                    More than 375,000 users world-wide rely on our software for their daily business as it makes creating graphical presentations so much easier, faster and more enjoyable.
-                    </td>
                    
-                        <td className="text-center">
-                    Head Office
-                    </td>   
-                      <td className="text-center">
-                    India
                     </td>
-                    				
+                     <td className="text-center">
+                   
+                    </td>
+                        <td className="text-center">
+                    
+                    </td>     
+                <td className="text-center">
+                  
+                    </td>
+					 <td className="text-center">
+                  
+                    </td>
+					 <td className="text-center">
+                  
+                    </td>
+                        <td className="text-center">
+                    
+                    </td>  		
+                    <td>
+                      
+                     
+                    </td>					
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					
 					</td>
 					<td>
-					View / Edit / Delete
+					
 					</td>
                   </tr>
 				    
@@ -101,4 +116,4 @@ const JobPosition = () => {
   )
 }
 
-export default JobPosition
+export default LeaveRule

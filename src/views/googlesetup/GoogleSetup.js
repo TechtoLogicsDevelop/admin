@@ -28,16 +28,14 @@ import {
   CInputGroupText,
   CLabel,
   CSelect,
+  CHeaderNavLink,
   CRow,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const GoogleSetup = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,7 +44,9 @@ const GoogleSetup = () => {
           <CCard>
             <CCardHeader>
               Google Map Setting
-             
+             <div className="text-right">
+			 <CHeaderNavLink   to="/miscellaneous">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

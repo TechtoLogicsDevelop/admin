@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CButton,
   CCard,
@@ -29,10 +29,10 @@ import {
   CLabel,
   CSelect,
   CRow,
+  CHeaderNavLink,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const GoogleMap = () => {
   const [collapsed, setCollapsed] = React.useState(true)
@@ -46,7 +46,9 @@ const GoogleMap = () => {
           <CCard>
             <CCardHeader>
               Google Map Setting
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
