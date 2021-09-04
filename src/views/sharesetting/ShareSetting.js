@@ -5,6 +5,7 @@ import {
   CCardBody,
   CCardHeader,
   CCol,
+  CHeaderNavLink,
   CRow
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
@@ -16,6 +17,9 @@ const ShareSetting = () => {
         <CCard>
           <CCardHeader>
             Share Setting
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
+			 </div>
           </CCardHeader>
           <CCardBody>
           

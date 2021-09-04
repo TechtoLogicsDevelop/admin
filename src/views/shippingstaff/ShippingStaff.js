@@ -1,10 +1,10 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
   CBadge,
-  CButton,
+ 
   CButtonGroup,
   CCard,
   CCardBody,
@@ -12,17 +12,38 @@ import {
   CCardHeader,
   CCol,
   CProgress,
+  CPagination,
   CRow,
    CSwitch,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
+   CButton,
+   CInputCheckbox,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const ShippingStaff = () => {
+	const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
       
@@ -34,11 +55,56 @@ const ShippingStaff = () => {
              Shipping Staff
             </CCardHeader>
 			
-		   
             <CCardBody>
-              
-
-              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+			 <CModal 
+              show={large} 
+              onClose={() => setLarge(!large)}
+              size="lg"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle>Customer Details</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
+			      <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">Registration No</CLabel>
+                    <CInput id="first" placeholder="Registration No" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">Vechicle No</CLabel>
+                    <CInput id="last" placeholder="Vechicle No" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+                   <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="first">RC No</CLabel>
+                    <CInput id="first" placeholder="RC No" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                    <CLabel htmlFor="last">License No</CLabel>
+                    <CInput id="last" placeholder="License No" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+			     
+              </CForm>
+              </CModalBody>
+               <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
+			<br/>
+             <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     <th className="text-center"><CIcon name="cil-people" /></th>
@@ -103,14 +169,21 @@ const ShippingStaff = () => {
 					 <CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
                    	</td>
 					<td>
-					  <CHeaderNavLink to="/assignvehicle">Vechile </CHeaderNavLink>
+					<CButton onClick={() => setLarge(!large)} className="mr-1">
+                        Add Vechicle
+                        </CButton>
+					 
 					</td>
                   </tr>
-				   
-                 
-                </tbody>
+			   </tbody>
               </table>
-
+                 	  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

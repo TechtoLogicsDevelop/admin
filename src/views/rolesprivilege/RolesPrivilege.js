@@ -36,6 +36,8 @@ const RolesPrivilege = () => {
           <CCard>
             <CCardHeader>
              Roles Privilege
+			 <div className="text-right">
+			 <CHeaderNavLink   to="/adminusers">Back</CHeaderNavLink> </div>
             </CCardHeader>
 			
 		   

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -14,15 +14,38 @@ import {
   CProgress,
   CRow,
    CSwitch,
+   CPagination,
+    CModal,
+   CModalHeader,
+   CModalTitle,
+   CModalBody,
+   CForm,
+   CFormGroup,
+   CLabel,
+   CInput,
+   CSelect,
+   CModalFooter,
+   CTextarea,
+   CInputFile,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
 
 
 const Rolegroups = () => {
+	
+	 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -32,19 +55,72 @@ const Rolegroups = () => {
           <CCard>
             <CCardHeader>
              Roles Groups Master
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/adminusers">Back</CHeaderNavLink> </div>
             </CCardHeader>
 			
 		   
             <CCardBody>
+               <div className="text-right">
+               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Add</CButton>
+			   </div>
+			      <CModal 
+              show={success} 
+              onClose={() => setSuccess(!success)}
+              color="success"
+            >
+              <CModalHeader closeButton>
+                <CModalTitle> AddRoleGroup</CModalTitle>
+              </CModalHeader>
+              <CModalBody>
+                         <CRow>
+        <CCol xs="12" md="12">
+          <CCard>
+            <CCardHeader>
+             Add New Role Group
+             
+            </CCardHeader>
+            <CCardBody >
+              <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
               
+                <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CInput id="text-input" name="text-input" placeholder="Role Group Name" />
+                   
+                  </CCol>
+                </CFormGroup>
+              
+                <CFormGroup row>
+                 
+                  <CCol xs="12" md="12">
+                    <CTextarea 
+                      name="textarea-input" 
+                      id="textarea-input" 
+                      rows="4"
+                      placeholder=" Role Group Description..." 
+                    />
+                  </CCol>
+                </CFormGroup>
+              
+              </CForm>
+            </CCardBody>
+            
+          </CCard>
+         
+        </CCol>
+       
+      </CRow>
+              </CModalBody>
+              <CModalFooter>
+                <CButton color="success" onClick={() => setSuccess(!success)}> Save</CButton>{' '}
+				 <CButton color="info" onClick={() => setSuccess(!success)}>Save & Continue</CButton>
+                <CButton color="secondary" onClick={() => setSuccess(!success)}>Cancel</CButton>
+              </CModalFooter>
+            </CModal>
 
                <CCardHeader>
 		  
-                <CHeaderNav className="d-md-down-none mr-auto">
-                     <CHeaderNavItem className="px-3" >
-                     <CHeaderNavLink to="/addrolegroup">+Add New Role Group</CHeaderNavLink>
-                     </CHeaderNavItem>
-                </CHeaderNav>
               </CCardHeader>
 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
@@ -180,7 +256,14 @@ const Rolegroups = () => {
                  
                 </tbody>
               </table>
-                
+              <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

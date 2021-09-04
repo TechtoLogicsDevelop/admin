@@ -29,15 +29,13 @@ import {
   CLabel,
   CSelect,
   CRow,
+  CHeaderNavLink,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const SEOptimize = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,6 +44,9 @@ const SEOptimize = () => {
           <CCard>
             <CCardHeader>
            Search Engine Optimization
+		   <div className="text-right">
+			 <CHeaderNavLink   to="/websitesettings">Back</CHeaderNavLink> 
+			 </div>
            
             </CCardHeader>
             <CCardBody>
