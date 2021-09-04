@@ -138,6 +138,7 @@ const Widgets = () => {
           text="Visitors"
           color="gradient-info"
         >
+		
           <CIcon name="cil-people" height="36"/>
         </CWidgetProgressIcon>
         <CWidgetProgressIcon

@@ -1,24 +1,19 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
   CHeaderNavLink,
-  CBadge,
-  CButton,
-  CButtonGroup,
+  
   CCard,
   CCardBody,
-  CCardFooter,
+  
   CCardHeader,
   CCol,
-  CProgress,
+  
   CRow,
-   CSwitch,
-  CCallout
+   CSwitch
+  
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-
-import MainChartExample from '../charts/MainChartExample.js'
 
 
 

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -25,6 +25,9 @@ const WebsiteSettings = () => {
           <CCard>
             <CCardHeader>
              Website Settings
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			 <CCardHeader>
 		  

@@ -2,38 +2,26 @@ import React, { useState, useEffect } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import {
 	CButton,
-  CBadge,
+  
   CCard,
   CCardBody,
   CCardHeader,
   CCol,
-  CDataTable,
+ CPagination,
+ CHeaderNavLink,
   CRow,
   CSwitch,
-  CPagination
+  
 } from '@coreui/react'
 
-import usersData from './UsersData'
-
-const getBadge = status => {
-  switch (status) {
-    case 'Active': return 'success'
-    case 'Inactive': return 'secondary'
-    case 'Pending': return 'warning'
-    case 'Banned': return 'danger'
-    default: return 'primary'
-  }
-}
 
 const Users = () => {
-  const history = useHistory()
+ 
   const queryPage = useLocation().search.match(/page=([0-9]+)/, '')
-  const currentPage = Number(queryPage && queryPage[1] ? queryPage[1] : 1)
+  
   const [page, setPage] = useState(currentPage)
-
-  const pageChange = newPage => {
-    currentPage !== newPage && history.push(`/users?page=${newPage}`)
-  }
+ const [currentPage, setCurrentPage] = useState(1)
+ 
 
   useEffect(() => {
     currentPage !== page && setPage(currentPage)
@@ -63,13 +51,9 @@ const Users = () => {
 																class="label label-primary ml-10">[0]</span></span></CButton>
 			   <CButton size="sm" className="btn-reddit btn-brand mr-1 mb-1"><span className="mfs-2">Others<span
 																class="label label-primary ml-10">[0]</span></span></CButton>
-               <CButton size="sm" className="btn-vimeo btn-brand mr-1 mb-1"><span className="mfs-2">Craft Communities<span
-																class="label label-primary ml-10">[0]</span></span></CButton>
-             
-              <CButton size="sm" className="btn-github btn-brand mr-1 mb-1"><span className="mfs-2">Creative Communities<span
-																class="label label-primary ml-10">[0]</span></span></CButton>
+              
               <CButton size="sm" className="btn-stack-overflow btn-brand mr-1 mb-1"><span className="mfs-2">Students<span
-																class="label label-primary ml-10">[0]</span></span></CButton>
+																class="label label-primary ml-10">[0]</span></span></CButton><br/>
               <CButton size="sm" className="btn-facebook btn-brand mr-1 mb-1"><span className="mfs-2">Facebook<span
 																class="label label-primary ml-10">[0]</span></span></CButton>
             <CButton size="sm" className="btn-pinterest btn-brand mr-1 mb-1"><span className="mfs-2">Google<span
@@ -86,16 +70,14 @@ const Users = () => {
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                    
-                   <th className="text-center">Username </th>
-					
-					
+                  <th className="text-center">First Name</th>
+				   <th className="text-center">Last Name</th>
 					<th className="text-center">Email</th>
 					<th className="text-center">Phone</th>
-					 <th className="text-center">Category </th>
-					 <th className="text-center">Sub Category </th>
+					 <th className="text-center">Main </th>
+					 <th className="text-center">Primary Role </th>
 					
-					<th className="text-center">Group</th>
+					<th className="text-center">Secondary Role</th>
                      <th className="text-center">Location</th>
 					 
 					    <th className="text-center"> Tag</th>
@@ -106,35 +88,42 @@ const Users = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    	 <td className="text-center">
-                    Rakesh
+                     <td className="text-center">
+                    <CHeaderNavLink   to="/usersprofile">Rakesh</CHeaderNavLink> 
+                    </td>	
+					<td className="text-center">
+                   SR
                     </td>
 					 <td className="text-center">
                   rakesh@gmail.com
                     </td>
 					 <td className="text-center">
                     9537462816
-                    </td>
-                    <td>
+                    </td >
+                    <td className="text-center">
                      Artist / Creaters
                      
                     </td>
-					<td>
+					<td className="text-center">
                     Painter
                      
                     </td>
 					
 					<td className="text-center">
-                   Oil Painter
+                  <ul>
+                  <li> Oil Painter</li>
+				  <li> Pencil Painter</li>
+				  <li> Sketch Painter</li>
+				   </ul>
                     </td>
 				
 					
 					
-					 <td>
+					 <td className="text-center">
                      Bangalore
                      
                     </td>
-                   <td>
+                   <td className="text-center">
                      Gallery
                      
                     </td>
@@ -151,7 +140,14 @@ const Users = () => {
 				  
                 </tbody>
               </table>
-
+             <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
         </CCard>
       </CCol>

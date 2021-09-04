@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -25,6 +25,9 @@ const ZonesList = () => {
           <CCard>
             <CCardHeader>
             ZonesList Setting
+			 <div className="text-right">
+			 <CHeaderNavLink   to="/base/shippmentsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			 <CCardHeader>
 		   <p>

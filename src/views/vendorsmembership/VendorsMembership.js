@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	
   CHeaderNavLink,
@@ -17,11 +17,14 @@ import {
    CInputGroup,
    CLabel,
    CInput,
+   CPagination,
    CInputGroupAppend
  
 } from '@coreui/react'
 
 const VendorsMembership = () => {
+	 const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -33,7 +36,6 @@ const VendorsMembership = () => {
           Manage Vendors Membership Payment
             </CCardHeader>
 			
-		   
             <CCardBody>
                  <CFormGroup>
                       <CLabel htmlFor="appendedInputButton">Search Vendor</CLabel>
@@ -53,7 +55,6 @@ const VendorsMembership = () => {
                     <th>Vendor</th>
                     <th >Amount</th>
                    <th >Upgraded Vender Package</th>
-                  
                   
 					<th >Status</th>
 					<th ></th>
@@ -109,7 +110,13 @@ const VendorsMembership = () => {
 				  
                 </tbody>
               </table>
-
+                  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

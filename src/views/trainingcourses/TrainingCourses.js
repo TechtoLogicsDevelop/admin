@@ -10,13 +10,16 @@ import {
   CCardHeader,
   CCol,
   
-  CRow,
-   CSwitch
+  CRow
    
+   
+   
+  
 } from '@coreui/react'
 
 
-const TrainingSession = () => {
+
+const TrainingCourses = () => {
   return (
     <>
       
@@ -25,7 +28,7 @@ const TrainingSession = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-            Training Session
+             Training Courses
             </CCardHeader>
 			
 		   
@@ -36,7 +39,7 @@ const TrainingSession = () => {
 		  
                 <CHeaderNav className="d-md-down-none mr-auto">
                      <CHeaderNavItem className="px-3" >
-                     <CHeaderNavLink to="/addsession">+Add New Session</CHeaderNavLink>
+                     <CHeaderNavLink to="/addtrainingcourse">+Add New Training Course</CHeaderNavLink>
                      </CHeaderNavItem>
                 </CHeaderNav>
               </CCardHeader>
@@ -47,12 +50,12 @@ const TrainingSession = () => {
                    <th>Name</th>
                     <th>Course</th>
                     
-                    <th>Shedule Date & Time</th>
+                    <th>Planned Time</th>
                     <th>Status</th>
-                   <th>	Delivery Method</th>
-				    <th>Delivery Location</th>
+                   <th>	Modeof transport</th>
+				    <th>Training Location</th>
 					 <th>Attendence Type</th>
-					  <th>Training Certification Required</th>
+					  <th>Training Certificate Requirements</th>
 					<th>Status</th>
 					  <th>Actions</th>
                   </tr>
@@ -60,36 +63,36 @@ const TrainingSession = () => {
                 <tbody>
                   <tr>
                     <td>
-                      <div>Admin, Secretarial</div>
+                     
                      
                     </td>
                     <td>
-                      <div>Course and Diploma in Media and Graphic Design</div>    
+                       
                      
                     </td>
                     <td className="text-center">
-                     09/01/20 19:00
+                    
                     </td>
                      <td className="text-center">
-                     09/08/21 13:55
+                    
                     </td>
                         <td className="text-center">
-                     ArtmediaWork
+                     
                     </td>   
                       <td className="text-center">
-                     Artcurate
+                     
                     </td>
                      <td className="text-center">
-                     Hemanth
+                    
                     </td>
                      <td className="text-center">
-                    Paid
+                    
                     </td>					
 					<td>
-					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					
 					</td>
 					<td>
-					View / Edit / Delete
+					
 					</td>
                   </tr>
 				    
@@ -106,4 +109,4 @@ const TrainingSession = () => {
   )
 }
 
-export default TrainingSession
+export default TrainingCourses
