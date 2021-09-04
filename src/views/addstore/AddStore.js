@@ -86,7 +86,6 @@ const AddStore = () => {
                       <option value="0">Bangalore</option>
                       <option value="1">Hassan</option>
                      
-					  
                     </CSelect>
                   </CCol>
                 </CFormGroup>
