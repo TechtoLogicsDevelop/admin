@@ -14,3 +14,52 @@ button {
     margin-top: 0 !important;
   }
 }
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #2eb85c;
+    border-color: #2eb85c;
+}
+
+.c-sidebar {
+    color: #fff;
+    background: #39f;
+}
+a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #39f;
+}
+.c-icon {
+    /* display: inline-block; */
+    /* color: inherit; */
+    /* text-align: center; */
+    /* fill: currentColor; */
+    display: none;
+}
+.c-icon {
+    display: inline-block;
+    color: inherit;
+    text-align: center;
+    fill: currentColor;
+    display: none;
+}
+
+
+.list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    background-color: #2eb85c;
+    border-color: #2eb85c;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    line-height: 1.25;
+    border: 1px solid #2eb85c;
+    color: rgb(46, 184, 92);
+    background-color: rgb(255, 255, 255);
+}
