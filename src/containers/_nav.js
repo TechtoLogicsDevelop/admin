@@ -12,7 +12,16 @@ const _nav =  [
       
     }
   },
- 
+ {
+    _tag: 'CSidebarNavItem',
+    name: 'Pre-launch Users',
+   to: '/prelaunchusers',
+    icon: <CIcon name="cil-speedometer" customClasses="c-sidebar-nav-icon"/>,
+    badge: {
+      color: 'info',
+      
+    }
+  },
   {
     _tag: 'CSidebarNavItem',
     name: 'Users Master',
@@ -140,9 +149,25 @@ const _nav =  [
     _children: [
 	{
         _tag: 'CSidebarNavItem',
+        name: 'Price Types',
+        to: '/base/pricetypes',
+      },
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Showcase Types',
+        to: '/base/showcasetypes',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Showcase Category',
+        to: '/base/showcasecategory',
+      },
+	{
+        _tag: 'CSidebarNavItem',
         name: 'Main',
         to: '/base/main',
       },
+	
       {
         _tag: 'CSidebarNavItem',
         name: 'Category',
@@ -274,6 +299,11 @@ const _nav =  [
     _children: [
 	{
         _tag: 'CSidebarNavItem',
+        name: 'Sales Payment Options',  
+        to: '/salespayment',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
         name: 'Sales Quatation',  
         to: '/base/salesquatation',
       },
@@ -304,6 +334,40 @@ const _nav =  [
         to: '/base/salesreport',
       },
      
+    ],
+  },
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Bid/ Auctions ',
+    route: '/base',
+    icon: 'cil-puzzle',
+    _children: [
+	
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Auction Products',
+        to: '/base/auctionproducts',
+      },
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Auction Activities',
+        to: '/auctionactivities',
+      },
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Bid/Auction History',  
+        to: '/auctionshistory',
+      },
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Bid/Auction Wallet Credit',
+        to: '/base/auctioncredits',
+      },
+     {
+        _tag: 'CSidebarNavItem',
+        name: 'Bid/Auction Wallet Debit',
+        to: '/base/auctiondebits',
+      },
     ],
   },
    {
@@ -369,11 +433,27 @@ const _nav =  [
     ],
   },
    {
-    _tag: 'CSidebarNavDropdown',
+    _tag: 'CSidebarNavDropdown',  
     name: 'Events Management',
     route: '/base',
     icon: 'cil-puzzle',
     _children: [
+	
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Contribution',
+        to: '/base/contribution',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Fund usage Types',
+        to: '/base/fundusagetypes',
+      },
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Events Type',
+        to: '/base/eventstypes',
+      },
 	{
         _tag: 'CSidebarNavItem',
         name: 'Events',
@@ -582,6 +662,62 @@ const _nav =  [
       
     ],
   },
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'LMS',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'LMS Setting',
+        to: '/zones',
+      },
+	 {
+        _tag: 'CSidebarNavItem',
+        name: 'LMS Courses',
+        to: '/managecourse',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'LMS Teachers/ Trainer',
+        to: '/managestaff',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'LMS Students',
+        to: '/managestudents',
+      },
+	    {
+        _tag: 'CSidebarNavItem',
+        name: 'LMS Batches',
+        to: '/managebatches',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Time Table',
+        to: '/timetableview',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Questions & Tests',
+        to: '/questionsandtests',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Examinations',
+        to: '/examinations',
+      },
+      {
+        _tag: 'CSidebarNavItem',
+        name: 'Study Materials',
+        to: '/managenotes',
+      },
+	 
+	  
+	  
+    ],
+  },
    {
     _tag: 'CSidebarNavDropdown',  
     name: 'Opportunities',
@@ -590,35 +726,59 @@ const _nav =  [
     _children: [
 	{
         _tag: 'CSidebarNavItem',
-        name: 'Manage',
+        name: 'Manage Setting',
         to: '/jobssetting',
       },
 	 {
         _tag: 'CSidebarNavItem',  
-        name: 'Jobs Sub Category',
-        to: '/zones',
+        name: 'Manage Employers ',
+        to: '/employers',
       },
 	  {
         _tag: 'CSidebarNavItem',
-        name: 'Jobs Post',
-        to: '/zones',
+        name: 'Job Position',
+        to: '/jobposition',
       },
        {
         _tag: 'CSidebarNavItem',
-        name: 'Jobseeker',
-        to: '/zones',
+        name: 'Jobseeker / Candidates',
+        to: '/candidates',
       },
 	   {
         _tag: 'CSidebarNavItem',
-        name: 'Employer',
-        to: '/zones',
+        name: 'Leave Setting',
+        to: '/leavesetting',
       },
 	   {
         _tag: 'CSidebarNavItem',
-        name: 'Guest user',
-        to: '/zones',
+        name: 'Leave Managaement',
+        to: '/leavesmanage',
       },
-      
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Payroll',
+        to: '/payroll',
+      },
+       {
+        _tag: 'CSidebarNavItem',
+        name: 'Training Setting',
+        to: '/trainingsetup',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Performance',
+        to: '/performance',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: 'Payment Setting',  
+        to: '/jobspayment',
+      },
+	   {
+        _tag: 'CSidebarNavItem',
+        name: ' Job Reviews',  
+        to: '/jobreviews',
+      },
     ],
   },
    {
@@ -631,6 +791,22 @@ const _nav =  [
         _tag: 'CSidebarNavItem',
         name: 'Files Setting',
         to: '/filesmaster',
+      },
+	 
+      
+    ],
+	
+  },
+  {
+    _tag: 'CSidebarNavDropdown',
+    name: 'Newsletter',
+    route: '',
+    icon: 'cil-puzzle',
+    _children: [
+	{
+        _tag: 'CSidebarNavItem',
+        name: 'Newsletter Setting',
+        to: '/newslettersetup',
       },
 	 
       
@@ -678,7 +854,16 @@ const _nav =  [
         name: 'Customer Enquiries',
         to: '/enquiries',
       },
-	 
+	 {
+        _tag: 'CSidebarNavItem',
+        name: 'Employers Enquiries',
+        to: '/employersenquiry',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Candidates Enquiries',
+        to: '/candidateenquiry',
+      },
       
     ],
   },
@@ -734,9 +919,19 @@ const _nav =  [
     icon: 'cil-puzzle',
     _children: [
 	{
-        _tag: 'CSidebarNavItem',
+        _tag: 'CSidebarNavItem',  
         name: 'Payment Mode',
         to: '/payments',
+      },
+	  {
+        _tag: 'CSidebarNavItem',
+        name: 'Stored Credit Cards',
+        to: '/storedcreditcards',
+      },
+	    {
+        _tag: 'CSidebarNavItem',
+        name: 'Payment Providers',
+        to: '/paymentproviders',
       },
 	  {
         _tag: 'CSidebarNavItem',
@@ -899,24 +1094,15 @@ const _nav =  [
   
   {
     _tag: 'CSidebarNavTitle',
-    _children: ['Ecommerce']
+    _children: ['Addtional']
   },
   {
     _tag: 'CSidebarNavDropdown',
-    name: 'Contacts Master',
+    name: 'Design Samples',
     route: '/base',
     icon: 'cil-puzzle',
     _children: [
-      {
-        _tag: 'CSidebarNavItem',
-        name: 'Vendors',
-        to: '/base/vendors',
-      },
-	  {
-        _tag: 'CSidebarNavItem',
-        name: 'Customers',
-        to: '/base/customers',
-      },
+     
       {
         _tag: 'CSidebarNavItem',
         name: 'Cards',
