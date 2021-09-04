@@ -14,7 +14,8 @@ import {
   CProgress,
   CRow,
    CSwitch,
-         CModal,
+    
+     CModal,
    CModalHeader,
    CModalTitle,
    CModalBody,
@@ -37,8 +38,9 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-const BackupRestore = () => {
-		 const [modal, setModal] = useState(true)
+
+const AuctionsHistory = () => {
+				const [modal, setModal] = useState(true)
   const [large, setLarge] = useState(false)
   const [small, setSmall] = useState(false)
   const [primary, setPrimary] = useState(false)
@@ -57,92 +59,68 @@ const BackupRestore = () => {
         <CCol>
           <CCard>
             <CCardHeader>
-             Backup-Restore Master
-			 <div className="text-right">
-			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
-			 </div>
-			 
+            Auctions History
+			
             </CCardHeader>
 			
 		   
             <CCardBody>
-               <div className="text-right">
-               <CButton   color="success" onClick={() => setSuccess(!success)} className="mr-1">+ Take Backup</CButton>
-			   </div>
-			     
-
+              
                <CCardHeader>
-		  
+		   
               </CCardHeader>
 
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                     
-                   
-                    <th>Id</th>
-                    <th className="text-center">Backup</th>
-					<th className="text-center">Path</th>
-                    <th className="text-center">Size</th>
-                   
-					<th>Backup Date</th>
+                    <th className="text-center">Bidder Id</th>
+                    <th className="text-center">Bidder Name</th>
+                    <th className="text-center">Email</th>
+					 <th className="text-center">Phone</th>
+					<th className="text-center">Item</th>
+                    <th className="text-center">Bid Amount</th>
+					<th className="text-center">Date</th>
+					<th>Status</th>
 					
-					  <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    
                     <td>
-                      <div>1</div>
+                     B-2054
+                    </td>
+                    <td>
+                     Sandeep
                      
                     </td>
 					 <td className="text-center">
-                    backup20210413
+                    sandeep@gmail.com
                     </td>
                     <td className="text-center">
-                      users/backup/
+                    9632587410
                     </td>
-                    <td className="text-center">
-                      2.14 GB
-                    </td>
-                     
-					<td>
-					28-04-2021
-					</td>
-					
-					<td>
-					View / Edit / Delete
-					</td>
-                  </tr>
-				    <tr>
-                    
-                    <td>
-                      <div>2</div>
-                     
+                       <td className="text-center">
+                 Abstract Art on canvas 
                     </td>
 					 <td className="text-center">
-                    backup20210428
-                    </td>
-                    <td className="text-center">
-                      users/backup/
-                    </td>
-                    <td className="text-center">
-                      2.30 GB
-                    </td>
+                    $1,400.00
                      
+                    </td>
 					<td>
-					28-04-2021
+					11/08/2021
 					</td>
 					
 					<td>
-					View / Edit / Delete
+					Won
 					</td>
                   </tr>
+				  
                 </tbody>
               </table>
-                  <br/>
-			   <CPagination
+				     <br/>
+				 
+          <CPagination
             align="end"
             activePage={currentPage}
             pages={10}
@@ -156,4 +134,4 @@ const BackupRestore = () => {
   )
 }
 
-export default BackupRestore
+export default AuctionsHistory

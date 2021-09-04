@@ -36,11 +36,8 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const AdvancedStoreSetup = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
   
 
   return (
@@ -51,7 +48,9 @@ const AdvancedStoreSetup = () => {
           <CCard>
             <CCardHeader>
               Advanced Store Setup
-             
+             <div className="text-right">
+			 <CHeaderNavLink   to="/miscellaneous">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

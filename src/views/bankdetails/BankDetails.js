@@ -26,13 +26,14 @@ import {
   CInputGroupPrepend,
   CDropdown,
   CInputGroupText,
+  CHeaderNavLink,
   CLabel,
   CSelect,
   CRow,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
+
 
 const BankDetails = () => {
   const [collapsed, setCollapsed] = React.useState(true)
@@ -46,122 +47,98 @@ const BankDetails = () => {
           <CCard>
             <CCardHeader>
               Bank Details
-              <small> Setting</small>
-			  <DocsLink name="-Input"/>
+              <div className="text-right">
+			 <CHeaderNavLink   to="/systemconfig">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">
-               
-                <CFormGroup row>
-                  <CCol md="3">
+                <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
                     <CLabel htmlFor="text-input">Bank Code</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Bank Code" />
-                    
-                  </CCol>
-                </CFormGroup>
-				 <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">Bank Group Code</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
+                   <CInput id="text-input" name="text-input" placeholder="Bank Code" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                     <CLabel htmlFor="text-input">Bank Group Code</CLabel>
                     <CInput id="text-input" name="text-input" placeholder="Bank Group Code" />
-                    
-                  </CCol>
-                </CFormGroup>
-				
-                <CFormGroup row>
-                  <CCol md="3">
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+               
+				 <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
                     <CLabel htmlFor="text-input">Bank Name</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Bank Name" />
-                    
-                  </CCol>
-                </CFormGroup>
-                <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">Short Name</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
+                   <CInput id="text-input" name="text-input" placeholder="Bank Name" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                      <CLabel htmlFor="text-input">Short Name</CLabel>
                     <CInput id="text-input" name="text-input" placeholder="Short Name" />
-                    
-                  </CCol>
-                </CFormGroup>
-				 <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">Branch Name</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Branch Name" />
-                    
-                  </CCol>
-                </CFormGroup>
-               <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">IFSC Code</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="IFSC Code" />
-                    
-                  </CCol>
-                </CFormGroup>
-                <CFormGroup row>
-                  <CCol md="3">
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+				 
+				 <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
+                   <CLabel htmlFor="text-input">Branch Name</CLabel>
+                   <CInput id="text-input" name="text-input" placeholder="Branch Name" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                      <CLabel htmlFor="text-input">IFSC Code</CLabel>
+                   <CInput id="text-input" name="text-input" placeholder="IFSC Code" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+				<CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
                     <CLabel htmlFor="text-input">Local Currency</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Local Currency" />
-                    
-                  </CCol>
-                </CFormGroup>
-				 <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">Calculation Currency</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Calculation Currency" />
-                    
-                  </CCol>
-                </CFormGroup>
-				 <CFormGroup row>
-                  <CCol md="3">
+                   <CInput id="text-input" name="text-input" placeholder="Local Currency" />
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                      <CLabel htmlFor="text-input">Calculation Currency</CLabel>
+                   <CInput id="text-input" name="text-input" placeholder="Calculation Currency" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+               <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
                     <CLabel htmlFor="select">Account Type</CLabel>
-                  </CCol>
-                  <CCol xs="9" md="9">
-                    <CSelect custom name="select" id="select">
+                   <CSelect custom name="select" id="select">
                       <option value="0">Saving Account</option>
                       <option value="1">Current Account</option>
                      
-					  
                     </CSelect>
-                  </CCol>
-                </CFormGroup>
-				  <CFormGroup row>
-                  <CCol md="3">
-                    <CLabel htmlFor="text-input">Account Name</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Account Name" />
-                    
-                  </CCol>
-                </CFormGroup>
-              
-                  <CFormGroup row>
-                  <CCol md="3">
+                  </CFormGroup>
+                </CCol>
+                <CCol xs="6">
+                  <CFormGroup>
+                      <CLabel htmlFor="text-input">Account Name</CLabel>
+                   <CInput id="text-input" name="text-input" placeholder="Account Name" />
+                  </CFormGroup>
+                </CCol>
+              </CFormGroup>
+				    <CFormGroup row className="my-0">
+                <CCol xs="6">
+                  <CFormGroup>
                     <CLabel htmlFor="text-input">Account Number</CLabel>
-                  </CCol>
-                  <CCol xs="12" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="Account Number" />
-                    
-                  </CCol>
-                </CFormGroup>
+                   <CInput id="text-input" name="text-input" placeholder="Account Number" />
+                  </CFormGroup>
+                </CCol>
               
-               
-              
-              
-                
+              </CFormGroup>
+                 
               </CForm>
 			   <CCardHeader>
               
