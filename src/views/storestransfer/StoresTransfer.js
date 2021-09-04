@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CButton,
   CCard,
@@ -26,18 +26,28 @@ import {
   CInputGroupPrepend,
   CDropdown,
   CInputGroupText,
+  CHeaderNavLink,
+  CPagination,
   CLabel,
   CSelect,
   CRow,
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const StoresTransfer = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+		 const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+	 const [currentPage, setCurrentPage] = useState(2)
+ 
+ 
   return (
     <>
      
@@ -45,7 +55,7 @@ const StoresTransfer = () => {
         <CCol xs="12" md="12">
           <CCard>
             <CCardHeader>
-            StoresTransfer
+            Stores to Stores Transfer
              
             </CCardHeader>
 			 
@@ -113,6 +123,80 @@ const StoresTransfer = () => {
 			 <CButton type="submit" size="sm" color="info"><CIcon name="cil-scrubber" /> Transfer </CButton>&nbsp;&nbsp;
               
             </CCardFooter>
+			 <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+                <thead className="thead-light">
+                  <tr>
+                  
+				   <th>From Store</th>
+				    <th>To Store</th>
+				    <th> From Bin</th>
+					<th> To Bin</th>
+					 <th>SKU</th>
+                    <th>Product</th>
+                    <th >Unit</th>
+                   
+                   <th >Quantity</th>
+                   <th >Date</th>
+					<th >Status</th>
+					  <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+				   <td>
+                     <CButton onClick={() => setLarge(!large)} className="mr-1">
+                      Artcurate
+                     </CButton>
+                     
+                    </td>
+                    <td>
+                     <CButton onClick={() => setLarge(!large)} className="mr-1">
+                      Artwork
+                     </CButton>
+                     
+                    </td>
+					 <td>
+                    Bin-01
+                    </td>
+					 <td>
+                    Bin-02
+                    </td>
+					 <td>
+                      1001
+                    </td>
+					 <td>
+                     Digital Prints
+                     
+                    </td>
+                    <td>
+                     Pcs
+                    </td>
+					 <td >
+                     200
+                    </td >
+					  <td>
+					    14/07/2021
+					
+					</td>
+                                    
+					<td>
+					<CSwitch className={'mx-1'} variant={'3d'} color={'primary'} defaultChecked onChange={(e)=>console.log(e.target.checked)}/>
+					</td>
+					<td>
+					View / Edit / Delete
+					</td>
+                  </tr>
+				    
+                </tbody>
+              </table>
+                  <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
               </CFormGroup>
                
               </CForm>

@@ -6,38 +6,19 @@ import {
   CCardFooter,
   CCardHeader,
   CCol,
-  CCollapse,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CFade,
+ 
   CForm,
   CFormGroup,
-  CFormText,
-  CValidFeedback,
-  CInvalidFeedback,
-  CTextarea,
-  CInput,
-  CInputFile,
-  CInputCheckbox,
-  CInputRadio,
-  CInputGroup,
-  CInputGroupAppend,
-  CInputGroupPrepend,
-  CDropdown,
-  CInputGroupText,
+ CHeaderNavLink,
   CLabel,
   CSelect,
-  CRow,
-  CSwitch
+  CRow
+  
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const TaxCalculate = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,7 +27,9 @@ const TaxCalculate = () => {
           <CCard>
             <CCardHeader>
              Set the Tax Calculate
-             
+               <div className="text-right">
+			 <CHeaderNavLink   to="/taxsetting">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

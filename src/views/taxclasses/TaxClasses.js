@@ -6,38 +6,19 @@ import {
   CCardFooter,
   CCardHeader,
   CCol,
-  CCollapse,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CFade,
+ 
   CForm,
   CFormGroup,
-  CFormText,
-  CValidFeedback,
-  CInvalidFeedback,
-  CTextarea,
-  CInput,
-  CInputFile,
-  CInputCheckbox,
-  CInputRadio,
-  CInputGroup,
-  CInputGroupAppend,
-  CInputGroupPrepend,
-  CDropdown,
-  CInputGroupText,
+  CHeaderNavLink,
   CLabel,
   CSelect,
-  CRow,
-  CSwitch
+  CRow
+  
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const TaxClasses = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-
+ 
   return (
     <>
      
@@ -46,6 +27,9 @@ const TaxClasses = () => {
           <CCard>
             <CCardHeader>
              Set the Tax Classes 
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/taxsetting">Back</CHeaderNavLink> 
+			 </div>
              
             </CCardHeader>
             <CCardBody>

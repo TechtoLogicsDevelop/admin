@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   CBadge,
    CHeaderNav,
@@ -10,37 +10,29 @@ import {
   CCol,
   CDataTable,
   CSwitch,
+   CPagination,
   CRow
 } from '@coreui/react'
 import { DocsLink } from 'src/reusable'
 
-
-
 const SponsorsProposal = () => {
+	 const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
-     
-      
-
-    
-	   <CRow>
+     <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
            Sponsors Proposal List
+		    <div className="text-right">
+			 <CHeaderNavLink   to="base/sponsors">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
-		   
             <CCardBody>
-            
-                    
-              
-
               <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
-                    
-                   
                     <th>Id</th>
                     <th className="text-center">Sponsors Name </th>
 					<th className="text-center">Organization</th>
@@ -61,10 +53,7 @@ const SponsorsProposal = () => {
                      sp-01
                      
                     </td>
-                  
-					
-					
-					<td className="text-center">
+                 	<td className="text-center">
                    Handicraft
                     </td>
 					 <td className="text-center">
@@ -97,7 +86,13 @@ const SponsorsProposal = () => {
 				  
                 </tbody>
               </table>
-
+               	  <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

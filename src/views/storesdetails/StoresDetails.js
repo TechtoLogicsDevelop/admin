@@ -1,21 +1,15 @@
 import React from 'react'
 import {
-  CButton,
+  
   CCard,
   CCardBody,
-  CCardFooter,
+ 
   CCardHeader,
   CCol,
-  CCollapse,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CFade,
+ 
   CForm,
   CFormGroup,
-  CFormText,
-  CValidFeedback,
-  CInvalidFeedback,
+  
   CTextarea,
   CInput,
   CInputFile,

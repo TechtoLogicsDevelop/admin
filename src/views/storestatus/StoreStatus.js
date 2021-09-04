@@ -1,28 +1,17 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import {
-	CHeaderNav,
-  CHeaderNavItem,
-  CHeaderNavLink,
-  CBadge,
-  CButton,
-  CButtonGroup,
+	
   CCard,
   CCardBody,
-  CCardFooter,
+  
   CCardHeader,
   CCol,
-  CProgress,
+  CHeaderNavLink,
   CRow,
    CSwitch,
-   CFormGroup,
-   CInputCheckbox,
-   CLabel,
-   CSelect,
-  CCallout
+   CFormGroup
+   
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-
-import MainChartExample from '../charts/MainChartExample.js'
 
 
 
@@ -34,8 +23,11 @@ const StoreStatus = () => {
       <CRow>
         <CCol>
           <CCard>
-            <CCardHeader className="text-center">
+            <CCardHeader >
              StoreStatus
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/websitesettings">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
 		   
@@ -48,7 +40,7 @@ const StoreStatus = () => {
                 <thead className="thead-light">
                   <tr>
                   
-                    <th className="text-center">Open</th>
+                    <th className="text-center">Store Opening Status</th>
                     
                     <th className="text-center">Down for Maintainance</th>
                    

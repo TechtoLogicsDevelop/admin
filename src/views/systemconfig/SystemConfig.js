@@ -1,79 +1,221 @@
 import React from 'react'
 import {
-  CBadge,
-  CHeaderNav,
+  
   CHeaderNavItem,
   CHeaderNavLink,
   CCard,
   CCardBody,
-  CCardFooter,
-  CCardHeader,
+  
+  
   CCol,
-  CRow,
-  CCollapse,
-  CFade,
-  CSwitch,
-  CLink
+  CRow
+  
+  
 } from  '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 
 const SystemConfig = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showCard, setShowCard] = React.useState(true)
-
+ 
   return (
     <>
      
-     
-        <CRow>
-        <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+       <CRow>
+		
+        <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
           <CHeaderNavLink to="/companyprofile">Company Profile</CHeaderNavLink>
-        </CHeaderNavItem>
+        
             </CCardBody>
           </CCard>
         </CCol>
-		 <CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+		
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
+              
+          <CHeaderNavLink to="/sitedisplay">Site Display</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
           <CHeaderNavLink to="/bankdetails">Bank Details Setting</CHeaderNavLink>
-        </CHeaderNavItem>
-            </CCardBody>
-          </CCard>
-        </CCol>
-		<CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
-            <CCardBody>
-              <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/fiscalyears">Fiscal Years</CHeaderNavLink>   
-        </CHeaderNavItem>
+       
             </CCardBody>
           </CCard>
         </CCol>
 		
       </CRow>
-     
+        <CRow>
+		
+        <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+              
+          <CHeaderNavLink to="/listingspreferences">Listings Preferences</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
+          <CHeaderNavLink to="/listingsauction">Listings Auction</CHeaderNavLink>
+       
+            </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+              
+          <CHeaderNavLink to="/currency">Currency Setting</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
+		
+		
+      </CRow>
       <CRow>
-	  
-		<CCol xs="12" sm="6" md="4">
-          <CCard color="success" className="text-white text-center">
+		
+        <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
             <CCardBody>
-              <CHeaderNavItem  className="px-3">
-          <CHeaderNavLink to="/socialmedia">Social Medias</CHeaderNavLink>
-        </CHeaderNavItem>
+              
+          <CHeaderNavLink to="/listingsfixedprice">Listings Fixed Price</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
+          <CHeaderNavLink to="/listingsclassified">Listings Classified</CHeaderNavLink>
+       
+            </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+              
+          <CHeaderNavLink to="/currency">Currency Setting</CHeaderNavLink>
+        
             </CCardBody>
           </CCard>
         </CCol>
 		
 		
+      </CRow>
+      <CRow>
+	   <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
+          <CHeaderNavLink to="/languages">Language Setting</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
+	  <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
+          <CHeaderNavLink to="/fiscalyears">Fiscal Years</CHeaderNavLink>   
+      
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+             
+          <CHeaderNavLink to="/socialmedia">Social Medias</CHeaderNavLink>
+        
+            </CCardBody>
+          </CCard>
+        </CCol>
 		
       </CRow>
-     
+      <CRow>
+	   <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+          <CHeaderNavLink to="/datetime">Date & Time Setting</CHeaderNavLink>
+		  </CCardBody>
+          </CCard>
+        </CCol>
+	  <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+            <CHeaderNavLink to="/locale">Locale Setting</CHeaderNavLink>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+           <CHeaderNavLink to="/googlemap">Google map Setting</CHeaderNavLink>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		
+      </CRow>
+	    <CRow>
+	   <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+          <CHeaderNavLink to="/release">Release Setting</CHeaderNavLink>
+		  </CCardBody>
+          </CCard>
+        </CCol>
+	  <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+            <CHeaderNavLink to="/backuprestore">Restore & Backup Setting</CHeaderNavLink>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		<CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+           <CHeaderNavLink to="/privacypolicy">Privacy, Terms & Conditions Setting</CHeaderNavLink>
+            </CCardBody>
+          </CCard>
+        </CCol>
+		
+      </CRow>
+	   <CRow>
+	   <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+         <CHeaderNavLink to="/maintenance">Maintenance</CHeaderNavLink>
+		  </CCardBody>
+          </CCard>
+        </CCol>
+	      <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+         <CHeaderNavLink to="/preferences">Preferences</CHeaderNavLink>
+		  </CCardBody>
+          </CCard>
+        </CCol>
+		 <CCol xs="6" sm="4" md="4">
+          <CCard color="warning" className="text-white text-center">
+            <CCardBody>
+         <CHeaderNavLink to="/emailtemplates">Email Templates</CHeaderNavLink>
+		  </CCardBody>
+          </CCard>
+        </CCol>
+      </CRow>
     </>
   )
 }

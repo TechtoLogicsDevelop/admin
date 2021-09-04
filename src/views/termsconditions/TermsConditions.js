@@ -6,42 +6,25 @@ import {
   CCardFooter,
   CCardHeader,
   CCol,
-  CCollapse,
-  CDropdownItem,
-  CDropdownMenu,
-  CDropdownToggle,
-  CFade,
+  
   CForm,
   CFormGroup,
-  CFormText,
-  CValidFeedback,
-  CInvalidFeedback,
-  CTextarea,
+  
   CInput,
   CInputFile,
   CInputCheckbox,
-  CInputRadio,
-  CInputGroup,
-  CInputGroupAppend,
-  CInputGroupPrepend,
-  CDropdown,
-  CInputGroupText,
+ 
   CLabel,
   CSelect,
   CRow,
-  CPopover,
-  CHeaderNav,
-  CHeaderNavItem,
-  CHeaderNavLink,
-  CSwitch
+ 
+  CHeaderNavLink
+  
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const TermsConditions = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-  
+ 
 
   return (
     <>
