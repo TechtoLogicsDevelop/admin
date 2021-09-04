@@ -36,12 +36,9 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const DocSetup = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-  
+ 
 
   return (
     <>
@@ -51,7 +48,9 @@ const DocSetup = () => {
           <CCard>
             <CCardHeader>
               Purchase & Sales Doc Settings
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/miscellaneous">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

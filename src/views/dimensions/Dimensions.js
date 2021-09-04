@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -14,15 +14,16 @@ import {
   CProgress,
   CRow,
    CSwitch,
+     CPagination,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
 
 
 const Dimensions = () => {
+	 const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -32,6 +33,9 @@ const Dimensions = () => {
           <CCard>
             <CCardHeader>
            Product Dimensions
+		    <div className="text-right">
+			 <CHeaderNavLink   to="/base/productvariants">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
 		   
@@ -106,7 +110,14 @@ const Dimensions = () => {
 				  
                 </tbody>
               </table>
-
+                    <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

@@ -36,13 +36,9 @@ import {
   CSwitch
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { DocsLink } from 'src/reusable'
 
 const DateandTime = () => {
-  const [collapsed, setCollapsed] = React.useState(true)
-  const [showElements, setShowElements] = React.useState(true)
-  
-
+ 
   return (
     <>
       
@@ -51,7 +47,9 @@ const DateandTime = () => {
           <CCard>
             <CCardHeader>
               Date and Time Setting
-             
+              <div className="text-right">
+			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
             <CCardBody>
               <CForm action="" method="post" encType="multipart/form-data" className="form-horizontal">

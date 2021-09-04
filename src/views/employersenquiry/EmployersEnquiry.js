@@ -19,19 +19,21 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-const Enquiries = () => {
+const EmployersEnquiry = () => {
 	 const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
        <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-             Enquiries
+             Employers Enquiries
             </CCardHeader>
 			
             <CCardBody>
-             <table className="table table-hover table-outline mb-0 d-none d-sm-table">
+              
+              <table className="table table-hover table-outline mb-0 d-none d-sm-table">
                 <thead className="thead-light">
                   <tr>
                    <th>Id</th>
@@ -64,16 +66,15 @@ const Enquiries = () => {
                     <td >
                       Text Message
                     </td>
-                                      
-					
+                         
 					<td>
 					View / Delete
 					</td>
                   </tr>
-				
+				   
                 </tbody>
               </table>
-                  <br/>
+             <br/>
           <CPagination
             align="end"
             activePage={currentPage}
@@ -88,4 +89,4 @@ const Enquiries = () => {
   )
 }
 
-export default Enquiries
+export default EmployersEnquiry

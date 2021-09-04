@@ -17,9 +17,6 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const DisplaySettings = () => {
   return (
@@ -31,6 +28,9 @@ const DisplaySettings = () => {
           <CCard>
             <CCardHeader>
              Display Settings
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/storesettings">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			 <CCardHeader>
 		  

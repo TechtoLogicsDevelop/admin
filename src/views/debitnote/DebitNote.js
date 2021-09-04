@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -19,15 +19,24 @@ import {
    CLabel,
    CInput,
    CInputGroupAppend,
+   CPagination,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const DebitNote = () => {
+		const [modal, setModal] = useState(true)
+  const [large, setLarge] = useState(false)
+  const [small, setSmall] = useState(false)
+  const [primary, setPrimary] = useState(false)
+  const [success, setSuccess] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const [danger, setDanger] = useState(false)
+  const [info, setInfo] = useState(false)
+  
+   const [currentPage, setCurrentPage] = useState(2)
+
   return (
     <>
       
@@ -102,7 +111,14 @@ const DebitNote = () => {
 				  
                 </tbody>
               </table>
-
+              	     <br/>
+				 
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>

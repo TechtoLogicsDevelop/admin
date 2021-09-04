@@ -84,10 +84,6 @@ const EditBinQuantity = () => {
                   </CCol>
                 </CFormGroup>
 				 
-				
-				 
-				
-               
               </CForm>
             </CCardBody>
             <CCardFooter className="text-center" >

@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React, { useState } from 'react'
 import {
 	CHeaderNav,
   CHeaderNavItem,
@@ -14,15 +14,14 @@ import {
   CProgress,
   CRow,
    CSwitch,
+    CPagination,
   CCallout
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
-import MainChartExample from '../charts/MainChartExample.js'
-
-
 
 const FaqsSetting = () => {
+	const [currentPage, setCurrentPage] = useState(2)
   return (
     <>
       
@@ -32,6 +31,9 @@ const FaqsSetting = () => {
           <CCard>
             <CCardHeader>
              Faqs Setting
+			  <div className="text-right">
+			 <CHeaderNavLink   to="/faqs">Back</CHeaderNavLink> 
+			 </div>
             </CCardHeader>
 			
 		   
@@ -84,7 +86,13 @@ const FaqsSetting = () => {
 				   
                 </tbody>
               </table>
-
+                         <br/>
+          <CPagination
+            align="end"
+            activePage={currentPage}
+            pages={10}
+            onActivePageChange={setCurrentPage}
+          />
             </CCardBody>
           </CCard>
         </CCol>
