@@ -53,10 +53,10 @@ const AddProductsKit = () => {
                
                   <CFormGroup row>
                   <CCol md="3">
-                    <CLabel htmlFor="select"> Name</CLabel>
+                    <CLabel htmlFor="select"> Kit Name</CLabel>
                   </CCol>
                   <CCol xs="9" md="9">
-                    <CInput id="text-input" name="text-input" placeholder="  Name" />
+                    <CInput id="text-input" name="text-input" placeholder=" Kit Name" />
                    
                   </CCol>
                 </CFormGroup>

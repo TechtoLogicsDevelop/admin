@@ -60,9 +60,7 @@ const AddProductMaterials = () => {
                    
                   </CCol>
                 </CFormGroup>
-				 
 				
-               
               </CForm>
             </CCardBody>
             <CCardFooter className="text-center" >
